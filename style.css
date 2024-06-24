@@ -47,6 +47,11 @@ h3 {
     font-size: medium;
 }
 
+h5 {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
 p {
     font-size: 1.1rem;
     line-height: 1.6;
@@ -96,7 +101,7 @@ img.rounded-circle {
 }
 
 .card-body {
-    text-align: center;
+    text-align: left;
 }
 
 .btn-dark-green {
