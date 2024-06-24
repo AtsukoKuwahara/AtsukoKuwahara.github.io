@@ -104,7 +104,7 @@ img.rounded-circle {
 }
 
 footer {
-    background-color: #333;
+    background-color: #2d2d2d;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -118,4 +118,17 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+    color: #ddd; /* Ensures better visibility on hover */
+}
+
+.text-dark {
+    color: #013220 !important;
+}
+
+.text-dark:hover {
+    color: #024731 !important;
+}
+
+.fas, .fab {
+    margin-right: 10px;
 }
