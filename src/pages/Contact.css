@@ -1,0 +1,64 @@
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  padding: 50px 20px;
+}
+
+.contact-content {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 200px;
+  text-align: left;
+}
+
+.contact-content h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.contact-content p {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.contact-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.2em;
+  display: block;
+  margin-bottom: 50px;
+}
+
+.social-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.contact-link:hover,
+.social-link:hover {
+  color: #555;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.asrecords-image {
+  flex: 1;
+  text-align: end;
+  min-width: 150px;
+}
+
+.asrecords-logo {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin-right: 40px;
+}
