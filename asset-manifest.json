@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6de86e8f.css",
+    "main.js": "/static/js/main.90fcdf58.js",
+    "static/js/453.acca0757.chunk.js": "/static/js/453.acca0757.chunk.js",
+    "static/media/leaflet-web-app.jpg": "/static/media/leaflet-web-app.7230a1028f89d973a3df.jpg",
+    "static/media/apw-store.jpg": "/static/media/apw-store.f2f4332b9962d0f26bc1.jpg",
+    "static/media/todo-list.jpg": "/static/media/todo-list.3ef270f9f4ea8168e1be.jpg",
+    "static/media/as-records-store.jpg": "/static/media/as-records-store.2cadcb52f4b027d3daf8.jpg",
+    "static/media/adobe-xd.jpg": "/static/media/adobe-xd.98f06b82628059127f14.jpg",
+    "static/media/chicago-museum-app.jpg": "/static/media/chicago-museum-app.600c2136e0aabf1b9636.jpg",
+    "static/media/adobe-premiere.jpg": "/static/media/adobe-premiere.f5b289a7c573d2e45925.jpg",
+    "static/media/kaleidoscope-app.jpg": "/static/media/kaleidoscope-app.fd2aee9fb88341bc6a9d.jpg",
+    "static/media/react_native.png": "/static/media/react_native.86c8d9eba03e29814d2a.png",
+    "static/media/java.png": "/static/media/java.ddf8676bd569fe01ab44.png",
+    "static/media/logo1.png": "/static/media/logo1.50c658083ebd86133db6.png",
+    "static/media/html.png": "/static/media/html.6e930594286d8afe4c79.png",
+    "static/media/css.png": "/static/media/css.463e319bad8e0edf1ef7.png",
+    "static/media/js.png": "/static/media/js.3dfb665e058d08c99f28.png",
+    "index.html": "/index.html",
+    "main.6de86e8f.css.map": "/static/css/main.6de86e8f.css.map",
+    "main.90fcdf58.js.map": "/static/js/main.90fcdf58.js.map",
+    "453.acca0757.chunk.js.map": "/static/js/453.acca0757.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6de86e8f.css",
+    "static/js/main.90fcdf58.js"
+  ]
+}
