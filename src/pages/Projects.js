@@ -102,6 +102,7 @@ function Projects() {
           title="APW Store Web App - JavaScript"
           description="Web Application implemented in JavaScript for the online store 'APW Store'."
           repoLink="https://github.com/AtsukoKuwahara/apw_store"
+          videoLink={process.env.REACT_APP_ONE_DRIVE_LINK_APW_STORE}
           technologies={[jsImg, cssImg, htmlImg]}
         />
         <ProjectCard
