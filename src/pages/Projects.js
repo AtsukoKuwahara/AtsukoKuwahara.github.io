@@ -110,6 +110,7 @@ function Projects() {
           title="A's Records Store Web App"
           description="A web application for A's Records, an online store selling music records, built with Flask and MongoDB."
           repoLink="https://github.com/AtsukoKuwahara/a_records_store"
+          videoLink={process.env.REACT_APP_ONE_DRIVE_LINK_AS_RECORDS_STORE}
           technologies={[]}
           techDescription="Flask / MongoDB"
         />
