@@ -12,24 +12,44 @@ function FloatingNav() {
   };
 
   return (
-    <div className="floating-nav">
-      <div className="nav-item" onClick={() => scrollToSection('home')}>
+    <nav className="floating-nav" aria-label="Section navigation">
+      <button
+        type="button"
+        className="nav-item"
+        onClick={() => scrollToSection('home')}
+        aria-label="Go to Home section"
+      >
         <span className="nav-icon">🏠</span>
         <span className="nav-text">Home</span>
-      </div>
-      <div className="nav-item" onClick={() => scrollToSection('about')}>
+      </button>
+      <button
+        type="button"
+        className="nav-item"
+        onClick={() => scrollToSection('about')}
+        aria-label="Go to About section"
+      >
         <span className="nav-icon">ℹ️</span>
         <span className="nav-text">About</span>
-      </div>
-      <div className="nav-item" onClick={() => scrollToSection('projects-overview')}>
+      </button>
+      <button
+        type="button"
+        className="nav-item"
+        onClick={() => scrollToSection('projects-overview')}
+        aria-label="Go to Projects section"
+      >
         <span className="nav-icon">💼</span>
         <span className="nav-text">Projects</span>
-      </div>
-      <div className="nav-item" onClick={() => scrollToSection('contact')}>
+      </button>
+      <button
+        type="button"
+        className="nav-item"
+        onClick={() => scrollToSection('contact')}
+        aria-label="Go to Contact section"
+      >
         <span className="nav-icon">✉️</span>
         <span className="nav-text">Contact</span>
-      </div>
-    </div>
+      </button>
+    </nav>
   );
 }
 

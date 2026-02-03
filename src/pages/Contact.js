@@ -11,9 +11,9 @@ const Contact = () => {
     <div className="contact-container">
       <div className="contact-content">
         <h2>Contact</h2>
-        <p>You can reach me via email at:</p>
+        <p>If you want to talk about ideas, music, or thoughtful products, I'd love to hear from you.</p>
         <a href="mailto:kuwahara.atsuko@gmail.com" className="contact-link">
-          <FontAwesomeIcon icon={faEnvelope} /> Atsuko Kuwahara
+          <FontAwesomeIcon icon={faEnvelope} /> Email Atsuko
         </a>
         <hr />
         <p>Find me on:</p>
@@ -37,7 +37,7 @@ const Contact = () => {
         </div>
       </div>
       <div className="asrecords-logo">
-      <img src={logoImg} alt="AsRecords Logo" />
+        <img src={logoImg} alt="AsRecords Logo" />
       </div>
     </div>
   );

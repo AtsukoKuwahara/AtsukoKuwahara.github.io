@@ -4,13 +4,18 @@ import ReactMarkdown from 'react-markdown';
 const markdownContent = `
 # About Me
 
-Music has always been a significant part of my life, especially blues and rock. In my 20s, my passion for music led me to travel alone to the US, where I immersed myself in vibrant musical cultures. 
+### Music
+Blues and Rock are my grounding. I love the feeling of a live room, the texture of vinyl, and the way small details change the whole experience.
 
-In my 30s, a special connection through music brought me to Montreal, where I built a fulfilling life, raising my child and working in a restaurant. However, when the pandemic struck, it brought about unexpected changes, prompting me to reevaluate my path.
+### Journey
+In my 20s, I traveled alone to the U.S. to explore music culture. In my 30s, I built a life in Montreal, raised my child, and worked in hospitality — a place where calm, care, and timing matter.  
+When the pandemic brought unexpected change, it pushed me to pause and rethink my direction.
 
-Seizing the moment, I decided to pursue a long-standing interest in programming. With the support and encouragement of those around me, I successfully completed a 1,200-hour bootcamp program in college, acquiring new skills and knowledge in the tech field.
+### Making
+That same sense of rhythm pulled me into programming. I completed a 1,200-hour mobile development program and kept building — apps, tools, and experiences that feel thoughtful and approachable.  
+My first encounter with AI surprised me in the best way; it deepened my curiosity and added a new layer of excitement to making.
 
-My journey continues as I embrace new challenges and opportunities, driven by a passion for innovation and continuous learning.
+I'm happiest when I can blend craft and empathy into the products I build.
 `;
 
 const About = () => (

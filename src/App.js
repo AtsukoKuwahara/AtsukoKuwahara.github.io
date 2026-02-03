@@ -24,16 +24,24 @@ function App() {
         <Route path="/" element={
           <div className="content">
             <section id="home" className="full-page">
-              <Home />
+              <div className="section-inner">
+                <Home />
+              </div>
             </section>
             <section id="about" className="full-page">
-              <About />
+              <div className="section-inner">
+                <About />
+              </div>
             </section>
             <section id="projects-overview" className="full-page">
-              <ProjectsOverview />
+              <div className="section-inner">
+                <ProjectsOverview />
+              </div>
             </section>
             <section id="contact" className="full-page">
-              <Contact />
+              <div className="section-inner">
+                <Contact />
+              </div>
             </section>
           </div>
         } />

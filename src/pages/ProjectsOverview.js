@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 function ProjectsOverview() {
   return (
     <div>
-      <h2>Projects</h2>
-      <p>A brief introduction to the projects I've worked on. Click the button below to view all projects in detail.</p>
-      <Link to="/projects" className="btn btn-primary">View Projects</Link>
+      <h2>Selected Works</h2>
+      <p>A small collection of projects that reflect how I think and build. Each one has a story behind it.</p>
+      <Link to="/projects" className="btn btn-primary">Explore Projects</Link>
     </div>
   );
 }
