@@ -76,10 +76,10 @@ function Projects() {
         <ProjectCard
           imgSrc={orangebotImg}
           title="Orange Bot"
-          description="An iOS chatbot built with SwiftUI and modern LLMs. Focused on clarity, tone, and fast interaction."
+          description="A local-first iOS chatbot built with SwiftUI and Ollama. Features guided model selection, in-app model management, and archive review."
           repoLink="https://github.com/AtsukoKuwahara/SimpleAIChatbot"
           technologies={[]}
-          techDescription="Swift"
+          techDescription="SwiftUI / Ollama"
         />
         <ProjectCard
           imgSrc={asRecordsStoreImg}
