@@ -8,12 +8,11 @@ const markdownContent = `
 Blues and Rock are my grounding. I love the feeling of a live room, the texture of vinyl, and the way small details change the whole experience.
 
 ### Journey
-In my 20s, I traveled alone to the U.S. to explore music culture. In my 30s, I built a life in Montreal, raised my child, and worked in hospitality — a place where calm, care, and timing matter.  
-When the pandemic brought unexpected change, it pushed me to pause and rethink my direction.
+My 20s were shaped by solo travel and music. In my 30s, I moved to Montreal and built a family. When the pandemic hit, it made me stop and reassess my path — including the things I'd always wanted to learn.
 
 ### Making
-That same sense of rhythm pulled me into programming. I completed a 1,200-hour mobile development program and kept building — apps, tools, and experiences that feel thoughtful and approachable.  
-My first encounter with AI surprised me in the best way; it deepened my curiosity and added a new layer of excitement to making.
+I completed a 1,200-hour mobile development program and have been building ever since — apps, tools, and experiences meant to feel clear and approachable.  
+AI later added a new kind of curiosity and joy to the process.
 
 I'm happiest when I can blend craft and empathy into the products I build.
 `;

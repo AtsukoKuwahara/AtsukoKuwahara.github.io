@@ -104,26 +104,26 @@ hr {
 
 #home {
   background:
-    linear-gradient(0deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.32)),
-    #f6e2c8;
+    linear-gradient(0deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.28)),
+    #e6eef2;
 }
 
 #about {
   background:
-    linear-gradient(0deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.26)),
-    #dfe6dc;
+    linear-gradient(0deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.28)),
+    #f4eadb;
 }
 
 #projects-overview {
   background:
-    linear-gradient(0deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.24)),
-    #e7d3b3;
+    linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
+    #dbe3d1;
 }
 
 #contact {
   background:
     linear-gradient(0deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.28)),
-    #f2d2c7;
+    #f2d2c8;
 }
 
 .section {

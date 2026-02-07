@@ -60,13 +60,13 @@
 .asrecords-logo img {
   width: 160px;
   height: 160px;
-  border-radius: 50%;
-  border: 2px solid var(--retro-ink);
-  box-shadow: var(--retro-shadow-soft);
-  background: #fff;
-  padding: 10px;
-  filter: contrast(1.02);
-  opacity: 0.98;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 0;
+  filter: drop-shadow(0 6px 10px rgba(20, 20, 20, 0.12));
+  opacity: 1;
 }
 
 @media (max-width: 800px) {
