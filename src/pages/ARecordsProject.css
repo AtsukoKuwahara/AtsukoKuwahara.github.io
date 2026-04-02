@@ -104,16 +104,6 @@
   box-shadow: 0 14px 26px rgba(20, 20, 20, 0.16);
 }
 
-.role-title-link {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.role-title-link:hover,
-.role-title-link:focus-visible {
-  color: var(--retro-teal);
-}
 
 .snapshot-card img {
   width: 100%;

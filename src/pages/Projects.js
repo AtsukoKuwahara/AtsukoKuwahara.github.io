@@ -23,7 +23,6 @@ const featuredProject = {
   description:
     "A connected three-app Rails project built around a hub website, dedicated storefront, and community/events space. It reframes my earlier A'S RECORDS concept as a small system with clearer roles and stronger navigation.",
   detailLink: "/projects/a-s-records-rails-suite",
-  repoLink: "https://github.com/AtsukoKuwahara/a_records_website_rails",
   tags: ["Ruby on Rails", "Hub Website", "Store", "Community / Events"],
 };
 
@@ -193,14 +192,6 @@ function Projects() {
             <Link to={featuredProject.detailLink} className="btn btn-primary">
               View Details
             </Link>
-            <a
-              href={featuredProject.repoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-dark-green"
-            >
-              GitHub
-            </a>
           </div>
         </div>
       </section>

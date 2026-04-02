@@ -14,19 +14,16 @@ const appRoles = [
     name: "Website",
     detail:
       "Acts as the hub for the suite. It introduces the brand, explains the concept, and routes visitors toward the store and community areas.",
-    href: "https://github.com/AtsukoKuwahara/a_records_website_rails",
   },
   {
     name: "Store",
     detail:
       "Focuses on product browsing and storefront flow. It now sits inside the wider A'S RECORDS system instead of carrying the whole concept alone.",
-    href: "https://github.com/AtsukoKuwahara/a_records_store_rails",
   },
   {
     name: "Community / Events",
     detail:
       "Adds a participation layer to the project, giving the suite a community-facing role beyond shopping alone.",
-    href: "https://github.com/AtsukoKuwahara/a_records_community_events_rails",
   },
 ];
 
@@ -105,14 +102,6 @@ function ARecordsProject() {
             <Link to="/projects" className="btn btn-primary">
               Back to Projects
             </Link>
-            <a
-              href="https://github.com/AtsukoKuwahara/a_records_website_rails"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-dark-green"
-            >
-              GitHub
-            </a>
           </div>
           <div className="featured-tag-list a-records-tags">
             <span className="featured-tag">Ruby on Rails</span>
@@ -134,16 +123,7 @@ function ARecordsProject() {
         <div className="role-grid">
           {appRoles.map((role) => (
             <article key={role.name} className="role-card">
-              <h3>
-                <a
-                  href={role.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="role-title-link"
-                >
-                  {role.name}
-                </a>
-              </h3>
+              <h3>{role.name}</h3>
               <p>{role.detail}</p>
             </article>
           ))}
