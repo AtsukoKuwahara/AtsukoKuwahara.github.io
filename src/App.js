@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import ProjectsOverview from './pages/ProjectsOverview';
 import Projects from './pages/Projects';
+import ARecordsProject from './pages/ARecordsProject';
 import Contact from './pages/Contact';
 import useScrollToTop from './useScrollToTop'; // Import the custom hook
 import './styles/App.css';
@@ -14,12 +15,12 @@ import './styles/App.css';
 function App() {
   useScrollToTop(); // Use the custom hook
   const location = useLocation();
-  const isProjectsPage = location.pathname === '/projects';
+  const isStandalonePage = location.pathname !== '/';
 
   return (
     <div className="App">
       <Header />
-      {!isProjectsPage && <FloatingNav />}
+      {!isStandalonePage && <FloatingNav />}
       <Routes>
         <Route path="/" element={
           <div className="content">
@@ -46,6 +47,7 @@ function App() {
           </div>
         } />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/a-s-records-rails-suite" element={<ARecordsProject />} />
       </Routes>
     </div>
   );

@@ -10,7 +10,8 @@ const Contact = () => {
   return (
     <div className="contact-container">
       <div className="contact-content">
-        <h2>Contact</h2>
+        <p className="section-kicker">Contact</p>
+        <h2>Thoughtful products, warm ideas, good records</h2>
         <p>If you want to talk about ideas, music, or thoughtful products, I'd love to hear from you.</p>
         <a href="mailto:kuwahara.atsuko@gmail.com" className="contact-link">
           <FontAwesomeIcon icon={faEnvelope} /> Email Atsuko
@@ -37,6 +38,7 @@ const Contact = () => {
         </div>
       </div>
       <div className="asrecords-logo">
+        <p className="contact-side-note">Built with warmth, intention, and a little noise in the background.</p>
         <img src={logoImg} alt="AsRecords Logo" />
       </div>
     </div>

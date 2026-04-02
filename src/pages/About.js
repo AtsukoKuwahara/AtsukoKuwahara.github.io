@@ -1,26 +1,42 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 
-const markdownContent = `
-# About Me
+const beats = [
+  {
+    title: 'Music',
+    text: 'Blues and rock are my grounding. I care about texture, atmosphere, and the way small details can change the entire feeling of an experience.',
+  },
+  {
+    title: 'Journey',
+    text: 'My path into development was not early or linear. Travel, family life in Montreal, and the pause of the pandemic all pushed me toward learning how to build the products I wanted to see.',
+  },
+  {
+    title: 'Making',
+    text: 'After a 1,200-hour mobile development program, I kept building across mobile, web, and AI-assisted projects. I am most interested in work that feels coherent, usable, and lived in.',
+  },
+];
 
-### Music
-Blues and Rock are my grounding. I love the feeling of a live room, the texture of vinyl, and the way small details change the whole experience.
-
-### Journey
-My 20s were shaped by solo travel and music. In my 30s, I moved to Montreal and built a family. When the pandemic hit, it made me stop and reassess my path — including the things I'd always wanted to learn.
-
-### Making
-I completed a 1,200-hour mobile development program and have been building ever since — apps, tools, and experiences meant to feel clear and approachable.  
-AI later added a new kind of curiosity and joy to the process.
-
-I'm happiest when I can blend craft and empathy into the products I build.
-`;
-
-const About = () => (
-  <div>
-    <ReactMarkdown>{markdownContent}</ReactMarkdown>
-  </div>
-);
+function About() {
+  return (
+    <div className="about-stage">
+      <div className="about-heading">
+        <p className="section-kicker">About Me</p>
+        <h2>Late to tech, close to craft</h2>
+        <p>
+          I am not trying to look like the loudest developer in the room. What
+          matters more to me is building steadily, thinking clearly, and making
+          products with a point of view.
+        </p>
+      </div>
+      <div className="about-beats">
+        {beats.map((beat) => (
+          <section key={beat.title} className="about-beat">
+            <h3>{beat.title}</h3>
+            <p>{beat.text}</p>
+          </section>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default About;

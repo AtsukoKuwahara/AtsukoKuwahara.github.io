@@ -13,6 +13,8 @@
   min-width: 300px;
   padding-right: 80px;
   text-align: left;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-content h2 {
@@ -51,10 +53,22 @@
   margin-top: 20px;
 }
 
-.asrecords-image {
-  flex: 1;
-  text-align: end;
-  min-width: 150px;
+.asrecords-logo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.contact-side-note {
+  max-width: 260px;
+  margin: 0;
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(31, 36, 40, 0.65);
+  text-align: right;
 }
 
 .asrecords-logo img {
@@ -76,5 +90,10 @@
 
   .asrecords-logo {
     width: 100%;
+    align-items: flex-start;
+  }
+
+  .contact-side-note {
+    text-align: left;
   }
 }
