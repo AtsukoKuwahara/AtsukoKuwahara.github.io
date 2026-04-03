@@ -192,25 +192,146 @@ hr {
 
 .home-actions {
   margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.home-vinyl-wrap {
+  position: relative;
+  min-height: 580px;
+  animation: driftIn 1s ease both;
+  display: grid;
+  place-items: center;
+}
+
+.home-vinyl-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(44, 110, 111, 0.18), transparent 26%),
+    radial-gradient(circle at 32% 32%, rgba(197, 106, 74, 0.18), transparent 22%),
+    radial-gradient(circle at 70% 68%, rgba(214, 166, 58, 0.12), transparent 20%);
+  filter: blur(16px);
+  opacity: 0.8;
+}
+
+.home-vinyl {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 440px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, #1e2327 0 12%, #101215 12% 18%, #1a1d20 18% 24%, #0c0e10 24% 100%);
+  box-shadow:
+    0 28px 42px rgba(20, 20, 20, 0.2),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.04),
+    inset 0 0 0 22px rgba(255, 255, 255, 0.015);
+  animation: spinVinyl 24s linear infinite;
+}
+
+.home-vinyl::before,
+.home-vinyl::after {
+  content: "";
+  position: absolute;
+  inset: 6%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.home-vinyl::after {
+  inset: 18%;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.home-vinyl-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.home-vinyl-ring-one {
+  inset: 10%;
+}
+
+.home-vinyl-ring-two {
+  inset: 22%;
+}
+
+.home-vinyl-ring-three {
+  inset: 34%;
+}
+
+.home-vinyl-label {
+  position: absolute;
+  inset: 35%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.25), transparent 20%),
+    linear-gradient(145deg, rgba(44, 110, 111, 0.92), rgba(28, 64, 65, 0.96));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.16),
+    0 8px 16px rgba(20, 20, 20, 0.22);
+  text-align: center;
+}
+
+.home-vinyl-label span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.68rem;
+  line-height: 1.15;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--retro-cream);
+}
+
+.vinyl-label-primary {
+  top: 24%;
+}
+
+.vinyl-label-secondary {
+  bottom: 18%;
+}
+
+.home-vinyl-hole {
+  position: absolute;
+  inset: 42%;
+  border-radius: 50%;
+  background: #0f1113;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 0 0 8px rgba(15, 17, 19, 0.12);
+}
+
+.home-vinyl-note {
+  position: absolute;
+  bottom: 48px;
+  right: 28px;
+  z-index: 2;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(31, 36, 40, 0.45);
 }
 
 .home-riff {
-  align-self: stretch;
-  display: grid;
-  align-content: center;
-  gap: 10px;
-  justify-items: end;
-  animation: driftIn 1s ease both;
+  display: none;
 }
 
 .home-riff p {
   margin: 0;
   font-family: 'Bowlby One SC', serif;
-  font-size: clamp(1.2rem, 2.2vw, 2rem);
+  font-size: clamp(1.15rem, 1.8vw, 1.7rem);
   line-height: 1;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(31, 36, 40, 0.15);
+  color: rgba(31, 36, 40, 0.14);
   transform: rotate(-5deg);
 }
 
@@ -375,6 +496,16 @@ hr {
   }
 }
 
+@keyframes spinVinyl {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 900px) {
   .full-page {
     padding: 70px 32px;
@@ -394,8 +525,13 @@ hr {
     height: 5px;
   }
 
-  .home-riff {
-    justify-items: start;
+  .home-vinyl-wrap {
+    min-height: 480px;
+    margin-top: 20px;
+  }
+
+  .home-vinyl {
+    width: min(100%, 360px);
   }
 }
 
@@ -420,5 +556,21 @@ hr {
 
   .contact-container::before {
     display: none;
+  }
+
+  .home-vinyl-wrap {
+    min-height: 320px;
+    margin-top: 10px;
+  }
+
+  .home-vinyl {
+    width: min(100%, 280px);
+  }
+
+  .home-vinyl-note {
+    bottom: 8px;
+    right: 0;
+    left: 0;
+    text-align: center;
   }
 }

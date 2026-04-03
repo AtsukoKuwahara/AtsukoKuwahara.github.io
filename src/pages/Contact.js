@@ -13,6 +13,10 @@ const Contact = () => {
         <p className="section-kicker">Contact</p>
         <h2>Thoughtful products, warm ideas, good records</h2>
         <p>If you want to talk about ideas, music, or thoughtful products, I'd love to hear from you.</p>
+        <div className="contact-brand-row">
+          <p className="contact-side-note">Built with warmth, intention, and a little noise in the background.</p>
+          <img src={logoImg} alt="AsRecords Logo" className="contact-inline-logo" />
+        </div>
         <a href="mailto:kuwahara.atsuko@gmail.com" className="contact-link">
           <FontAwesomeIcon icon={faEnvelope} /> Email Atsuko
         </a>
@@ -36,10 +40,6 @@ const Contact = () => {
             <FontAwesomeIcon icon={faGithub} size="2x" />
           </a>
         </div>
-      </div>
-      <div className="asrecords-logo">
-        <p className="contact-side-note">Built with warmth, intention, and a little noise in the background.</p>
-        <img src={logoImg} alt="AsRecords Logo" />
       </div>
     </div>
   );
