@@ -4,10 +4,10 @@ import "./ARecordsProject.css";
 
 import websiteHomeImg from "../assets/images/a-records-website-home.jpg";
 import sideShopHomeImg from "../assets/images/a-records-sideshop-home.jpg";
-import communityHomeImg from "../assets/images/a-records-community-home.jpg";
-import communityAdminDashboardImg from "../assets/images/a-records-community-admin-dashboard.jpg";
-import communityAdminCalendarImg from "../assets/images/a-records-community-admin-calendar.jpg";
-import websiteAdminSettingsImg from "../assets/images/a-records-website-admin-settings.jpg";
+import communityHomeIndieImg from "../assets/images/a-records-community-home-indie.jpg";
+import communityLiveDetailsImg from "../assets/images/a-records-community-live-details.jpg";
+import communityReservationsImg from "../assets/images/a-records-community-reservations.jpg";
+import communityInboxImg from "../assets/images/a-records-community-inbox.jpg";
 
 const appRoles = [
   {
@@ -50,35 +50,35 @@ function ARecordsProject() {
         "The store app focuses on practical shopping flow and its own dedicated browsing tone.",
     },
     {
-      image: communityHomeImg,
-      alt: "A'S RECORDS community home",
+      image: communityHomeIndieImg,
+      alt: "A'S RECORDS community indie home",
       title: "Community Front Door",
       description:
-        "The public community/events side extends the suite beyond commerce into gatherings and announcements.",
+        "The community front page now leans into a louder indie-show concept and presents the app as a live board for local signals rather than a quiet archive.",
     },
   ];
 
   const adminSnapshots = [
     {
-      image: communityAdminDashboardImg,
-      alt: "A'S RECORDS community admin dashboard",
-      title: "Community Admin Dashboard",
+      image: communityLiveDetailsImg,
+      alt: "A'S RECORDS community live details page",
+      title: "Live Detail Page",
       description:
-        "The admin dashboard shows the operations side of the community app, including events and announcements management.",
+        "The live detail screen shows the new visual direction more clearly, with event context, poster-style presentation, and public-facing venue information.",
     },
     {
-      image: websiteAdminSettingsImg,
-      alt: "A'S RECORDS website admin settings",
-      title: "Website Admin Settings",
+      image: communityReservationsImg,
+      alt: "A'S RECORDS community reservations admin page",
+      title: "Reservations Management",
       description:
-        "Settings pages expose practical rules such as shipping values and connected links, showing the system side behind the storefront.",
+        "Reservation handling now has a dedicated management view for confirmed guests, waitlist movement, cancellations, and attendance tracking.",
     },
     {
-      image: communityAdminCalendarImg,
-      alt: "A'S RECORDS community admin calendar",
-      title: "Community Event Calendar",
+      image: communityInboxImg,
+      alt: "A'S RECORDS community inbox page",
+      title: "Inbox Messages",
       description:
-        "The community admin calendar gives a clearer view of event scheduling, status changes, and monthly operations planning.",
+        "The inbox adds another operational layer, letting the community app hold incoming contact notes and reservation-related messages in one place.",
     },
   ];
 
@@ -160,12 +160,12 @@ function ARecordsProject() {
 
       <section className="a-records-section">
         <div className="section-heading">
-          <p className="section-kicker">Operations Views</p>
-          <h2>Admin And Management Screens</h2>
+          <p className="section-kicker">Community Deep Dive</p>
+          <h2>New Direction And Added Features</h2>
           <p className="section-intro">
-            These screens are included as supporting evidence rather than the
-            main showcase. They help show that the suite also considers
-            day-to-day operations, not only public-facing pages.
+            These screens focus only on the community / events app. They show
+            the updated concept, stronger public presentation, and newer admin
+            features added after the original portfolio pass.
           </p>
         </div>
         <div className="admin-snapshot-grid">
