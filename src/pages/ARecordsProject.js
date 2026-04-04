@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./ARecordsProject.css";
 
@@ -13,27 +13,98 @@ const appRoles = [
   {
     name: "Website",
     detail:
-      "Acts as the hub for the suite. It introduces the brand, explains the concept, and routes visitors toward the store and community areas.",
+      "Acts as the hub for the suite. It introduces the concept, connects the other apps, and brings the separate learning tracks back into one system.",
   },
   {
     name: "Store",
     detail:
-      "Focuses on product browsing and storefront flow. It now sits inside the wider A'S RECORDS system instead of carrying the whole concept alone.",
+      "Focuses on building out the e-commerce side of the project, including browsing flow and the kinds of functionality needed for secondhand, one-of-a-kind record inventory.",
   },
   {
     name: "Community / Events",
     detail:
-      "Adds a participation layer to the project, giving the suite a community-facing role beyond shopping alone.",
+      "Focuses on the separate participation features a community-facing music space needs, beyond storefront behavior alone.",
   },
 ];
 
 const navigationSteps = [
-  "Website works as the main entry point and presents the shared A'S RECORDS identity.",
-  "From the hub, visitors can move into the dedicated store experience or the community / events area.",
-  "Store and community pages both include a return path back to the website so the suite stays connected.",
+  "The website works as the main entry point and establishes the shared A'S RECORDS identity.",
+  "From the hub, visitors can move into the store app or the community / events app depending on what they want to do.",
+  "Those focused apps stay distinct, but both route back through the website so the system still reads as one connected project.",
 ];
 
+const focusPoints = [
+  {
+    name: "Ruby / Rails Learning",
+    detail:
+      "I used the rebuild to learn Ruby and work through a framework-based web application structure rather than repeating the earlier Flask build directly.",
+  },
+  {
+    name: "Feature Separation",
+    detail:
+      "I split the project into focused apps so storefront features and community features could be explored as different kinds of web behavior.",
+  },
+  {
+    name: "Hub Integration",
+    detail:
+      "The website ties those focused apps back together, so the suite still reads as one A'S RECORDS system rather than separate experiments.",
+  },
+];
+
+function ImageLightbox({ image, onClose }) {
+  useEffect(() => {
+    if (!image) {
+      return undefined;
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [image, onClose]);
+
+  if (!image) {
+    return null;
+  }
+
+  return (
+    <div
+      className="image-lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${image.alt} expanded view`}
+      onClick={onClose}
+    >
+      <div
+        className="image-lightbox-content"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <button
+          type="button"
+          className="image-lightbox-close"
+          onClick={onClose}
+          aria-label="Close expanded image"
+        >
+          Close
+        </button>
+        <img src={image.src} alt={image.alt} />
+      </div>
+    </div>
+  );
+}
+
 function ARecordsProject() {
+  const [activeImage, setActiveImage] = useState(null);
+
   const snapshots = [
     {
       image: websiteHomeImg,
@@ -83,115 +154,197 @@ function ARecordsProject() {
   ];
 
   return (
-    <main className="a-records-page">
-      <section className="a-records-hero">
-        <div className="a-records-hero-copy">
-          <p className="section-kicker">Featured Case Study</p>
-          <h1>A'S RECORDS Rails Suite</h1>
-          <p className="a-records-summary">
-            A three-app Rails portfolio project built as a connected system: a
-            hub website, a storefront, and a community / events experience.
+    <>
+      <main className="a-records-page">
+        <section className="a-records-hero">
+          <div className="a-records-hero-copy">
+            <p className="section-kicker">Featured Case Study</p>
+            <h1>A'S RECORDS Rails Suite</h1>
+            <p className="a-records-summary">
+              A three-app Rails portfolio project built as a connected system: a
+              hub website, a storefront, and a community / events experience.
+            </p>
+            <p>
+              This is the current evolution of A'S RECORDS. I rebuilt the idea in
+              Rails as a way to study Ruby, practice framework-based web
+              development, and rethink the project as a connected system rather
+              than a single storefront alone.
+            </p>
+            <p className="a-records-role">
+              My role: concept development, UI direction, app structure,
+              navigation flow, and Rails-based implementation.
+            </p>
+            <div className="featured-tag-list a-records-tags">
+              <span className="featured-tag">Ruby on Rails</span>
+              <span className="featured-tag">Three-App Suite</span>
+              <span className="featured-tag">Portfolio Case Study</span>
+            </div>
+          </div>
+          <div className="a-records-hero-media">
+            <button
+              type="button"
+              className="a-records-image-button"
+              onClick={() =>
+                setActiveImage({
+                  src: websiteHomeImg,
+                  alt: "A'S RECORDS website screenshot",
+                })
+              }
+              aria-label="Open larger image for A'S RECORDS website screenshot"
+            >
+              <img src={websiteHomeImg} alt="A'S RECORDS website screenshot" loading="eager" />
+            </button>
+          </div>
+        </section>
+
+        <section className="a-records-section a-records-section-story">
+          <div className="section-heading">
+            <p className="section-kicker">Why I Rebuilt It</p>
+            <h2>From One Store Prototype To A Three-App Learning Project</h2>
+          </div>
+          <p>
+            The original A&apos;S RECORDS project started as a self-built Flask and
+            MongoDB record store. When I began studying Ruby and Rails, I did
+            not want to simply recreate the same storefront one more time. I
+            used the rebuild as a way to learn the language, work inside a
+            full-featured web framework, and redesign the project around
+            clearer responsibilities.
           </p>
           <p>
-            This is the current evolution of A'S RECORDS. Instead of rebuilding
-            the earlier store prototype as a single app, I used Rails study to
-            separate responsibilities and design navigation between related
-            products.
+            The three-app structure came from that learning goal. I wanted one
+            app to focus on the e-commerce side, one to focus on the separate
+            community and events features, and one website layer to act as the
+            hub that ties the whole system together. Each app could then focus
+            on a different kind of web behavior, while still belonging to a
+            single A&apos;S RECORDS concept.
           </p>
-          <div className="a-records-hero-actions">
-            <Link to="/projects" className="btn btn-primary">
-              Back to Projects
-            </Link>
+        </section>
+
+        <section className="a-records-section a-records-section-focus">
+          <div className="section-heading">
+            <p className="section-kicker">What This Version Focuses On</p>
+            <h2>Three Separate Learning Goals Inside One System</h2>
           </div>
-          <div className="featured-tag-list a-records-tags">
-            <span className="featured-tag">Ruby on Rails</span>
-            <span className="featured-tag">System Design</span>
-            <span className="featured-tag">Navigation Flow</span>
-            <span className="featured-tag">Portfolio Case Study</span>
+          <div className="role-grid">
+            {focusPoints.map((point) => (
+              <article key={point.name} className="role-card">
+                <h3>{point.name}</h3>
+                <p>{point.detail}</p>
+              </article>
+            ))}
           </div>
-        </div>
-        <div className="a-records-hero-media">
-          <img src={websiteHomeImg} alt="A'S RECORDS website screenshot" loading="eager" />
-        </div>
-      </section>
+        </section>
 
-      <section className="a-records-section">
-        <div className="section-heading">
-          <p className="section-kicker">System Roles</p>
-          <h2>How The Three Apps Divide The Work</h2>
-        </div>
-        <div className="role-grid">
-          {appRoles.map((role) => (
-            <article key={role.name} className="role-card">
-              <h3>{role.name}</h3>
-              <p>{role.detail}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+        <section className="a-records-section a-records-section-system">
+          <div className="section-heading">
+            <p className="section-kicker">How The Suite Works</p>
+            <h2>Role Separation With A Hub-Led Flow</h2>
+            <p className="section-intro">
+              The suite works because each app has a clearer role, while the
+              website still acts as the shared entry point and connector.
+            </p>
+          </div>
+          <div className="role-grid">
+            {appRoles.map((role) => (
+              <article key={role.name} className="role-card">
+                <h3>{role.name}</h3>
+                <p>{role.detail}</p>
+              </article>
+            ))}
+          </div>
+          <div className="flow-list" aria-label="Navigation flow steps">
+            {navigationSteps.map((step) => (
+              <p key={step} className="flow-step">
+                <span className="flow-step-icon" aria-hidden="true">↳</span>
+                <span className="flow-step-text">{step}</span>
+              </p>
+            ))}
+          </div>
+        </section>
 
-      <section className="a-records-section">
-        <div className="section-heading">
-          <p className="section-kicker">Navigation Flow</p>
-          <h2>Hub-Led Movement Across The Suite</h2>
-        </div>
-        <ol className="flow-list">
-          {navigationSteps.map((step) => (
-            <li key={step}>{step}</li>
-          ))}
-        </ol>
-      </section>
+        <section className="a-records-section">
+          <div className="section-heading">
+            <p className="section-kicker">Visual Snapshot</p>
+            <h2>Current Screens Across The Suite</h2>
+          </div>
+          <div className="snapshot-grid snapshot-grid-three">
+            {snapshots.map((snapshot) => (
+              <article key={snapshot.title} className="snapshot-card">
+                <button
+                  type="button"
+                  className="a-records-image-button"
+                  onClick={() =>
+                    setActiveImage({
+                      src: snapshot.image,
+                      alt: snapshot.alt,
+                    })
+                  }
+                  aria-label={`Open larger image for ${snapshot.title}`}
+                >
+                  <img src={snapshot.image} alt={snapshot.alt} loading="lazy" />
+                </button>
+                <h3>{snapshot.title}</h3>
+                <p>{snapshot.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      <section className="a-records-section">
-        <div className="section-heading">
-          <p className="section-kicker">Visual Snapshot</p>
-          <h2>Current Screens Across The Suite</h2>
-        </div>
-        <div className="snapshot-grid snapshot-grid-three">
-          {snapshots.map((snapshot) => (
-            <article key={snapshot.title} className="snapshot-card">
-              <img src={snapshot.image} alt={snapshot.alt} loading="lazy" />
-              <h3>{snapshot.title}</h3>
-              <p>{snapshot.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+        <section className="a-records-section">
+          <div className="section-heading">
+            <p className="section-kicker">Community Focus</p>
+            <h2>Features Added Beyond The Original Store Idea</h2>
+            <p className="section-intro">
+              These screens show how the project expanded past storefront logic
+              into separate public and admin-facing community features.
+            </p>
+          </div>
+          <div className="admin-snapshot-grid">
+            {adminSnapshots.map((snapshot) => (
+              <article key={snapshot.title} className="snapshot-card admin-snapshot-card">
+                <button
+                  type="button"
+                  className="a-records-image-button"
+                  onClick={() =>
+                    setActiveImage({
+                      src: snapshot.image,
+                      alt: snapshot.alt,
+                    })
+                  }
+                  aria-label={`Open larger image for ${snapshot.title}`}
+                >
+                  <img src={snapshot.image} alt={snapshot.alt} loading="lazy" />
+                </button>
+                <h3>{snapshot.title}</h3>
+                <p>{snapshot.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      <section className="a-records-section">
-        <div className="section-heading">
-          <p className="section-kicker">Community Deep Dive</p>
-          <h2>New Direction And Added Features</h2>
-          <p className="section-intro">
-            These screens focus only on the community / events app. They show
-            the updated concept, stronger public presentation, and newer admin
-            features added after the original portfolio pass.
+        <section className="a-records-section previous-iteration">
+          <div className="section-heading">
+            <p className="section-kicker">Previous Iteration</p>
+            <h2>Earlier Flask / MongoDB Version</h2>
+          </div>
+          <p>
+            The earlier Flask / MongoDB version remains in the portfolio as the
+            starting point for the concept. The Rails suite is the next step: a
+            rebuild that turns one store prototype into a broader system with
+            clearer responsibilities and a stronger overall structure.
           </p>
-        </div>
-        <div className="admin-snapshot-grid">
-          {adminSnapshots.map((snapshot) => (
-            <article key={snapshot.title} className="snapshot-card admin-snapshot-card">
-              <img src={snapshot.image} alt={snapshot.alt} loading="lazy" />
-              <h3>{snapshot.title}</h3>
-              <p>{snapshot.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+        </section>
 
-      <section className="a-records-section previous-iteration">
-        <div className="section-heading">
-          <p className="section-kicker">Previous Iteration</p>
-          <h2>Earlier Flask / MongoDB Version</h2>
+        <div className="a-records-footer-actions">
+          <Link to="/projects" className="btn btn-primary">
+            Back to Projects
+          </Link>
         </div>
-        <p>
-          The earlier A&apos;S RECORDS prototype remains part of the portfolio as
-          a separate card. That version explored the storefront concept,
-          introduced a local-LLM trivia feature, and now serves as a clear
-          before-and-after reference for how the idea evolved in Rails.
-        </p>
-      </section>
-    </main>
+      </main>
+      {activeImage && (
+        <ImageLightbox image={activeImage} onClose={() => setActiveImage(null)} />
+      )}
+    </>
   );
 }
 

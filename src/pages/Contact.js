@@ -12,7 +12,10 @@ const Contact = () => {
       <div className="contact-content">
         <p className="section-kicker">Contact</p>
         <h2>Thoughtful products, warm ideas, good records</h2>
-        <p>If you want to talk about ideas, music, or thoughtful products, I'd love to hear from you.</p>
+        <p>
+          If you are interested in web, mobile, or product-focused work, I would
+          be glad to connect.
+        </p>
         <div className="contact-brand-row">
           <p className="contact-side-note">Built with warmth, intention, and a little noise in the background.</p>
           <img src={logoImg} alt="AsRecords Logo" className="contact-inline-logo" />
@@ -21,7 +24,7 @@ const Contact = () => {
           <FontAwesomeIcon icon={faEnvelope} /> Email Atsuko
         </a>
         <hr />
-        <p>Find me on:</p>
+        <p>Elsewhere:</p>
         <div className="social-links">
           <a
             href="https://www.linkedin.com/in/atsuko-kuwahara-9a9212232/"
