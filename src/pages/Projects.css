@@ -25,6 +25,10 @@ body {
   max-width: none;
 }
 
+.featured-case-studies {
+  margin-bottom: 40px;
+}
+
 .featured-project {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -40,6 +44,10 @@ body {
   box-shadow: 0 24px 40px rgba(20, 20, 20, 0.12);
   position: relative;
   overflow: hidden;
+}
+
+.featured-case-studies .featured-project:last-child {
+  margin-bottom: 0;
 }
 
 .featured-project::after {
@@ -80,6 +88,23 @@ body {
 .featured-project-media .project-image-button,
 .featured-project-media img {
   flex: 1 1 auto;
+}
+
+.featured-project-media-portrait {
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-project-media-portrait .project-image-button {
+  max-width: 320px;
+}
+
+.featured-project-media-portrait img {
+  min-height: 0;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  background: rgba(246, 241, 233, 0.92);
 }
 
 .featured-project-content {

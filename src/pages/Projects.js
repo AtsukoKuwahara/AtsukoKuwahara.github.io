@@ -10,6 +10,7 @@ import leafletWebAppImg from "../assets/images/leaflet-web-app.jpg";
 import apwStoreImg from "../assets/images/apw-store.jpg";
 import asRecordsStoreImg from "../assets/images/as-records-store.jpg";
 import aRecordsWebsiteHomeImg from "../assets/images/a-records-website-home.jpg";
+import openCollectionDiscoverImg from "../assets/images/open-collection-discover.png";
 import javaImg from "../assets/images/java.png";
 import reactNativeImg from "../assets/images/react_native.png";
 import jsImg from "../assets/images/js.png";
@@ -21,6 +22,9 @@ const techCatalog = {
   rails: { label: "Rails", shortLabel: "RbR", tone: "ruby" },
   ruby: { label: "Ruby", shortLabel: "Rb", tone: "ruby" },
   swiftui: { label: "SwiftUI", shortLabel: "Sw", tone: "swift" },
+  ios: { label: "iOS", shortLabel: "iOS", tone: "slate" },
+  api: { label: "API", shortLabel: "API", tone: "amber" },
+  localData: { label: "Local Persistence", shortLabel: "DB", tone: "green" },
   ollama: { label: "Ollama", shortLabel: "Ol", tone: "slate" },
   flask: { label: "Flask", shortLabel: "Fl", tone: "slate" },
   mongodb: { label: "MongoDB", shortLabel: "Mg", tone: "green" },
@@ -34,16 +38,32 @@ const techCatalog = {
   xd: { label: "Adobe XD", shortLabel: "Xd", tone: "pink" },
 };
 
-const featuredProject = {
-  imgSrc: aRecordsWebsiteHomeImg,
-  title: "A'S RECORDS Rails Suite",
-  description:
-    "A connected three-app Rails project built around a hub website, dedicated storefront, and community/events space. It reframes my earlier A'S RECORDS concept as a small system with clearer roles and stronger navigation.",
-  detailLink: "/projects/a-s-records-rails-suite",
-  tags: ["Rails", "Three-App Suite", "Case Study"],
-  stack: ["rails", "ruby"],
-  role: "Concept / UI / Structure / Implementation",
-};
+const featuredProjects = [
+  {
+    id: "a-records-rails-suite",
+    imgSrc: aRecordsWebsiteHomeImg,
+    mediaClassName: "",
+    title: "A'S RECORDS Rails Suite",
+    description:
+      "A connected three-app Rails project built around a hub website, dedicated storefront, and community/events space. It reframes my earlier A'S RECORDS concept as a small system with clearer roles and stronger navigation.",
+    detailLink: "/projects/a-s-records-rails-suite",
+    tags: ["Rails", "Three-App Suite", "Case Study"],
+    stack: ["rails", "ruby"],
+    role: "Concept / UI / Structure / Implementation",
+  },
+  {
+    id: "open-collection-ios",
+    imgSrc: openCollectionDiscoverImg,
+    mediaClassName: "featured-project-media-portrait",
+    title: "Open Collection iOS",
+    description:
+      "A SwiftUI art discovery app that brings together the Art Institute of Chicago and the Cleveland Museum of Art, with search, saved works, tags, filters, and a quieter mobile viewing flow.",
+    detailLink: "/projects/open-collection-ios",
+    tags: ["SwiftUI", "Cross-Museum App", "Case Study"],
+    stack: ["swiftui", "ios", "api", "localData"],
+    role: "Concept / Product Direction / UI / SwiftUI Implementation",
+  },
+];
 
 const projects = [
   {
@@ -259,49 +279,67 @@ function Projects() {
           <h2>Selected Works</h2>
           <p className="projects-lede">
             A focused set of projects across mobile, web, prototyping, and
-            product thinking. The featured work below shows how I now structure
-            connected applications rather than only standalone builds.
+            product thinking. The featured case studies below show how I shape
+            small products from concept and interface direction through
+            implementation.
           </p>
         </header>
 
-        <section className="featured-project reveal-card" aria-labelledby="featured-project-heading">
-          <div className="featured-project-media">
-            <button
-              type="button"
-              className="project-image-button featured-image-button"
-              onClick={() =>
-                setActiveImage({
-                  src: featuredProject.imgSrc,
-                  alt: featuredProject.title,
-                })
-              }
-              aria-label={`Open larger image for ${featuredProject.title}`}
+        <section className="featured-case-studies" aria-labelledby="featured-case-studies-heading">
+          <div className="projects-list-heading reveal-card">
+            <p className="section-kicker">Featured Case Studies</p>
+            <h3 id="featured-case-studies-heading">Detailed Projects</h3>
+            <p>
+              These two projects are the clearest examples of how I take an
+              idea through product framing, interface decisions, and working
+              implementation rather than stopping at a single screen or sample.
+            </p>
+          </div>
+          {featuredProjects.map((project) => (
+            <section
+              key={project.id}
+              className="featured-project reveal-card"
+              aria-labelledby={`${project.id}-heading`}
             >
-              <img
-                src={featuredProject.imgSrc}
-                alt={featuredProject.title}
-                loading="eager"
-              />
-            </button>
-          </div>
-          <div className="featured-project-content">
-            <p className="section-kicker">Featured Project</p>
-            <h3 id="featured-project-heading">{featuredProject.title}</h3>
-            <p>{featuredProject.description}</p>
-          <div className="featured-tag-list" aria-label="featured project tags">
-            {featuredProject.tags.map((tag) => (
-              <span key={tag} className="featured-tag">
-                {tag}
-              </span>
-            ))}
-          </div>
-          <p className="featured-project-role">{featuredProject.role}</p>
-          <div className="project-card-actions featured-actions">
-            <Link to={featuredProject.detailLink} className="btn btn-primary">
-              View Details
-              </Link>
-            </div>
-          </div>
+              <div className={`featured-project-media ${project.mediaClassName || ""}`}>
+                <button
+                  type="button"
+                  className="project-image-button featured-image-button"
+                  onClick={() =>
+                    setActiveImage({
+                      src: project.imgSrc,
+                      alt: project.title,
+                    })
+                  }
+                  aria-label={`Open larger image for ${project.title}`}
+                >
+                  <img
+                    src={project.imgSrc}
+                    alt={project.title}
+                    loading="eager"
+                  />
+                </button>
+              </div>
+              <div className="featured-project-content">
+                <p className="section-kicker">Featured Project</p>
+                <h3 id={`${project.id}-heading`}>{project.title}</h3>
+                <p>{project.description}</p>
+                <div className="featured-tag-list" aria-label="featured project tags">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="featured-tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="featured-project-role">{project.role}</p>
+                <div className="project-card-actions featured-actions">
+                  <Link to={project.detailLink} className="btn btn-primary">
+                    View Details
+                  </Link>
+                </div>
+              </div>
+            </section>
+          ))}
         </section>
 
         <section className="projects-list-section" aria-labelledby="more-projects-heading">
