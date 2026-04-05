@@ -1,8 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.3d3664f7.css",
-    "main.js": "/static/js/main.1c5d87aa.js",
+    "main.css": "/static/css/main.43a98b2c.css",
+    "main.js": "/static/js/main.ff3f7fee.js",
     "static/js/453.acca0757.chunk.js": "/static/js/453.acca0757.chunk.js",
+    "static/media/open-collection-fullscreen.png": "/static/media/open-collection-fullscreen.db3f1571abf29c2ffdfa.png",
+    "static/media/open-collection-detail.png": "/static/media/open-collection-detail.656bc92c9a220b8390bc.png",
+    "static/media/open-collection-discover.png": "/static/media/open-collection-discover.251f8f30df85aa62bc2e.png",
+    "static/media/open-collection-search.png": "/static/media/open-collection-search.e4530209c2ff8b989cf2.png",
+    "static/media/open-collection-collection.png": "/static/media/open-collection-collection.a15aa93200f998e70ab4.png",
+    "static/media/open-collection-collection-tags.png": "/static/media/open-collection-collection-tags.66f39598728fc6927964.png",
     "static/media/leaflet-web-app.jpg": "/static/media/leaflet-web-app.7230a1028f89d973a3df.jpg",
     "static/media/apw-store.jpg": "/static/media/apw-store.f2f4332b9962d0f26bc1.jpg",
     "static/media/a-records-website-home.jpg": "/static/media/a-records-website-home.92cd1f73158d6555cdaa.jpg",
@@ -24,12 +30,12 @@
     "static/media/css.png": "/static/media/css.463e319bad8e0edf1ef7.png",
     "static/media/js.png": "/static/media/js.3dfb665e058d08c99f28.png",
     "index.html": "/index.html",
-    "main.3d3664f7.css.map": "/static/css/main.3d3664f7.css.map",
-    "main.1c5d87aa.js.map": "/static/js/main.1c5d87aa.js.map",
+    "main.43a98b2c.css.map": "/static/css/main.43a98b2c.css.map",
+    "main.ff3f7fee.js.map": "/static/js/main.ff3f7fee.js.map",
     "453.acca0757.chunk.js.map": "/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d3664f7.css",
-    "static/js/main.1c5d87aa.js"
+    "static/css/main.43a98b2c.css",
+    "static/js/main.ff3f7fee.js"
   ]
 }
