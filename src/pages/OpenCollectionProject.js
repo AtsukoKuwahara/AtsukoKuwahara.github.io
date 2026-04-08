@@ -7,41 +7,116 @@ import searchImg from "../assets/images/open-collection-search.png";
 import detailImg from "../assets/images/open-collection-detail.png";
 import fullscreenImg from "../assets/images/open-collection-fullscreen.png";
 import collectionImg from "../assets/images/open-collection-collection.png";
-import collectionTagsImg from "../assets/images/open-collection-collection-tags.png";
+import v2DiscoverThemeImg from "../assets/images/open-collection-v2-discover-theme.png";
+import v3DiscoverImg from "../assets/images/open-collection-v3-discover.png";
+import v3CollectionShelvesImg from "../assets/images/open-collection-v3-collection-shelves.png";
 
-const focusPoints = [
+const productPillars = [
   {
-    name: "Cross-Museum Discovery",
+    name: "Calm Cross-Museum Browsing",
     detail:
-      "The app brings together the Art Institute of Chicago and the Cleveland Museum of Art inside one browsing experience.",
+      "The app brings together the Art Institute of Chicago and the Cleveland Museum of Art inside one quieter browsing flow.",
   },
   {
-    name: "Clean Fetch And Display",
+    name: "Artwork-First Viewing",
     detail:
-      "A main goal was fetching the artwork data I wanted and presenting it clearly on the device, not just exposing raw API results.",
+      "Discover, detail, and full-screen viewing are designed to keep the artwork at the center instead of treating the app like a data list.",
   },
   {
-    name: "Tagged Collection",
+    name: "Personal Curation",
     detail:
-      "Saved works, tags, and filters turn the app into a personal collection tool instead of one flat favorites list.",
+      "Saving, filtering, tags, and shelves make the product useful after the first browse, not just during it.",
   },
 ];
 
-const challengePoints = [
+const releaseCards = [
   {
-    name: "Two APIs, One UI Model",
-    detail:
-      "Each museum returned data differently, so I had to normalize the responses into one artwork model for list and detail screens.",
+    label: "V1 / Baseline Product",
+    image: discoverImg,
+    alt: "Open Collection v1 discover screen",
+    title: "The strongest baseline",
+    description:
+      "V1 established the core product: cross-museum discovery, artist and title search, artwork detail, full-screen viewing, local saving, tags, and collection filtering in one coherent flow.",
+    note: "The version that proved the product worked.",
   },
   {
-    name: "Image + Metadata Differences",
-    detail:
-      "Image delivery and metadata quality differed by source, especially on the AIC side, so the UI needed to stay clean even when the data did not.",
+    label: "V2 / Guided Discovery",
+    image: v2DiscoverThemeImg,
+    alt: "Open Collection v2 guided discovery screen",
+    title: "Exploration with limits",
+    description:
+      "V2 explored guided discovery through themed entry points and tighter featured ranking. It helped clarify that discovery quality depended on source-aware modeling and curation trust, not simply adding more surface area.",
+    note: "An iteration that sharpened product judgment.",
   },
   {
-    name: "Search And Collection UX",
+    label: "V3 / Shelf-Based Collection",
+    image: v3CollectionShelvesImg,
+    alt: "Open Collection v3 collection shelves screen",
+    title: "A stronger curation flow",
+    description:
+      "V3 turned Collection into a more expressive curation space through named shelves, shelf detail, and a shelf-wide viewer. It extended the product without adding interaction complexity just for show.",
+    note: "The strongest follow-up to the baseline release.",
+  },
+];
+
+const technicalDecisions = [
+  {
+    name: "Source-Aware Modeling",
     detail:
-      "I spent time refining artist and title search relevance and the collection UI so filtering by museum and tag felt useful rather than busy.",
+      "The museum APIs are not symmetrical, so the app uses shared UI-facing models while keeping source-specific logic inside each integration path.",
+  },
+  {
+    name: "Search Relevance Over Raw Breadth",
+    detail:
+      "Museum search endpoints can behave like broad metadata search, so I tuned the product around artist and title relevance rather than exposing every weak match.",
+  },
+  {
+    name: "AIC Image Handling",
+    detail:
+      "The Art Institute of Chicago required custom image handling to keep the visual experience reliable inside the same SwiftUI system.",
+  },
+  {
+    name: "Useful Simplicity In Collection",
+    detail:
+      "I avoided adding complexity for show. Tags stayed lightweight, and shelves were introduced only when they clearly improved personal organization.",
+  },
+];
+
+const coreSnapshots = [
+  {
+    image: discoverImg,
+    alt: "Open Collection discover screen",
+    title: "Discover",
+      description:
+        "Cross-museum browsing that feels calm, visual, and clearly guided from the start.",
+  },
+  {
+    image: searchImg,
+    alt: "Open Collection search screen",
+    title: "Search",
+      description:
+        "Artist and title search add direct utility without breaking the quieter product tone.",
+  },
+  {
+    image: detailImg,
+    alt: "Open Collection artwork detail screen",
+    title: "Artwork Detail",
+      description:
+        "Detail balances image, museum metadata, and continuation paths in one focused reading view.",
+  },
+  {
+    image: collectionImg,
+    alt: "Open Collection collection screen",
+    title: "Collection",
+    description:
+      "Saved works persist locally and stay useful through museum and tag-based filtering.",
+  },
+  {
+    image: fullscreenImg,
+    alt: "Open Collection full-screen viewer",
+    title: "Full-Screen Viewer",
+    description:
+      "Zoom and rotated viewing let the app function as a closer-looking experience, not just a browser.",
   },
 ];
 
@@ -99,53 +174,7 @@ function ImageLightbox({ image, onClose }) {
 function OpenCollectionProject() {
   const [activeImage, setActiveImage] = useState(null);
 
-  const snapshots = [
-    {
-      image: discoverImg,
-      alt: "Open Collection discover screen",
-      title: "Discover",
-      description:
-        "The home browsing view establishes the app's tone with cross-museum artwork discovery rather than a purely utilitarian feed.",
-    },
-    {
-      image: searchImg,
-      alt: "Open Collection search screen",
-      title: "Search",
-      description:
-        "Artist and title search give the app a direct utility layer without losing the calmer browsing experience.",
-    },
-    {
-      image: detailImg,
-      alt: "Open Collection artwork detail screen",
-      title: "Artwork Detail",
-      description:
-        "Detail brings together image, museum source, metadata, and saving actions in a more complete product view than a simple API result page.",
-    },
-  ];
-
-  const experienceSnapshots = [
-    {
-      image: fullscreenImg,
-      alt: "Open Collection full-screen viewer",
-      title: "Full-Screen Viewer",
-      description:
-        "The viewer supports closer looking with full-screen presentation, zoom, and portrait or landscape viewing.",
-    },
-    {
-      image: collectionImg,
-      alt: "Open Collection saved collection screen",
-      title: "Saved Collection",
-      description:
-        "Saved works persist locally with tags and filters, helping the app act like a personal collection tool instead of a one-time browser.",
-    },
-    {
-      image: collectionTagsImg,
-      alt: "Open Collection tag editing screen",
-      title: "Tag Editing",
-      description:
-        "Tag editing helps saved works turn into smaller themed collections, which was one of the key product goals for the app.",
-    },
-  ];
+  const openImage = (src, alt) => setActiveImage({ src, alt });
 
   return (
     <>
@@ -155,66 +184,92 @@ function OpenCollectionProject() {
             <p className="section-kicker">Featured Case Study</p>
             <h1>Open Collection iOS</h1>
             <p className="open-collection-summary">
-              A SwiftUI art discovery app built around cross-museum browsing,
-              clear on-device presentation, and personal saved collections.
+              A SwiftUI art browsing app for calm cross-museum discovery and
+              personal collection.
             </p>
             <p>
-              Open Collection is a small product built from an earlier museum
-              app idea. This version focuses on using two museum APIs well,
-              showing artworks clearly on device, and making saved works useful
-              through tags and filtering.
+              Open Collection brings together the Art Institute of Chicago and
+              the Cleveland Museum of Art in one artwork-first iPhone
+              experience.
             </p>
             <p className="open-collection-role">
-              My role: concept development, product direction, UI design,
-              information architecture, SwiftUI implementation, and iterative
-              refinement.
+              Role: concept, product direction, UI/UX, information
+              architecture, SwiftUI implementation, and iteration.
             </p>
             <div className="featured-tag-list open-collection-tags">
               <span className="featured-tag">SwiftUI</span>
+              <span className="featured-tag">iOS Product Design</span>
               <span className="featured-tag">Cross-Museum App</span>
-              <span className="featured-tag">Portfolio Case Study</span>
+              <span className="featured-tag">Case Study</span>
             </div>
           </div>
-          <div className="open-collection-hero-media">
+
+          <div className="open-collection-hero-image">
             <button
               type="button"
               className="open-collection-image-button"
               onClick={() =>
-                setActiveImage({
-                  src: discoverImg,
-                  alt: "Open Collection discover screen",
-                })
+                openImage(
+                  v3DiscoverImg,
+                  "Open Collection v3 discover screen"
+                )
               }
-              aria-label="Open larger image for Open Collection discover screen"
+              aria-label="Open larger image for Discover"
             >
-              <img src={discoverImg} alt="Open Collection discover screen" loading="eager" />
+              <img
+                src={v3DiscoverImg}
+                alt="Open Collection v3 discover screen"
+                loading="eager"
+              />
             </button>
           </div>
         </section>
 
         <section className="open-collection-section open-collection-section-story">
           <div className="section-heading">
-            <p className="section-kicker">What I Wanted To Make</p>
-            <h2>Not Just An API Sample</h2>
+            <p className="section-kicker">Product Direction</p>
+            <h2>A quiet product, not a museum data demo</h2>
           </div>
           <p>
-            The goal was not only to fetch museum data. I wanted an iOS app
-            that could support quiet browsing across two collections, stronger
-            search, and a personal collection feature that felt worth returning
-            to.
+            The goal was to make cross-museum browsing feel quiet, coherent,
+            and trustworthy on iPhone. Instead of exposing raw source data, I
+            shaped the app around a clearer product direction: focused
+            discovery, artwork-first detail views, and a local collection space
+            for saving and revisiting works.
           </p>
+          <div className="role-grid">
+            {productPillars.map((point) => (
+              <article key={point.name} className="role-card">
+                <h3>{point.name}</h3>
+                <p>{point.detail}</p>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className="open-collection-section open-collection-section-focus">
           <div className="section-heading">
-            <p className="section-kicker">What Matters Here</p>
-            <h2>The Main Product Points</h2>
+            <p className="section-kicker">Core Experience</p>
+            <h2>The product is strongest when it stays clear and direct</h2>
+            <p className="section-intro">
+              The baseline release already works as a complete iOS product:
+              discover works across museums, search directly, open richer
+              detail views, and keep a personal collection on device.
+            </p>
           </div>
-          <div className="role-grid">
-            {focusPoints.map((point) => (
-              <article key={point.name} className="role-card">
-                <h3>{point.name}</h3>
-                <p>{point.detail}</p>
+          <div className="snapshot-grid snapshot-grid-core">
+            {coreSnapshots.map((snapshot) => (
+              <article key={snapshot.title} className="snapshot-card snapshot-card-compact">
+                <button
+                  type="button"
+                  className="open-collection-image-button"
+                  onClick={() => openImage(snapshot.image, snapshot.alt)}
+                  aria-label={`Open larger image for ${snapshot.title}`}
+                >
+                  <img src={snapshot.image} alt={snapshot.alt} loading="lazy" />
+                </button>
+                <h3>{snapshot.title}</h3>
+                <p>{snapshot.description}</p>
               </article>
             ))}
           </div>
@@ -222,80 +277,49 @@ function OpenCollectionProject() {
 
         <section className="open-collection-section open-collection-section-system">
           <div className="section-heading">
-            <p className="section-kicker">What Was Challenging</p>
-            <h2>Three Places I Had To Push The Build Further</h2>
+            <p className="section-kicker">Iteration Across Releases</p>
+            <h2>V2 and V3 added depth without replacing the core product</h2>
             <p className="section-intro">
-              The hard part was making the app feel clean and coherent even
-              though the data sources, images, and user flows all behaved
-              differently.
+              I did not treat feature count as progress by default. Each later
+              release tested a narrower product question and helped clarify
+              where the app should deepen and where it should stay restrained.
+            </p>
+          </div>
+          <div className="release-grid">
+            {releaseCards.map((card) => (
+              <article key={card.label} className="release-card">
+                <button
+                  type="button"
+                  className="open-collection-image-button"
+                  onClick={() => openImage(card.image, card.alt)}
+                  aria-label={`Open larger image for ${card.label}`}
+                >
+                  <img src={card.image} alt={card.alt} loading="lazy" />
+                </button>
+                <p className="release-label">{card.label}</p>
+                <h3>{card.title}</h3>
+                <p>{card.description}</p>
+                <p className="release-note">{card.note}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="open-collection-section">
+          <div className="section-heading">
+            <p className="section-kicker">Product And Technical Decisions</p>
+            <h2>Implementation choices that shaped the experience</h2>
+            <p className="section-intro">
+              The product only works because the underlying implementation takes
+              source differences seriously. These choices mattered as much as
+              the UI itself.
             </p>
           </div>
           <div className="role-grid">
-            {challengePoints.map((point) => (
-              <article key={point.name} className="role-card">
-                <h3>{point.name}</h3>
-                <p>{point.detail}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="open-collection-section">
-          <div className="section-heading">
-            <p className="section-kicker">Visual Snapshot</p>
-            <h2>Core Screens Across The App</h2>
-          </div>
-          <div className="snapshot-grid snapshot-grid-three">
-            {snapshots.map((snapshot) => (
-              <article key={snapshot.title} className="snapshot-card">
-                <button
-                  type="button"
-                  className="open-collection-image-button"
-                  onClick={() =>
-                    setActiveImage({
-                      src: snapshot.image,
-                      alt: snapshot.alt,
-                    })
-                  }
-                  aria-label={`Open larger image for ${snapshot.title}`}
-                >
-                  <img src={snapshot.image} alt={snapshot.alt} loading="lazy" />
-                </button>
-                <h3>{snapshot.title}</h3>
-                <p>{snapshot.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="open-collection-section">
-          <div className="section-heading">
-            <p className="section-kicker">Viewing Experience</p>
-            <h2>What Pushes It Beyond A Sample</h2>
-            <p className="section-intro">
-              Full-screen viewing, saved works, and tag editing are the parts
-              that make the app feel more like a small product than a simple
-              museum browser.
-            </p>
-          </div>
-          <div className="experience-grid">
-            {experienceSnapshots.map((snapshot) => (
-              <article key={snapshot.title} className="snapshot-card experience-card">
-                <button
-                  type="button"
-                  className="open-collection-image-button"
-                  onClick={() =>
-                    setActiveImage({
-                      src: snapshot.image,
-                      alt: snapshot.alt,
-                    })
-                  }
-                  aria-label={`Open larger image for ${snapshot.title}`}
-                >
-                  <img src={snapshot.image} alt={snapshot.alt} loading="lazy" />
-                </button>
-                <h3>{snapshot.title}</h3>
-                <p>{snapshot.description}</p>
+            {technicalDecisions.slice(0, 3).map((decision) => (
+              <article key={decision.name} className="role-card">
+                <h3>{decision.name}</h3>
+                <p>{decision.detail}</p>
               </article>
             ))}
           </div>
