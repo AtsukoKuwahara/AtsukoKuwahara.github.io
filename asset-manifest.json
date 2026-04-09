@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.7463f6f0.css",
-    "main.js": "/static/js/main.3b31bfee.js",
+    "main.js": "/static/js/main.af98adf5.js",
     "static/js/453.acca0757.chunk.js": "/static/js/453.acca0757.chunk.js",
     "static/media/open-collection-fullscreen.png": "/static/media/open-collection-fullscreen.db3f1571abf29c2ffdfa.png",
-    "static/media/open-collection-detail.png": "/static/media/open-collection-detail.656bc92c9a220b8390bc.png",
-    "static/media/open-collection-v3-discover.png": "/static/media/open-collection-v3-discover.141170ab361356c28401.png",
+    "static/media/open-collection-v3-detail.png": "/static/media/open-collection-v3-detail.da6e558c00562828552e.png",
     "static/media/open-collection-discover.png": "/static/media/open-collection-discover.251f8f30df85aa62bc2e.png",
+    "static/media/open-collection-v3-discover.png": "/static/media/open-collection-v3-discover.56f0b8254c5c63c4f8da.png",
     "static/media/open-collection-v2-discover-theme.png": "/static/media/open-collection-v2-discover-theme.e27306e15f19a1f6d162.png",
-    "static/media/open-collection-search.png": "/static/media/open-collection-search.e4530209c2ff8b989cf2.png",
-    "static/media/open-collection-collection.png": "/static/media/open-collection-collection.a15aa93200f998e70ab4.png",
-    "static/media/open-collection-v3-collection-shelves.png": "/static/media/open-collection-v3-collection-shelves.e4317267a215105ae11f.png",
+    "static/media/open-collection-v3-shelf-remove.png": "/static/media/open-collection-v3-shelf-remove.bf1f61e2bf67b89df05d.png",
+    "static/media/open-collection-v3-search.png": "/static/media/open-collection-v3-search.eb57f7f931bdcc87a705.png",
+    "static/media/open-collection-v3-library.png": "/static/media/open-collection-v3-library.5cb48676be9efd745827.png",
     "static/media/leaflet-web-app.jpg": "/static/media/leaflet-web-app.7230a1028f89d973a3df.jpg",
     "static/media/apw-store.jpg": "/static/media/apw-store.f2f4332b9962d0f26bc1.jpg",
     "static/media/a-records-website-home.jpg": "/static/media/a-records-website-home.92cd1f73158d6555cdaa.jpg",
@@ -33,11 +33,11 @@
     "static/media/js.png": "/static/media/js.3dfb665e058d08c99f28.png",
     "index.html": "/index.html",
     "main.7463f6f0.css.map": "/static/css/main.7463f6f0.css.map",
-    "main.3b31bfee.js.map": "/static/js/main.3b31bfee.js.map",
+    "main.af98adf5.js.map": "/static/js/main.af98adf5.js.map",
     "453.acca0757.chunk.js.map": "/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7463f6f0.css",
-    "static/js/main.3b31bfee.js"
+    "static/js/main.af98adf5.js"
   ]
 }
