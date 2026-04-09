@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import "./OpenCollectionProject.css";
 
 import discoverImg from "../assets/images/open-collection-discover.png";
-import searchImg from "../assets/images/open-collection-search.png";
-import detailImg from "../assets/images/open-collection-detail.png";
 import fullscreenImg from "../assets/images/open-collection-fullscreen.png";
-import collectionImg from "../assets/images/open-collection-collection.png";
 import v2DiscoverThemeImg from "../assets/images/open-collection-v2-discover-theme.png";
 import v3DiscoverImg from "../assets/images/open-collection-v3-discover.png";
-import v3CollectionShelvesImg from "../assets/images/open-collection-v3-collection-shelves.png";
+import v3SearchImg from "../assets/images/open-collection-v3-search.png";
+import v3DetailImg from "../assets/images/open-collection-v3-detail.png";
+import v3LibraryImg from "../assets/images/open-collection-v3-library.png";
+import v3ShelfRemoveImg from "../assets/images/open-collection-v3-shelf-remove.png";
 
 const productPillars = [
   {
@@ -25,7 +25,7 @@ const productPillars = [
   {
     name: "Personal Curation",
     detail:
-      "Saving, filtering, tags, and shelves make the product useful after the first browse, not just during it.",
+      "Saving, filtering, tags, and shelves make the Library useful after the first browse, not just during it.",
   },
 ];
 
@@ -50,11 +50,11 @@ const releaseCards = [
   },
   {
     label: "V3 / Shelf-Based Collection",
-    image: v3CollectionShelvesImg,
-    alt: "Open Collection v3 collection shelves screen",
+    image: v3ShelfRemoveImg,
+    alt: "Open Collection v3 shelf detail screen",
     title: "A stronger curation flow",
     description:
-      "V3 turned Collection into a more expressive curation space through named shelves, shelf detail, and a shelf-wide viewer. It extended the product without adding interaction complexity just for show.",
+      "V3 turned saving into a more expressive Library workflow through named shelves, shelf detail, and a shelf-wide viewer. It extended the product without adding interaction complexity just for show.",
     note: "The strongest follow-up to the baseline release.",
   },
 ];
@@ -84,32 +84,32 @@ const technicalDecisions = [
 
 const coreSnapshots = [
   {
-    image: discoverImg,
-    alt: "Open Collection discover screen",
+    image: v3DiscoverImg,
+    alt: "Open Collection v3 discover screen",
     title: "Discover",
-      description:
-        "Cross-museum browsing that feels calm, visual, and clearly guided from the start.",
-  },
-  {
-    image: searchImg,
-    alt: "Open Collection search screen",
-    title: "Search",
-      description:
-        "Artist and title search add direct utility without breaking the quieter product tone.",
-  },
-  {
-    image: detailImg,
-    alt: "Open Collection artwork detail screen",
-    title: "Artwork Detail",
-      description:
-        "Detail balances image, museum metadata, and continuation paths in one focused reading view.",
-  },
-  {
-    image: collectionImg,
-    alt: "Open Collection collection screen",
-    title: "Collection",
     description:
-      "Saved works persist locally and stay useful through museum and tag-based filtering.",
+      "Cross-museum browsing that feels calm, visual, and clearly guided from the start.",
+  },
+  {
+    image: v3SearchImg,
+    alt: "Open Collection v3 search screen",
+    title: "Search",
+    description:
+      "Artist and title search add direct utility without breaking the quieter product tone.",
+  },
+  {
+    image: v3DetailImg,
+    alt: "Open Collection v3 artwork detail screen",
+    title: "Artwork Detail",
+    description:
+      "Detail balances image, museum metadata, and continuation paths in one focused reading view.",
+  },
+  {
+    image: v3LibraryImg,
+    alt: "Open Collection v3 library screen",
+    title: "Library",
+    description:
+      "Saved works persist locally and stay useful through museum and tag-based filtering in Library.",
   },
   {
     image: fullscreenImg,
@@ -185,7 +185,7 @@ function OpenCollectionProject() {
             <h1>Open Collection iOS</h1>
             <p className="open-collection-summary">
               A SwiftUI art browsing app for calm cross-museum discovery and
-              personal collection.
+              personal library.
             </p>
             <p>
               Open Collection brings together the Art Institute of Chicago and
@@ -234,7 +234,7 @@ function OpenCollectionProject() {
             The goal was to make cross-museum browsing feel quiet, coherent,
             and trustworthy on iPhone. Instead of exposing raw source data, I
             shaped the app around a clearer product direction: focused
-            discovery, artwork-first detail views, and a local collection space
+            discovery, artwork-first detail views, and a local library space
             for saving and revisiting works.
           </p>
           <div className="role-grid">
@@ -254,7 +254,7 @@ function OpenCollectionProject() {
             <p className="section-intro">
               The baseline release already works as a complete iOS product:
               discover works across museums, search directly, open richer
-              detail views, and keep a personal collection on device.
+              detail views, and keep a personal library on device.
             </p>
           </div>
           <div className="snapshot-grid snapshot-grid-core">
