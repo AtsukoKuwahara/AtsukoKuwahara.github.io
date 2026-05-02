@@ -7,7 +7,7 @@ import adobePremiereImg from "../assets/images/adobe-premiere.jpg";
 import chicagoMuseumAppImg from "../assets/images/chicago-museum-app.jpg";
 import kaleidoscopeAppImg from "../assets/images/kaleidoscope-app.jpg";
 import leafletWebAppImg from "../assets/images/leaflet-web-app.jpg";
-import apwStoreImg from "../assets/images/apw-store.jpg";
+import apwStoreRailsImg from "../assets/images/apw-store-rails.jpg";
 import asRecordsStoreImg from "../assets/images/as-records-store.jpg";
 import aRecordsWebsiteHomeImg from "../assets/images/a-records-website-home.jpg";
 import openCollectionDiscoverImg from "../assets/images/open-collection-discover.png";
@@ -25,6 +25,7 @@ const techCatalog = {
   ios: { label: "iOS", shortLabel: "iOS", tone: "slate" },
   api: { label: "API", shortLabel: "API", tone: "amber" },
   localData: { label: "Local Persistence", shortLabel: "DB", tone: "green" },
+  docker: { label: "Docker", shortLabel: "Dk", tone: "slate" },
   ollama: { label: "Ollama", shortLabel: "Ol", tone: "slate" },
   flask: { label: "Flask", shortLabel: "Fl", tone: "slate" },
   mongodb: { label: "MongoDB", shortLabel: "Mg", tone: "green" },
@@ -86,14 +87,13 @@ const projects = [
     role: "Concept / UI / Flask Store Build",
   },
   {
-    imgSrc: apwStoreImg,
-    title: "APW Store Web App - JavaScript",
+    imgSrc: apwStoreRailsImg,
+    title: "APW Store Rails",
     description:
-      "A static storefront mockup focused on clean browsing flow and e-commerce presentation.",
-    repoLink: "https://github.com/AtsukoKuwahara/apw_store",
-    videoLink: process.env.REACT_APP_ONE_DRIVE_LINK_APW_STORE,
-    stack: ["javascript", "css", "html"],
-    role: "UI Mockup / Frontend Build",
+      "A Rails e-commerce learning project with product browsing, session cart, checkout, order history, admin catalog management, and storefront badge controls.",
+    repoLink: "https://github.com/AtsukoKuwahara/apw_store_rails",
+    stack: ["rails", "ruby", "localData", "docker"],
+    role: "Rails MVC / E-commerce Demo / Docker Setup",
   },
   {
     imgSrc: leafletWebAppImg,
