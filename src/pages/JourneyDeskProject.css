@@ -1,0 +1,234 @@
+.journeydesk-page {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 104px 48px 80px;
+}
+
+.journeydesk-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(360px, 1.22fr);
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.journeydesk-hero-copy,
+.journeydesk-section,
+.journeydesk-section .role-card,
+.journeydesk-section .snapshot-card {
+  background: rgba(255, 249, 240, 0.86);
+  border: 2px solid rgba(31, 36, 40, 0.12);
+  box-shadow: var(--retro-shadow-soft);
+}
+
+.journeydesk-hero-copy {
+  padding: 26px;
+  border-radius: 24px;
+}
+
+.journeydesk-summary {
+  font-size: 1.04rem;
+  max-width: 32rem;
+}
+
+.journeydesk-role {
+  margin: 14px 0 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(44, 110, 111, 0.82);
+}
+
+.journeydesk-tags {
+  margin-top: 14px;
+}
+
+.journeydesk-hero-media {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+.journeydesk-hero-media img,
+.journeydesk-section .snapshot-card img {
+  display: block;
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+  object-position: center top;
+  background: rgba(246, 241, 233, 0.92);
+  box-shadow: 0 12px 22px rgba(20, 20, 20, 0.08);
+}
+
+.journeydesk-hero-media img {
+  min-height: 420px;
+  max-height: 520px;
+  border: 2px solid rgba(31, 36, 40, 0.18);
+}
+
+.journeydesk-image-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.journeydesk-image-button:focus-visible {
+  outline: 3px solid rgba(44, 110, 111, 0.45);
+  outline-offset: 4px;
+  border-radius: 22px;
+}
+
+.journeydesk-section {
+  border-radius: 26px;
+  padding: 26px;
+  margin-bottom: 24px;
+}
+
+.journeydesk-section-build {
+  background:
+    linear-gradient(180deg, rgba(44, 110, 111, 0.06), rgba(255, 249, 240, 0.86) 24%),
+    rgba(255, 249, 240, 0.86);
+}
+
+.journeydesk-section .section-heading {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.journeydesk-section .section-heading::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 3px;
+  margin-top: 14px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--retro-teal), rgba(44, 110, 111, 0.16));
+}
+
+.journeydesk-section .section-intro,
+.journeydesk-section > p {
+  max-width: none;
+  line-height: 1.75;
+}
+
+.journeydesk-section .flow-list {
+  display: grid;
+  gap: 14px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.journeydesk-section .flow-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 16px;
+  border: 1px solid rgba(31, 36, 40, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.journeydesk-section .flow-step-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(44, 110, 111, 0.12);
+  color: var(--retro-teal);
+  font-weight: 800;
+}
+
+.journeydesk-section .flow-step-text h3 {
+  margin: 0 0 6px;
+}
+
+.journeydesk-section .flow-step-text p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.journeydesk-section .role-grid,
+.journeydesk-snapshot-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.journeydesk-section .role-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.journeydesk-snapshot-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.journeydesk-section .role-card,
+.journeydesk-section .snapshot-card {
+  border-radius: 22px;
+  padding: 22px;
+  color: inherit;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.journeydesk-section .role-card:hover,
+.journeydesk-section .snapshot-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 26px rgba(20, 20, 20, 0.16);
+}
+
+.journeydesk-section .snapshot-card img {
+  height: 250px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(31, 36, 40, 0.12);
+}
+
+.journeydesk-section .snapshot-card p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.journeydesk-footer-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+@media (max-width: 1100px) {
+  .journeydesk-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 960px) {
+  .journeydesk-page {
+    padding: 96px 32px 72px;
+  }
+
+  .journeydesk-snapshot-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .journeydesk-page {
+    padding: 92px 20px 56px;
+  }
+
+  .journeydesk-hero-copy,
+  .journeydesk-section {
+    padding: 22px;
+  }
+
+  .journeydesk-hero-media img,
+  .journeydesk-section .snapshot-card img {
+    min-height: 0;
+    height: auto;
+  }
+}

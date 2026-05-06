@@ -11,6 +11,7 @@ import apwStoreRailsImg from "../assets/images/apw-store-rails.jpg";
 import asRecordsStoreImg from "../assets/images/as-records-store.jpg";
 import aRecordsWebsiteHomeImg from "../assets/images/a-records-website-home.jpg";
 import openCollectionDiscoverImg from "../assets/images/open-collection-discover.png";
+import journeyDeskHeroImg from "../assets/images/journeydesk_landing_hero.jpg";
 import javaImg from "../assets/images/java.png";
 import reactNativeImg from "../assets/images/react_native.png";
 import jsImg from "../assets/images/js.png";
@@ -21,6 +22,13 @@ import orangebotImg from "../assets/images/orange-bot.jpg";
 const techCatalog = {
   rails: { label: "Rails", shortLabel: "RbR", tone: "ruby" },
   ruby: { label: "Ruby", shortLabel: "Rb", tone: "ruby" },
+  nextjs: { label: "Next.js", shortLabel: "Nx", tone: "slate" },
+  typescript: { label: "TypeScript", shortLabel: "TS", tone: "slate" },
+  node: { label: "Node.js", shortLabel: "Nd", tone: "green" },
+  express: { label: "Express", shortLabel: "Ex", tone: "slate" },
+  postgres: { label: "PostgreSQL", shortLabel: "Pg", tone: "green" },
+  prisma: { label: "Prisma", shortLabel: "Pr", tone: "violet" },
+  openapi: { label: "OpenAPI", shortLabel: "OA", tone: "amber" },
   swiftui: { label: "SwiftUI", shortLabel: "Sw", tone: "swift" },
   ios: { label: "iOS", shortLabel: "iOS", tone: "slate" },
   api: { label: "API", shortLabel: "API", tone: "amber" },
@@ -41,16 +49,16 @@ const techCatalog = {
 
 const featuredProjects = [
   {
-    id: "a-records-rails-suite",
-    imgSrc: aRecordsWebsiteHomeImg,
+    id: "journeydesk",
+    imgSrc: journeyDeskHeroImg,
     mediaClassName: "",
-    title: "A'S RECORDS Rails Suite",
+    title: "JourneyDesk",
     description:
-      "A connected three-app Rails project built around a hub website, dedicated storefront, and community/events space. It reframes my earlier A'S RECORDS concept as a small system with clearer roles and stronger navigation.",
-    detailLink: "/projects/a-s-records-rails-suite",
-    tags: ["Rails", "Three-App Suite", "Case Study"],
-    stack: ["rails", "ruby"],
-    role: "Concept / UI / Structure / Implementation",
+      "A full-stack travel operations CRM for agency teams, combining client requests, itinerary management, booking status, staff tasks, activity logs, and mock-first AI assistance.",
+    detailLink: "/projects/journeydesk",
+    tags: ["Full-Stack TypeScript", "Operations CRM", "Case Study"],
+    stack: ["nextjs", "typescript", "node", "express", "postgres", "prisma", "docker", "openapi"],
+    role: "Product Framing / UI / Full-Stack Implementation / API Design",
   },
   {
     id: "open-collection-ios",
@@ -63,6 +71,18 @@ const featuredProjects = [
     tags: ["SwiftUI", "Cross-Museum App", "Case Study"],
     stack: ["swiftui", "ios", "api", "localData"],
     role: "Concept / Product Direction / UI / SwiftUI Implementation",
+  },
+  {
+    id: "a-records-rails-suite",
+    imgSrc: aRecordsWebsiteHomeImg,
+    mediaClassName: "",
+    title: "A'S RECORDS Rails Suite",
+    description:
+      "A connected three-app Rails project built around a hub website, dedicated storefront, and community/events space. It reframes my earlier A'S RECORDS concept as a small system with clearer roles and stronger navigation.",
+    detailLink: "/projects/a-s-records-rails-suite",
+    tags: ["Rails", "Three-App Suite", "Case Study"],
+    stack: ["rails", "ruby"],
+    role: "Concept / UI / Structure / Implementation",
   },
 ];
 
@@ -290,7 +310,7 @@ function Projects() {
             <p className="section-kicker">Featured Case Studies</p>
             <h3 id="featured-case-studies-heading">Detailed Projects</h3>
             <p>
-              These two projects are the clearest examples of how I take an
+              These projects are the clearest examples of how I take an
               idea through product framing, interface decisions, and working
               implementation rather than stopping at a single screen or sample.
             </p>
