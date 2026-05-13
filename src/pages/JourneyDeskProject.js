@@ -33,6 +33,13 @@ const buildHighlights = [
   "The project is documented with OpenAPI / Swagger, Docker Compose setup, seeded demo data, screenshots, and a focused README."
 ];
 
+const v2LearningPoints = [
+  "I kept the AI workflow local-first because travel operations data can include sensitive client context. The backend controls what is sent to the model, and staff remain responsible for final review.",
+  "Model choice became a product decision. Larger models can answer better, but `gemma3:4b` gave a more realistic balance for ordinary machines.",
+  "One challenge was balancing helpful travel suggestions with clear limits. The assistant can use internal trip context to support planning, but uncertain supplier details remain part of the human review process.",
+  "A future improvement would be local RAG over agency-owned resources, helping the assistant give better recommendations while keeping client context local."
+];
+
 const snapshots = [
   {
     image: landingHeroImg,
@@ -244,6 +251,18 @@ function JourneyDeskProject() {
               </article>
             ))}
           </div>
+        </section>
+
+        <section className="journeydesk-section journeydesk-section-learning">
+          <div className="section-heading">
+            <p className="section-kicker">V2 Learning</p>
+            <h2>Local AI works best inside the workflow</h2>
+          </div>
+          <article className="v2-learning-card">
+            {v2LearningPoints.map((point) => (
+              <p key={point}>{point}</p>
+            ))}
+          </article>
         </section>
 
         <div className="journeydesk-footer-actions">

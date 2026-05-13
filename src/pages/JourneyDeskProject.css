@@ -1,15 +1,15 @@
 .journeydesk-page {
-  max-width: 1320px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 104px 48px 80px;
 }
 
 .journeydesk-hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.78fr) minmax(360px, 1.22fr);
-  gap: 24px;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 32px;
   align-items: center;
-  margin-bottom: 32px;
+  margin-bottom: 48px;
 }
 
 .journeydesk-hero-copy,
@@ -22,13 +22,13 @@
 }
 
 .journeydesk-hero-copy {
-  padding: 26px;
+  padding: 32px;
   border-radius: 24px;
 }
 
 .journeydesk-summary {
-  font-size: 1.04rem;
-  max-width: 32rem;
+  font-size: 1.2rem;
+  max-width: 38rem;
 }
 
 .journeydesk-role {
@@ -41,7 +41,7 @@
 }
 
 .journeydesk-tags {
-  margin-top: 14px;
+  margin-top: 18px;
 }
 
 .journeydesk-hero-media {
@@ -62,9 +62,10 @@
 }
 
 .journeydesk-hero-media img {
-  min-height: 420px;
-  max-height: 520px;
-  border: 2px solid rgba(31, 36, 40, 0.18);
+  min-height: 360px;
+  max-height: 470px;
+  border: 2px solid var(--retro-ink);
+  box-shadow: 0 22px 40px rgba(20, 20, 20, 0.18);
 }
 
 .journeydesk-image-button {
@@ -92,6 +93,10 @@
   background:
     linear-gradient(180deg, rgba(44, 110, 111, 0.06), rgba(255, 249, 240, 0.86) 24%),
     rgba(255, 249, 240, 0.86);
+}
+
+.journeydesk-section-learning {
+  background: rgba(255, 249, 240, 0.84);
 }
 
 .journeydesk-section .section-heading {
@@ -169,7 +174,8 @@
 }
 
 .journeydesk-section .role-card,
-.journeydesk-section .snapshot-card {
+.journeydesk-section .snapshot-card,
+.v2-learning-card {
   border-radius: 22px;
   padding: 22px;
   color: inherit;
@@ -177,9 +183,25 @@
 }
 
 .journeydesk-section .role-card:hover,
-.journeydesk-section .snapshot-card:hover {
+.journeydesk-section .snapshot-card:hover,
+.v2-learning-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 14px 26px rgba(20, 20, 20, 0.16);
+}
+
+.v2-learning-card {
+  background: rgba(255, 249, 240, 0.94);
+  border: 2px solid rgba(31, 36, 40, 0.12);
+  box-shadow: var(--retro-shadow-soft);
+}
+
+.v2-learning-card p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.v2-learning-card p + p {
+  margin-top: 14px;
 }
 
 .journeydesk-section .snapshot-card img {
