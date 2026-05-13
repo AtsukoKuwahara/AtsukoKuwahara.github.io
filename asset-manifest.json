@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.8d2f5901.css",
-    "main.js": "/static/js/main.180c7140.js",
+    "main.js": "/static/js/main.891574ac.js",
     "static/js/453.acca0757.chunk.js": "/static/js/453.acca0757.chunk.js",
     "static/media/open-collection-fullscreen.png": "/static/media/open-collection-fullscreen.db3f1571abf29c2ffdfa.png",
     "static/media/open-collection-v3-detail.png": "/static/media/open-collection-v3-detail.da6e558c00562828552e.png",
@@ -16,12 +16,14 @@
     "static/media/a-records-community-live-details.jpg": "/static/media/a-records-community-live-details.6e56ade6ea0c1cdcfa6d.jpg",
     "static/media/a-records-sideshop-home.jpg": "/static/media/a-records-sideshop-home.30af1f3544f4e1d2d757.jpg",
     "static/media/a-records-community-home-indie.jpg": "/static/media/a-records-community-home-indie.b36e586c0a636a00546d.jpg",
-    "static/media/journeydesk_trip_request_detail.jpg": "/static/media/journeydesk_trip_request_detail.18c121c8449dcf531540.jpg",
+    "static/media/journeydesk_trip_request_detail.jpg": "/static/media/journeydesk_trip_request_detail.a6a869136cbe0ca0a929.jpg",
     "static/media/a-records-community-reservations.jpg": "/static/media/a-records-community-reservations.c62a22139f7cd683833d.jpg",
     "static/media/a-records-community-inbox.jpg": "/static/media/a-records-community-inbox.aa80bf21ffafef08aced.jpg",
+    "static/media/journeydesk_dashboard_overview.jpg": "/static/media/journeydesk_dashboard_overview.c8375d0e4a4990dbf43e.jpg",
+    "static/media/journeydesk_ai_workflow_checker.jpg": "/static/media/journeydesk_ai_workflow_checker.c3af4c807b7a3369ca2e.jpg",
+    "static/media/journeydesk_landing_hero.jpg": "/static/media/journeydesk_landing_hero.6452ae430a6aa02c7989.jpg",
     "static/media/as-records-store.jpg": "/static/media/as-records-store.2cadcb52f4b027d3daf8.jpg",
-    "static/media/journeydesk_landing_hero.jpg": "/static/media/journeydesk_landing_hero.1f898400a559d58bfab2.jpg",
-    "static/media/journeydesk_dashboard_overview.jpg": "/static/media/journeydesk_dashboard_overview.f1e27a6ddcb7cee8a93b.jpg",
+    "static/media/journeydesk_activity.jpg": "/static/media/journeydesk_activity.b1893c5409c283f5cd13.jpg",
     "static/media/apw-store-rails.jpg": "/static/media/apw-store-rails.bd1507ae456d93b8bafa.jpg",
     "static/media/adobe-xd.jpg": "/static/media/adobe-xd.98f06b82628059127f14.jpg",
     "static/media/orange-bot.jpg": "/static/media/orange-bot.78107b6b3e20bc1f6cdb.jpg",
@@ -37,11 +39,11 @@
     "static/media/js.png": "/static/media/js.3dfb665e058d08c99f28.png",
     "index.html": "/index.html",
     "main.8d2f5901.css.map": "/static/css/main.8d2f5901.css.map",
-    "main.180c7140.js.map": "/static/js/main.180c7140.js.map",
+    "main.891574ac.js.map": "/static/js/main.891574ac.js.map",
     "453.acca0757.chunk.js.map": "/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8d2f5901.css",
-    "static/js/main.180c7140.js"
+    "static/js/main.891574ac.js"
   ]
 }
