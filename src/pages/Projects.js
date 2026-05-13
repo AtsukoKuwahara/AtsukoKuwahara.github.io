@@ -54,11 +54,11 @@ const featuredProjects = [
     mediaClassName: "",
     title: "JourneyDesk",
     description:
-      "A full-stack travel operations CRM for agency teams, combining client requests, itinerary management, booking status, staff tasks, activity logs, and mock-first AI assistance.",
+      "A full-stack travel operations CRM for agency teams. V1 established the Next.js, Express, and PostgreSQL foundation; V2 adds a review-only local AI Assistant with Ollama.",
     detailLink: "/projects/journeydesk",
-    tags: ["Full-Stack TypeScript", "Operations CRM", "Case Study"],
-    stack: ["nextjs", "typescript", "node", "express", "postgres", "prisma", "docker", "openapi"],
-    role: "Product Framing / UI / Full-Stack Implementation / API Design",
+    tags: ["Full-Stack TypeScript", "Local AI Assistant", "Case Study"],
+    stack: ["nextjs", "typescript", "node", "express", "postgres", "prisma", "docker", "openapi", "ollama"],
+    role: "Product Framing / UI / Full-Stack Implementation / Local AI Workflow",
   },
   {
     id: "open-collection-ios",

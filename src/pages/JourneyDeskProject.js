@@ -5,30 +5,32 @@ import "./JourneyDeskProject.css";
 import landingHeroImg from "../assets/images/journeydesk_landing_hero.jpg";
 import dashboardImg from "../assets/images/journeydesk_dashboard_overview.jpg";
 import tripDetailImg from "../assets/images/journeydesk_trip_request_detail.jpg";
+import activityImg from "../assets/images/journeydesk_activity.jpg";
+import aiWorkflowImg from "../assets/images/journeydesk_ai_workflow_checker.jpg";
 import swaggerImg from "../assets/images/journeydesk_swagger_ui_light.jpg";
 
 const productPillars = [
   {
-    name: "Operations-First CRM",
+    name: "Travel Operations CRM",
     detail:
       "JourneyDesk is built for travel agency staff, not consumers. The interface centers client requests, owners, status, tasks, and operational context."
   },
   {
-    name: "Full-Stack TypeScript",
+    name: "V1 Full-Stack Foundation",
     detail:
-      "The project uses a separate Next.js frontend and Express API so the frontend, backend, REST contracts, validation, auth, and database layer are visible."
+      "V1 focused on learning and building the core product end to end with Next.js, Express, PostgreSQL, Prisma, authentication, REST APIs, Docker, and CI."
   },
   {
-    name: "Mock-First AI Assistance",
+    name: "V2 Local AI Assistant",
     detail:
-      "The AI panel is intentionally mock-first, with practical staff workflows like suggested next actions and draft client emails ready for a future AI provider."
+      "V2 adds Ollama-powered AI support for workflow checks and travel assistance while keeping suggestions review-only and under staff control."
   }
 ];
 
 const buildHighlights = [
-  "Next.js, React, TypeScript, Tailwind CSS, and Framer Motion for the frontend.",
-  "Node.js, Express, Prisma, PostgreSQL, JWT auth, role-scoped access, and activity logs for the backend.",
-  "Docker Compose, OpenAPI / Swagger documentation, README screenshots, and a clear portfolio presentation."
+  "V1 established the full-stack application structure: dashboard, clients, trip requests, itinerary builder, tasks, notes, activity logs, auth, and role-scoped API access.",
+  "V2 added a privacy-aware AI provider layer, Ollama integration, structured output validation, AI review drawer, saved reviews, and human-reviewed suggested tasks.",
+  "The project is documented with OpenAPI / Swagger, Docker Compose setup, seeded demo data, screenshots, and a focused README."
 ];
 
 const snapshots = [
@@ -52,6 +54,20 @@ const snapshots = [
     title: "Trip Request Workspace",
     description:
       "The main staff workspace: itinerary builder, request details, tasks, notes, activity timeline, and AI assistant."
+  },
+  {
+    image: aiWorkflowImg,
+    alt: "JourneyDesk AI workflow check drawer",
+    title: "AI Workflow Check",
+    description:
+      "A review-only AI panel that surfaces missing information, risks, next actions, draft follow-up, and suggested tasks for staff approval."
+  },
+  {
+    image: activityImg,
+    alt: "JourneyDesk activity audit trail",
+    title: "Activity Audit Trail",
+    description:
+      "An operational activity log with trip and date filters plus pagination for reviewing workflow history."
   },
   {
     image: swaggerImg,
@@ -126,22 +142,23 @@ function JourneyDeskProject() {
             <p className="section-kicker">Featured Case Study</p>
             <h1>JourneyDesk</h1>
             <p className="journeydesk-summary">
-              A full-stack travel operations CRM for agency teams.
+              A full-stack travel operations CRM with review-only local AI
+              assistance.
             </p>
             <p>
               JourneyDesk helps travel agency staff manage client requests,
               itineraries, booking status, tasks, notes, activity history, and
-              AI-assisted client communication in one focused operations
-              dashboard.
+              AI-assisted workflow review in one focused operations dashboard.
             </p>
             <p className="journeydesk-role">
               Role: product framing, UI/UX, full-stack implementation, API
-              design, relational modeling, and documentation.
+              design, relational modeling, local AI workflow, and documentation.
             </p>
             <div className="featured-tag-list journeydesk-tags">
               <span className="featured-tag">Next.js</span>
               <span className="featured-tag">Express API</span>
               <span className="featured-tag">PostgreSQL</span>
+              <span className="featured-tag">Ollama</span>
               <span className="featured-tag">OpenAPI</span>
             </div>
           </div>
@@ -174,7 +191,8 @@ function JourneyDeskProject() {
             consumer travel planning. Instead, it focuses on the operational
             work travel agents handle after a client inquiry arrives: tracking
             status, shaping itinerary details, assigning tasks, recording notes,
-            and keeping communication context visible.
+            keeping communication context visible, and using AI as a reviewed
+            staff support layer rather than an automatic operator.
           </p>
           <div className="role-grid">
             {productPillars.map((point) => (
