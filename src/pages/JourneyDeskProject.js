@@ -4,40 +4,42 @@ import "./JourneyDeskProject.css";
 
 import landingHeroImg from "../assets/images/journeydesk_landing_hero.jpg";
 import dashboardImg from "../assets/images/journeydesk_dashboard_overview.jpg";
+import tripRequestsImg from "../assets/images/journeydesk_trip_requests_list.jpg";
 import tripDetailImg from "../assets/images/journeydesk_trip_request_detail.jpg";
-import activityImg from "../assets/images/journeydesk_activity.jpg";
+import documentsImg from "../assets/images/journeydesk_documents.jpg";
 import aiWorkflowImg from "../assets/images/journeydesk_ai_workflow_checker.jpg";
-import swaggerImg from "../assets/images/journeydesk_swagger_ui_light.jpg";
 
 const productPillars = [
   {
-    name: "Travel Operations CRM",
+    name: "Travel operations workspace",
     detail:
-      "JourneyDesk is built for travel agency staff, not consumers. The interface centers client requests, owners, status, tasks, and operational context."
+      "JourneyDesk is built for agency staff after a client inquiry arrives: requests, itinerary work, tasks, notes, quotes, bookings, and activity history stay in one role-scoped workspace."
   },
   {
-    name: "V1 Full-Stack Foundation",
+    name: "Local-first AI support",
     detail:
-      "V1 focused on learning and building the core product end to end with Next.js, Express, PostgreSQL, Prisma, authentication, REST APIs, Docker, and CI."
+      "The assistant runs through Ollama and is review-only. It reads scoped trip context and local agency knowledge, but staff decide what to save, send, verify, or book."
   },
   {
-    name: "V2 Local AI Assistant",
+    name: "Operational knowledge layer",
     detail:
-      "V2 adds Ollama-powered AI support for workflow checks and travel assistance while keeping suggestions review-only and under staff control."
+      "V3 separates current-trip reference documents from reusable Workspace KB so past lessons can guide planning without being treated as proof for the active trip."
   }
 ];
 
 const buildHighlights = [
-  "V1 established the full-stack application structure: dashboard, clients, trip requests, itinerary builder, tasks, notes, activity logs, auth, and role-scoped API access.",
-  "V2 added a privacy-aware AI provider layer, Ollama integration, structured output validation, AI review drawer, saved reviews, and human-reviewed suggested tasks.",
-  "The project is documented with OpenAPI / Swagger, Docker Compose setup, seeded demo data, screenshots, and a focused README."
+  "V1 established the full-stack structure: dashboard, clients, trip requests, itinerary builder, tasks, notes, activity logs, authentication, and role-scoped API access.",
+  "V2 introduced a local AI assistant with an Ollama provider, structured output validation, saved AI reviews, and human-reviewed suggested tasks.",
+  "V3 strengthened the AI workflow with staff-entered travel styles, service scope, included services, trip reference documents, reusable Workspace KB, and safer source handling.",
+  "The backend now keeps readiness decisions stable while the LLM focuses on summarizing, drafting, and planning support. The project includes OpenAPI docs, Docker setup, tests, seeded demo data, and screenshots."
 ];
 
 const v2LearningPoints = [
-  "I kept the AI workflow local-first because travel operations data can include sensitive client context. The backend controls what is sent to the model, and staff remain responsible for final review.",
-  "Model choice became a product decision. Larger models can answer better, but `gemma3:4b` gave a more realistic balance for ordinary machines.",
-  "One challenge was balancing helpful travel suggestions with clear limits. The assistant can use internal trip context to support planning, but uncertain supplier details remain part of the human review process.",
-  "A future improvement would be local RAG over agency-owned resources, helping the assistant give better recommendations while keeping client context local."
+  "V2 proved that a local model could be integrated into the product, but V3 showed that prompts alone are not enough for a reliable business workflow.",
+  "The important design change was separating responsibilities: backend code owns evidence priority, source scope, role permissions, and readiness status; the LLM helps with summaries, next actions, itinerary ideas, and draft messages.",
+  "Workflow Check and Travel Assistant became separate tools. Workflow Check reviews what is known, missing, needs verification, or conflicts. Travel Assistant helps staff research itinerary ideas and client follow-up without updating the workspace automatically.",
+  "The product also needed more realistic context. Travel style, service scope, included services, planning stage, current-trip documents, and reusable agency knowledge all shape what the AI should and should not say.",
+  "A future step would be stronger local retrieval and evaluation over agency-owned documents, plus richer supplier workflows and optional text extraction from PDFs or images."
 ];
 
 const snapshots = [
@@ -56,32 +58,32 @@ const snapshots = [
       "Role-scoped operational metrics, priority trip requests, tasks, and recent client context."
   },
   {
+    image: tripRequestsImg,
+    alt: "JourneyDesk trip requests list",
+    title: "Trip Requests",
+    description:
+      "Staff create and review requests with explicit travel styles, service scope, included services, and planning stage."
+  },
+  {
     image: tripDetailImg,
     alt: "JourneyDesk trip request detail workspace",
-    title: "Trip Request Workspace",
+    title: "Trip Workspace",
     description:
-      "The main staff workspace: itinerary builder, request details, tasks, notes, activity timeline, and AI assistant."
+      "The active planning surface: request details, itinerary builder, tasks, notes, trip reference documents, and local AI support."
   },
   {
     image: aiWorkflowImg,
     alt: "JourneyDesk AI workflow check drawer",
-    title: "AI Workflow Check",
+    title: "Workflow Check",
     description:
-      "A review-only AI panel that surfaces missing information, risks, next actions, draft follow-up, and suggested tasks for staff approval."
+      "A readiness drawer that separates known, missing, needs-verification, and conflict items before staff move the plan forward."
   },
   {
-    image: activityImg,
-    alt: "JourneyDesk activity audit trail",
-    title: "Activity Audit Trail",
+    image: documentsImg,
+    alt: "JourneyDesk Documents workspace knowledge base",
+    title: "Documents and KB",
     description:
-      "An operational activity log with trip and date filters plus pagination for reviewing workflow history."
-  },
-  {
-    image: swaggerImg,
-    alt: "JourneyDesk Swagger UI",
-    title: "OpenAPI Documentation",
-    description:
-      "Swagger documentation for the Express REST API, including auth, clients, trip requests, and workflow endpoints."
+      "Reusable agency policies, supplier notes, destination insights, and past-trip lessons are searchable without replacing current-trip evidence."
   }
 ];
 
@@ -149,13 +151,15 @@ function JourneyDeskProject() {
             <p className="section-kicker">Featured Case Study</p>
             <h1>JourneyDesk</h1>
             <p className="journeydesk-summary">
-              A full-stack travel operations CRM with review-only local AI
-              assistance.
+              A full-stack travel operations CRM for agency teams, evolved in
+              V3 with stronger review-only local AI support.
             </p>
             <p>
               JourneyDesk helps travel agency staff manage client requests,
               itineraries, booking status, tasks, notes, activity history, and
-              AI-assisted workflow review in one focused operations dashboard.
+              reusable agency knowledge in one focused workspace. V3 focuses on
+              making AI useful inside that workflow, without letting it replace
+              staff review.
             </p>
             <p className="journeydesk-role">
               Role: product framing, UI/UX, full-stack implementation, API
@@ -231,8 +235,9 @@ function JourneyDeskProject() {
             <p className="section-kicker">Core Screens</p>
             <h2>The main product surfaces</h2>
             <p className="section-intro">
-              These screens show the product from public introduction through
-              authenticated operations work and backend documentation.
+              These screens show the V3 workflow from public introduction
+              through authenticated planning, AI review, and reusable agency
+              knowledge.
             </p>
           </div>
           <div className="journeydesk-snapshot-grid">
@@ -255,8 +260,8 @@ function JourneyDeskProject() {
 
         <section className="journeydesk-section journeydesk-section-learning">
           <div className="section-heading">
-            <p className="section-kicker">V2 Learning</p>
-            <h2>Local AI works best inside the workflow</h2>
+            <p className="section-kicker">V2 to V3 Learning</p>
+            <h2>Making AI useful required product architecture</h2>
           </div>
           <article className="v2-learning-card">
             {v2LearningPoints.map((point) => (
