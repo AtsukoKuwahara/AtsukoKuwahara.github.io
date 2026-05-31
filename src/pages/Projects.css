@@ -107,6 +107,18 @@ body {
   background: rgba(246, 241, 233, 0.92);
 }
 
+.featured-project-media-landscape {
+  align-items: center;
+}
+
+.featured-project-media-landscape img {
+  min-height: 0;
+  height: auto;
+  max-height: 340px;
+  object-fit: contain;
+  background: #07111f;
+}
+
 .featured-project-content {
   position: relative;
   z-index: 1;

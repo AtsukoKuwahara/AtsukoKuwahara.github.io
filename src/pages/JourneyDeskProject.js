@@ -36,6 +36,7 @@ const buildHighlights = [
 
 const v2LearningPoints = [
   "V2 proved that a local model could be integrated into the product, but V3 showed that prompts alone are not enough for a reliable business workflow.",
+  "The V2 challenge was balance: the assistant needed to be helpful enough to reduce staff workload, but limited enough that uncertain supplier, quote, or booking details stayed under human review.",
   "The important design change was separating responsibilities: backend code owns evidence priority, source scope, role permissions, and readiness status; the LLM helps with summaries, next actions, itinerary ideas, and draft messages.",
   "Workflow Check and Travel Assistant became separate tools. Workflow Check reviews what is known, missing, needs verification, or conflicts. Travel Assistant helps staff research itinerary ideas and client follow-up without updating the workspace automatically.",
   "The product also needed more realistic context. Travel style, service scope, included services, planning stage, current-trip documents, and reusable agency knowledge all shape what the AI should and should not say.",
