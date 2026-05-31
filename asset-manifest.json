@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.df500d77.css",
-    "main.js": "/static/js/main.c3ace8ba.js",
+    "main.js": "/static/js/main.743f9e58.js",
     "static/js/453.acca0757.chunk.js": "/static/js/453.acca0757.chunk.js",
     "static/media/open-collection-fullscreen.png": "/static/media/open-collection-fullscreen.db3f1571abf29c2ffdfa.png",
     "static/media/open-collection-v3-detail.png": "/static/media/open-collection-v3-detail.da6e558c00562828552e.png",
@@ -16,19 +16,19 @@
     "static/media/a-records-community-live-details.jpg": "/static/media/a-records-community-live-details.6e56ade6ea0c1cdcfa6d.jpg",
     "static/media/a-records-sideshop-home.jpg": "/static/media/a-records-sideshop-home.30af1f3544f4e1d2d757.jpg",
     "static/media/a-records-community-home-indie.jpg": "/static/media/a-records-community-home-indie.b36e586c0a636a00546d.jpg",
-    "static/media/journeydesk_trip_request_detail.jpg": "/static/media/journeydesk_trip_request_detail.a6a869136cbe0ca0a929.jpg",
     "static/media/a-records-community-reservations.jpg": "/static/media/a-records-community-reservations.c62a22139f7cd683833d.jpg",
     "static/media/a-records-community-inbox.jpg": "/static/media/a-records-community-inbox.aa80bf21ffafef08aced.jpg",
-    "static/media/journeydesk_dashboard_overview.jpg": "/static/media/journeydesk_dashboard_overview.c8375d0e4a4990dbf43e.jpg",
-    "static/media/journeydesk_ai_workflow_checker.jpg": "/static/media/journeydesk_ai_workflow_checker.c3af4c807b7a3369ca2e.jpg",
-    "static/media/journeydesk_landing_hero.jpg": "/static/media/journeydesk_landing_hero.6452ae430a6aa02c7989.jpg",
     "static/media/as-records-store.jpg": "/static/media/as-records-store.2cadcb52f4b027d3daf8.jpg",
-    "static/media/journeydesk_activity.jpg": "/static/media/journeydesk_activity.b1893c5409c283f5cd13.jpg",
     "static/media/apw-store-rails.jpg": "/static/media/apw-store-rails.bd1507ae456d93b8bafa.jpg",
     "static/media/adobe-xd.jpg": "/static/media/adobe-xd.98f06b82628059127f14.jpg",
     "static/media/orange-bot.jpg": "/static/media/orange-bot.78107b6b3e20bc1f6cdb.jpg",
     "static/media/chicago-museum-app.jpg": "/static/media/chicago-museum-app.600c2136e0aabf1b9636.jpg",
-    "static/media/journeydesk_swagger_ui_light.jpg": "/static/media/journeydesk_swagger_ui_light.83122424c6b2b64fe77a.jpg",
+    "static/media/journeydesk_documents.jpg": "/static/media/journeydesk_documents.b420768125e37cfcfcf9.jpg",
+    "static/media/journeydesk_ai_workflow_checker.jpg": "/static/media/journeydesk_ai_workflow_checker.96f23b92f3f093d9963b.jpg",
+    "static/media/journeydesk_trip_request_detail.jpg": "/static/media/journeydesk_trip_request_detail.60aca710f6c204c37e1b.jpg",
+    "static/media/journeydesk_trip_requests_list.jpg": "/static/media/journeydesk_trip_requests_list.6b89a235337251018ffb.jpg",
+    "static/media/journeydesk_dashboard_overview.jpg": "/static/media/journeydesk_dashboard_overview.e4f5d7ad79715f8cee6e.jpg",
+    "static/media/journeydesk_landing_hero.jpg": "/static/media/journeydesk_landing_hero.a9bf903122228085bf23.jpg",
     "static/media/adobe-premiere.jpg": "/static/media/adobe-premiere.f5b289a7c573d2e45925.jpg",
     "static/media/kaleidoscope-app.jpg": "/static/media/kaleidoscope-app.fd2aee9fb88341bc6a9d.jpg",
     "static/media/react_native.png": "/static/media/react_native.86c8d9eba03e29814d2a.png",
@@ -39,11 +39,11 @@
     "static/media/js.png": "/static/media/js.3dfb665e058d08c99f28.png",
     "index.html": "/index.html",
     "main.df500d77.css.map": "/static/css/main.df500d77.css.map",
-    "main.c3ace8ba.js.map": "/static/js/main.c3ace8ba.js.map",
+    "main.743f9e58.js.map": "/static/js/main.743f9e58.js.map",
     "453.acca0757.chunk.js.map": "/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.df500d77.css",
-    "static/js/main.c3ace8ba.js"
+    "static/js/main.743f9e58.js"
   ]
 }
