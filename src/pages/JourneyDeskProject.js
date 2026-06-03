@@ -18,29 +18,28 @@ const productPillars = [
   {
     name: "Local-first AI support",
     detail:
-      "The assistant runs through Ollama and is review-only. It reads scoped trip context and local agency knowledge, but staff decide what to save, send, verify, or book."
+      "The assistant runs through Ollama as a review-only support layer. It can read scoped trip context and local agency knowledge, while staff remain responsible for what to save, send, verify, or book."
   },
   {
     name: "Operational knowledge layer",
     detail:
-      "V3 separates current-trip reference documents from reusable Workspace KB so past lessons can guide planning without being treated as proof for the active trip."
+      "V3 adds current-trip reference documents and reusable Workspace KB so staff can separate active case evidence from reusable agency knowledge."
   }
 ];
 
 const buildHighlights = [
   "V1 established the full-stack structure: dashboard, clients, trip requests, itinerary builder, tasks, notes, activity logs, authentication, and role-scoped API access.",
-  "V2 introduced a local AI assistant with an Ollama provider, structured output validation, saved AI reviews, and human-reviewed suggested tasks.",
-  "V3 strengthened the AI workflow with staff-entered travel styles, service scope, included services, trip reference documents, reusable Workspace KB, and safer source handling.",
-  "The backend now keeps readiness decisions stable while the LLM focuses on summarizing, drafting, and planning support. The project includes OpenAPI docs, Docker setup, tests, seeded demo data, and screenshots."
+  "V2 introduced review-only local AI support with an Ollama provider, structured output validation, saved AI reviews, and human-reviewed suggested tasks.",
+  "V3 expanded the operations model with travel styles, service scope, included services, trip reference documents, reusable Workspace KB, and clearer review-only AI boundaries.",
+  "The project includes OpenAPI documentation, Docker-based local verification, seeded demo workflows, developer documentation, and tests for the core API and AI response contracts."
 ];
 
 const v2LearningPoints = [
-  "V2 proved that a local model could be integrated into the product, but V3 showed that prompts alone are not enough for a reliable business workflow.",
-  "The V2 challenge was balance: the assistant needed to be helpful enough to reduce staff workload, but limited enough that uncertain supplier, quote, or booking details stayed under human review.",
-  "The important design change was separating responsibilities: backend code owns evidence priority, source scope, role permissions, and readiness status; the LLM helps with summaries, next actions, itinerary ideas, and draft messages.",
-  "Workflow Check and Travel Assistant became separate tools. Workflow Check reviews what is known, missing, needs verification, or conflicts. Travel Assistant helps staff research itinerary ideas and client follow-up without updating the workspace automatically.",
-  "The product also needed more realistic context. Travel style, service scope, included services, planning stage, current-trip documents, and reusable agency knowledge all shape what the AI should and should not say.",
-  "A future step would be stronger local retrieval and evaluation over agency-owned documents, plus richer supplier workflows and optional text extraction from PDFs or images."
+  "V2 proved that a local LLM could be connected to a full-stack product, but the assistant role was still broad: it could review context and draft suggestions, while the real agency workflow was only lightly modeled.",
+  "V3 made the harder problem visible. A travel operations assistant cannot become useful just by adding longer prompts or more sample data. It needs clear workflow roles, reliable source handling, and evaluation against real staff expectations.",
+  "The core challenge is deciding what belongs to the app, what belongs to the model, and what must stay with human staff. The app should organize trip records, permissions, source types, and review-only boundaries. The LLM should read policy and case context, compare them, explain gaps, and suggest next steps without updating records, sending messages, or confirming bookings.",
+  "The redesign work now focuses on source-aware AI behavior: separating current-trip evidence from reusable Workspace KB, reducing context overload, improving retrieval, and testing model output against cases beyond the seeded demo data.",
+  "This learning changed the direction of the project. JourneyDesk is not treating AI as a magic layer on top of a CRM; it is treating AI as one part of a staff workflow system that needs product design, data boundaries, and evaluation before it can be trusted in real operations."
 ];
 
 const snapshots = [
@@ -77,7 +76,7 @@ const snapshots = [
     alt: "JourneyDesk AI workflow check drawer",
     title: "Workflow Check",
     description:
-      "A readiness drawer that separates known, missing, needs-verification, and conflict items before staff move the plan forward."
+      "A review-only readiness drawer designed to separate known, missing, needs-verification, and conflict items before staff move the plan forward."
   },
   {
     image: documentsImg,
@@ -152,15 +151,16 @@ function JourneyDeskProject() {
             <p className="section-kicker">Featured Case Study</p>
             <h1>JourneyDesk</h1>
             <p className="journeydesk-summary">
-              A full-stack travel operations CRM for agency teams, evolved in
-              V3 with stronger review-only local AI support.
+              A full-stack travel operations CRM for agency teams with
+              review-only local AI support.
             </p>
             <p>
               JourneyDesk helps travel agency staff manage client requests,
               itineraries, booking status, tasks, notes, activity history, and
-              reusable agency knowledge in one focused workspace. V3 focuses on
-              making AI useful inside that workflow, without letting it replace
-              staff review.
+              reusable agency knowledge in one focused workspace. V3 adds trip
+              reference documents, Workspace KB, and an Ollama-backed assistant
+              designed to support staff review without updating bookings,
+              emails, or records automatically.
             </p>
             <p className="journeydesk-role">
               Role: product framing, UI/UX, full-stack implementation, API
@@ -237,8 +237,8 @@ function JourneyDeskProject() {
             <h2>The main product surfaces</h2>
             <p className="section-intro">
               These screens show the V3 workflow from public introduction
-              through authenticated planning, AI review, and reusable agency
-              knowledge.
+              through authenticated planning, review-only AI support, and
+              reusable agency knowledge.
             </p>
           </div>
           <div className="journeydesk-snapshot-grid">
@@ -262,7 +262,7 @@ function JourneyDeskProject() {
         <section className="journeydesk-section journeydesk-section-learning">
           <div className="section-heading">
             <p className="section-kicker">V2 to V3 Learning</p>
-            <h2>Making AI useful required product architecture</h2>
+            <h2>Making AI useful requires product architecture</h2>
           </div>
           <article className="v2-learning-card">
             {v2LearningPoints.map((point) => (
