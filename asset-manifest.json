@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.9e4bdc61.css",
-    "main.js": "/static/js/main.a1a032b2.js",
+    "main.css": "/static/css/main.afa431c5.css",
+    "main.js": "/static/js/main.ddf0dd5b.js",
     "static/js/453.acca0757.chunk.js": "/static/js/453.acca0757.chunk.js",
     "static/media/open-collection-fullscreen.png": "/static/media/open-collection-fullscreen.db3f1571abf29c2ffdfa.png",
     "static/media/open-collection-v3-detail.png": "/static/media/open-collection-v3-detail.da6e558c00562828552e.png",
@@ -10,8 +10,12 @@
     "static/media/open-collection-v2-discover-theme.png": "/static/media/open-collection-v2-discover-theme.e27306e15f19a1f6d162.png",
     "static/media/open-collection-v3-shelf-remove.png": "/static/media/open-collection-v3-shelf-remove.bf1f61e2bf67b89df05d.png",
     "static/media/open-collection-v3-search.png": "/static/media/open-collection-v3-search.eb57f7f931bdcc87a705.png",
+    "static/media/rijks-explorer-viewer.png": "/static/media/rijks-explorer-viewer.8494ab5b90f589495d68.png",
     "static/media/open-collection-v3-library.png": "/static/media/open-collection-v3-library.5cb48676be9efd745827.png",
+    "static/media/rijks-explorer-masterpieces.png": "/static/media/rijks-explorer-masterpieces.19001b622b0825f1753b.png",
     "static/media/leaflet-web-app.jpg": "/static/media/leaflet-web-app.7230a1028f89d973a3df.jpg",
+    "static/media/rijks-explorer-explore.png": "/static/media/rijks-explorer-explore.ba7b2ecf9751583283d3.png",
+    "static/media/rijks-explorer-detail.png": "/static/media/rijks-explorer-detail.dfb01c26df46229427c1.png",
     "static/media/a-records-website-home.jpg": "/static/media/a-records-website-home.92cd1f73158d6555cdaa.jpg",
     "static/media/a-records-community-live-details.jpg": "/static/media/a-records-community-live-details.6e56ade6ea0c1cdcfa6d.jpg",
     "static/media/a-records-sideshop-home.jpg": "/static/media/a-records-sideshop-home.30af1f3544f4e1d2d757.jpg",
@@ -22,28 +26,25 @@
     "static/media/apw-store-rails.jpg": "/static/media/apw-store-rails.bd1507ae456d93b8bafa.jpg",
     "static/media/adobe-xd.jpg": "/static/media/adobe-xd.98f06b82628059127f14.jpg",
     "static/media/orange-bot.jpg": "/static/media/orange-bot.78107b6b3e20bc1f6cdb.jpg",
+    "static/media/asrecords_landing_ps.jpg": "/static/media/asrecords_landing_ps.9c4bebb57901734eb6da.jpg",
     "static/media/chicago-museum-app.jpg": "/static/media/chicago-museum-app.600c2136e0aabf1b9636.jpg",
     "static/media/journeydesk_documents.jpg": "/static/media/journeydesk_documents.b420768125e37cfcfcf9.jpg",
     "static/media/journeydesk_ai_workflow_checker.jpg": "/static/media/journeydesk_ai_workflow_checker.96f23b92f3f093d9963b.jpg",
     "static/media/journeydesk_trip_request_detail.jpg": "/static/media/journeydesk_trip_request_detail.60aca710f6c204c37e1b.jpg",
     "static/media/journeydesk_trip_requests_list.jpg": "/static/media/journeydesk_trip_requests_list.6b89a235337251018ffb.jpg",
     "static/media/journeydesk_dashboard_overview.jpg": "/static/media/journeydesk_dashboard_overview.e4f5d7ad79715f8cee6e.jpg",
+    "static/media/journeydesk_landing_pf.jpg": "/static/media/journeydesk_landing_pf.f3c9f71246110f9ed269.jpg",
     "static/media/journeydesk_landing_hero.jpg": "/static/media/journeydesk_landing_hero.a9bf903122228085bf23.jpg",
     "static/media/adobe-premiere.jpg": "/static/media/adobe-premiere.f5b289a7c573d2e45925.jpg",
     "static/media/kaleidoscope-app.jpg": "/static/media/kaleidoscope-app.fd2aee9fb88341bc6a9d.jpg",
-    "static/media/react_native.png": "/static/media/react_native.86c8d9eba03e29814d2a.png",
-    "static/media/java.png": "/static/media/java.ddf8676bd569fe01ab44.png",
     "static/media/logo1.png": "/static/media/logo1.50c658083ebd86133db6.png",
-    "static/media/html.png": "/static/media/html.6e930594286d8afe4c79.png",
-    "static/media/css.png": "/static/media/css.463e319bad8e0edf1ef7.png",
-    "static/media/js.png": "/static/media/js.3dfb665e058d08c99f28.png",
     "index.html": "/index.html",
-    "main.9e4bdc61.css.map": "/static/css/main.9e4bdc61.css.map",
-    "main.a1a032b2.js.map": "/static/js/main.a1a032b2.js.map",
+    "main.afa431c5.css.map": "/static/css/main.afa431c5.css.map",
+    "main.ddf0dd5b.js.map": "/static/js/main.ddf0dd5b.js.map",
     "453.acca0757.chunk.js.map": "/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9e4bdc61.css",
-    "static/js/main.a1a032b2.js"
+    "static/css/main.afa431c5.css",
+    "static/js/main.ddf0dd5b.js"
   ]
 }
