@@ -158,7 +158,7 @@ function ARecordsProject() {
       <main className="a-records-page">
         <section className="a-records-hero">
           <div className="a-records-hero-copy">
-            <p className="section-kicker">Featured Case Study</p>
+            <p className="section-kicker">Selected Web Case Study</p>
             <h1>A'S RECORDS Rails Suite</h1>
             <p className="a-records-summary">
               A three-app Rails portfolio project built as a connected system: a

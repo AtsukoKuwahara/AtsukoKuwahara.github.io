@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDocker, faNodeJs, faReact, faStripe } from "@fortawesome/free-brands-svg-icons";
 import "./Projects.css";
 
 import adobeXdImg from "../assets/images/adobe-xd.jpg";
@@ -9,22 +11,19 @@ import kaleidoscopeAppImg from "../assets/images/kaleidoscope-app.jpg";
 import leafletWebAppImg from "../assets/images/leaflet-web-app.jpg";
 import apwStoreRailsImg from "../assets/images/apw-store-rails.jpg";
 import asRecordsStoreImg from "../assets/images/as-records-store.jpg";
-import aRecordsWebsiteHomeImg from "../assets/images/a-records-website-home.jpg";
+import aRecordsPortfolioImg from "../assets/images/asrecords_landing_ps.jpg";
 import openCollectionDiscoverImg from "../assets/images/open-collection-discover.png";
-import journeyDeskHeroImg from "../assets/images/journeydesk_landing_hero.jpg";
-import javaImg from "../assets/images/java.png";
-import reactNativeImg from "../assets/images/react_native.png";
-import jsImg from "../assets/images/js.png";
-import htmlImg from "../assets/images/html.png";
-import cssImg from "../assets/images/css.png";
+import journeyDeskPortfolioImg from "../assets/images/journeydesk_landing_pf.jpg";
+import rijksExplorerMasterpiecesImg from "../assets/images/rijks-explorer-masterpieces.png";
 import orangebotImg from "../assets/images/orange-bot.jpg";
 
 const techCatalog = {
   rails: { label: "Rails", shortLabel: "RbR", tone: "ruby" },
   ruby: { label: "Ruby", shortLabel: "Rb", tone: "ruby" },
+  react: { label: "React", icon: faReact, tone: "react" },
   nextjs: { label: "Next.js", shortLabel: "Nx", tone: "slate" },
   typescript: { label: "TypeScript", shortLabel: "TS", tone: "slate" },
-  node: { label: "Node.js", shortLabel: "Nd", tone: "green" },
+  node: { label: "Node.js", icon: faNodeJs, tone: "green" },
   express: { label: "Express", shortLabel: "Ex", tone: "slate" },
   postgres: { label: "PostgreSQL", shortLabel: "Pg", tone: "green" },
   prisma: { label: "Prisma", shortLabel: "Pr", tone: "violet" },
@@ -33,56 +32,82 @@ const techCatalog = {
   ios: { label: "iOS", shortLabel: "iOS", tone: "slate" },
   api: { label: "API", shortLabel: "API", tone: "amber" },
   localData: { label: "Local Persistence", shortLabel: "DB", tone: "green" },
-  docker: { label: "Docker", shortLabel: "Dk", tone: "slate" },
+  docker: { label: "Docker", icon: faDocker, tone: "docker" },
   ollama: { label: "Ollama", shortLabel: "Ol", tone: "slate" },
+  hotwire: { label: "Hotwire", shortLabel: "Hw", tone: "amber" },
+  stimulus: { label: "Stimulus", shortLabel: "St", tone: "green" },
+  importmap: { label: "Importmap", shortLabel: "Im", tone: "slate" },
+  stripe: { label: "Stripe", icon: faStripe, tone: "violet" },
+  ci: { label: "CI", shortLabel: "CI", tone: "slate" },
   flask: { label: "Flask", shortLabel: "Fl", tone: "slate" },
   mongodb: { label: "MongoDB", shortLabel: "Mg", tone: "green" },
   llm: { label: "Local LLM", shortLabel: "AI", tone: "amber" },
-  javascript: { label: "JavaScript", src: jsImg },
-  css: { label: "CSS", src: cssImg },
-  html: { label: "HTML", src: htmlImg },
-  reactNative: { label: "React Native", src: reactNativeImg },
-  java: { label: "Java", src: javaImg },
+  javascript: { label: "JavaScript", shortLabel: "JS", tone: "javascript" },
+  css: { label: "CSS", shortLabel: "CSS", tone: "css" },
+  html: { label: "HTML", shortLabel: "HTML", tone: "html" },
+  reactNative: { label: "React Native", shortLabel: "RN", tone: "react" },
+  java: { label: "Java", shortLabel: "Java", tone: "java" },
   premiere: { label: "Premiere Pro", shortLabel: "Pr", tone: "violet" },
   xd: { label: "Adobe XD", shortLabel: "Xd", tone: "pink" },
 };
 
 const featuredProjects = [
   {
-    id: "journeydesk",
-    imgSrc: journeyDeskHeroImg,
-    mediaClassName: "featured-project-media-landscape",
-    title: "JourneyDesk",
-    description:
-      "A full-stack travel operations CRM for agency teams. V1 built the full-stack foundation; V2 introduced review-only local AI with Ollama; V3 added source-aware AI support with trip reference documents and reusable agency knowledge.",
-    detailLink: "/projects/journeydesk",
-    tags: ["Full-Stack TypeScript", "Local AI", "Case Study"],
-    stack: ["nextjs", "typescript", "node", "express", "postgres", "prisma", "docker", "openapi", "ollama"],
-    role: "Product Framing / UI / Full-Stack Implementation / AI Workflow Design",
-  },
-  {
     id: "open-collection-ios",
     imgSrc: openCollectionDiscoverImg,
     mediaClassName: "featured-project-media-portrait",
     title: "Open Collection iOS",
     description:
-      "A SwiftUI art discovery app that brings together the Art Institute of Chicago and the Cleveland Museum of Art, with search, saved works, tags, filters, and a quieter mobile viewing flow.",
+      "A calm cross-museum SwiftUI app for discovering, saving, and organizing artworks from the Art Institute of Chicago and the Cleveland Museum of Art.",
     detailLink: "/projects/open-collection-ios",
-    tags: ["SwiftUI", "Cross-Museum App", "Case Study"],
+    tags: ["SwiftUI", "Cross-Museum App", "Personal Library"],
     stack: ["swiftui", "ios", "api", "localData"],
     role: "Concept / Product Direction / UI / SwiftUI Implementation",
+    note:
+      "The key challenge was making two different museum APIs feel like one coherent discovery and library experience.",
+  },
+  {
+    id: "rijks-explorer-ios",
+    imgSrc: rijksExplorerMasterpiecesImg,
+    mediaClassName: "featured-project-media-portrait",
+    title: "RijksExplorer iOS",
+    description:
+      "A focused Rijksmuseum app that separates stable masterpiece stories from live collection exploration.",
+    detailLink: "/projects/rijks-explorer-ios",
+    tags: ["SwiftUI", "Live Museum Data", "Product Decisions"],
+    stack: ["swiftui", "ios", "api", "localData"],
+    role: "Concept / Product Direction / UI / SwiftUI Implementation",
+    note:
+      "The hardest product decision was choosing reliable paths over broad filters when live museum metadata proved uneven.",
+  },
+];
+
+const selectedWebProjects = [
+  {
+    id: "journeydesk",
+    imgSrc: journeyDeskPortfolioImg,
+    title: "JourneyDesk",
+    eyebrow: "Full-Stack Product Evolution / Local AI",
+    description:
+      "A React / TypeScript travel operations workspace developed from a full-stack foundation into a safer, source-aware local AI Assistant.",
+    detailLink: "/projects/journeydesk",
+    stack: ["react", "typescript", "node", "postgres", "docker", "openapi"],
+    progression: ["V1 Full-Stack", "V2 AI Introduction", "V3 Practical AI Upgrade"],
+    note:
+      "Shows React full-stack architecture, REST/OpenAPI documentation, Docker, CI, and a deliberately bounded local AI workflow.",
   },
   {
     id: "a-records-rails-suite",
-    imgSrc: aRecordsWebsiteHomeImg,
-    mediaClassName: "",
+    imgSrc: aRecordsPortfolioImg,
     title: "A'S RECORDS Rails Suite",
+    eyebrow: "Three Rails Applications / Integrated System",
     description:
-      "A connected three-app Rails project built around a hub website, dedicated storefront, and community/events space. It reframes my earlier A'S RECORDS concept as a small system with clearer roles and stronger navigation.",
+      "A Rails learning project developed as a brand website, record store, and community/events application, then connected into one coherent suite.",
     detailLink: "/projects/a-s-records-rails-suite",
-    tags: ["Rails", "Three-App Suite", "Case Study"],
-    stack: ["rails", "ruby"],
-    role: "Concept / UI / Structure / Implementation",
+    stack: ["rails", "postgres", "hotwire", "stripe", "ci"],
+    progression: ["Website Hub", "Record Store", "Community / Events"],
+    note:
+      "Contrasts JourneyDesk by showing Rails conventions, CI, and system integration across three related applications.",
   },
 ];
 
@@ -258,30 +283,87 @@ const ProjectCard = ({
       </div>
       <div className="project-stack">
         <p className="project-stack-label">Stack</p>
-        <div className="languages" aria-label={`${title} technology stack`}>
-          {stack.map((techKey) => {
-            const tech = techCatalog[techKey];
+        <StackBadges stack={stack} label={`${title} technology stack`} />
+      </div>
+    </div>
+  </article>
+);
 
-            if (!tech) {
-              return null;
-            }
+const StackBadges = ({ stack = [], label }) => (
+  <div className="languages" aria-label={label}>
+    {stack.map((techKey) => {
+      const tech = techCatalog[techKey];
 
-            return tech.src ? (
-              <span key={tech.label} className="tech-badge tech-badge-image" title={tech.label}>
-                <img src={tech.src} alt={tech.label} loading="lazy" />
-              </span>
-            ) : (
-              <span
-                key={tech.label}
-                className={`tech-badge tech-badge-text tech-badge-${tech.tone || "slate"}`}
-                title={tech.label}
-                aria-label={tech.label}
-              >
-                {tech.shortLabel}
-              </span>
-            );
-          })}
-        </div>
+      if (!tech) {
+        return null;
+      }
+
+      return tech.icon ? (
+        <span
+          key={tech.label}
+          className={`tech-badge tech-badge-text tech-badge-icon tech-badge-${tech.tone || "slate"}`}
+          title={tech.label}
+          aria-label={tech.label}
+        >
+          <FontAwesomeIcon icon={tech.icon} />
+        </span>
+      ) : tech.src ? (
+        <span key={tech.label} className="tech-badge tech-badge-image" title={tech.label}>
+          <img src={tech.src} alt={tech.label} loading="lazy" />
+        </span>
+      ) : (
+        <span
+          key={tech.label}
+          className={`tech-badge tech-badge-text tech-badge-${tech.tone || "slate"}`}
+          title={tech.label}
+          aria-label={tech.label}
+        >
+          {tech.shortLabel}
+        </span>
+      );
+    })}
+  </div>
+);
+
+const SelectedWebProject = ({
+  id,
+  imgSrc,
+  title,
+  eyebrow,
+  description,
+  detailLink,
+  stack,
+  progression,
+  note,
+  onImageOpen,
+}) => (
+  <article className="selected-web-project reveal-card" aria-labelledby={`${id}-heading`}>
+    <button
+      type="button"
+      className="project-image-button selected-web-project-media"
+      onClick={() => onImageOpen({ src: imgSrc, alt: title })}
+      aria-label={`Open larger image for ${title}`}
+    >
+      <img src={imgSrc} alt={title} loading="lazy" />
+    </button>
+    <div className="selected-web-project-content">
+      <p className="project-role">{eyebrow}</p>
+      <h4 id={`${id}-heading`}>{title}</h4>
+      <p>{description}</p>
+      <div className="project-progression" aria-label={`${title} project progression`}>
+        {progression.map((step) => (
+          <span key={step}>{step}</span>
+        ))}
+      </div>
+      <p className="selected-web-note">{note}</p>
+      <div className="project-stack selected-web-stack">
+        <p className="project-stack-label">Stack</p>
+        <StackBadges stack={stack} label={`${title} technology stack`} />
+      </div>
+      <div className="project-card-actions selected-web-project-actions">
+        <Link to={detailLink} className="btn btn-primary">
+          View Case Study
+        </Link>
       </div>
     </div>
   </article>
@@ -298,68 +380,94 @@ function Projects() {
           <p className="section-kicker">Portfolio Projects</p>
           <h2>Selected Works</h2>
           <p className="projects-lede">
-            A focused set of projects across mobile, web, prototyping, and
-            product thinking. The featured case studies below show how I shape
-            small products from concept and interface direction through
-            implementation.
+            Product-focused work across iOS, full-stack development, and
+            connected web systems. These projects show not only what I built,
+            but the technical constraints, trade-offs, and product decisions
+            that shaped each result.
           </p>
         </header>
 
         <section className="featured-case-studies" aria-labelledby="featured-case-studies-heading">
           <div className="projects-list-heading reveal-card">
-            <p className="section-kicker">Featured Case Studies</p>
-            <h3 id="featured-case-studies-heading">Detailed Projects</h3>
+            <p className="section-kicker">Featured iOS Applications</p>
+            <h3 id="featured-case-studies-heading">Two Museums, Two Data Challenges</h3>
             <p>
-              These projects are the clearest examples of how I take an
-              idea through product framing, interface decisions, and working
-              implementation rather than stopping at a single screen or sample.
+              Two SwiftUI products shaped around complex public collections.
+              Each app takes a different approach to building a calm,
+              trustworthy museum experience from inconsistent source data.
             </p>
           </div>
-          {featuredProjects.map((project) => (
-            <section
-              key={project.id}
-              className="featured-project reveal-card"
-              aria-labelledby={`${project.id}-heading`}
-            >
-              <div className={`featured-project-media ${project.mediaClassName || ""}`}>
-                <button
-                  type="button"
-                  className="project-image-button featured-image-button"
-                  onClick={() =>
-                    setActiveImage({
-                      src: project.imgSrc,
-                      alt: project.title,
-                    })
-                  }
-                  aria-label={`Open larger image for ${project.title}`}
-                >
-                  <img
-                    src={project.imgSrc}
-                    alt={project.title}
-                    loading="eager"
-                  />
-                </button>
-              </div>
-              <div className="featured-project-content">
-                <p className="section-kicker">Featured Project</p>
-                <h3 id={`${project.id}-heading`}>{project.title}</h3>
-                <p>{project.description}</p>
-                <div className="featured-tag-list" aria-label="featured project tags">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="featured-tag">
-                      {tag}
-                    </span>
-                  ))}
+          <div className="ios-feature-grid">
+            {featuredProjects.map((project, index) => (
+              <section
+                key={project.id}
+                className={`featured-project featured-project-${index === 0 ? "primary" : "secondary"} reveal-card`}
+                aria-labelledby={`${project.id}-heading`}
+              >
+                <div className={`featured-project-media ${project.mediaClassName || ""}`}>
+                  <button
+                    type="button"
+                    className="project-image-button featured-image-button"
+                    onClick={() =>
+                      setActiveImage({
+                        src: project.imgSrc,
+                        alt: project.title,
+                      })
+                    }
+                    aria-label={`Open larger image for ${project.title}`}
+                  >
+                    <img
+                      src={project.imgSrc}
+                      alt={project.title}
+                      loading="eager"
+                    />
+                  </button>
                 </div>
-                <p className="featured-project-role">{project.role}</p>
-                <div className="project-card-actions featured-actions">
-                  <Link to={project.detailLink} className="btn btn-primary">
-                    View Details
-                  </Link>
+                <div className="featured-project-content">
+                  <p className="section-kicker">Museum App 0{index + 1}</p>
+                  <h3 id={`${project.id}-heading`}>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <p className="featured-project-note">{project.note}</p>
+                  <div className="featured-tag-list" aria-label="featured project tags">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="featured-tag">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="featured-project-role">{project.role}</p>
+                  {project.detailLink && (
+                    <div className="project-card-actions featured-actions">
+                      <Link to={project.detailLink} className="btn btn-primary">
+                        View Case Study
+                      </Link>
+                    </div>
+                  )}
                 </div>
-              </div>
-            </section>
-          ))}
+              </section>
+            ))}
+          </div>
+        </section>
+
+        <section className="selected-web-section" aria-labelledby="selected-web-heading">
+          <div className="projects-list-heading reveal-card">
+            <p className="section-kicker">Selected Web Projects</p>
+            <h3 id="selected-web-heading">React AI Product / Rails Product System</h3>
+            <p>
+              Two web projects with different learning curves: one full-stack
+              React product that tests local AI boundaries, and one Rails suite
+              that connects three applications into a shared product world.
+            </p>
+          </div>
+          <div className="selected-web-projects">
+            {selectedWebProjects.map((project) => (
+              <SelectedWebProject
+                key={project.id}
+                {...project}
+                onImageOpen={setActiveImage}
+              />
+            ))}
+          </div>
         </section>
 
         <section className="projects-list-section" aria-labelledby="more-projects-heading">
@@ -367,9 +475,8 @@ function Projects() {
             <p className="section-kicker">More Projects</p>
             <h3 id="more-projects-heading">Additional Work</h3>
             <p>
-              Earlier iterations, focused prototypes, and standalone projects.
-              These remain intentionally lightweight here, with process videos and
-              repository links where available.
+              Focused prototypes, earlier iterations, and standalone projects,
+              with demos and repository links where available.
             </p>
           </div>
           <div className="projects-grid">

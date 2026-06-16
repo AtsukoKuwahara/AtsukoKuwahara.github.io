@@ -10,6 +10,7 @@ import Projects from './pages/Projects';
 import ARecordsProject from './pages/ARecordsProject';
 import OpenCollectionProject from './pages/OpenCollectionProject';
 import JourneyDeskProject from './pages/JourneyDeskProject';
+import RijksExplorerProject from './pages/RijksExplorerProject';
 import Contact from './pages/Contact';
 import useScrollToTop from './useScrollToTop'; // Import the custom hook
 import './styles/App.css';
@@ -52,6 +53,7 @@ function App() {
         <Route path="/projects/journeydesk" element={<JourneyDeskProject />} />
         <Route path="/projects/a-s-records-rails-suite" element={<ARecordsProject />} />
         <Route path="/projects/open-collection-ios" element={<OpenCollectionProject />} />
+        <Route path="/projects/rijks-explorer-ios" element={<RijksExplorerProject />} />
       </Routes>
     </div>
   );

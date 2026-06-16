@@ -38,8 +38,8 @@ const v2LearningPoints = [
   "V2 proved that a local LLM could be connected to a full-stack product, but the assistant role was still broad: it could review context and draft suggestions, while the real agency workflow was only lightly modeled.",
   "V3 made the harder problem visible. A travel operations assistant cannot become useful just by adding longer prompts or more sample data. It needs clear workflow roles, reliable source handling, and evaluation against real staff expectations.",
   "The core challenge is deciding what belongs to the app, what belongs to the model, and what must stay with human staff. The app should organize trip records, permissions, source types, and review-only boundaries. The LLM should read policy and case context, compare them, explain gaps, and suggest next steps without updating records, sending messages, or confirming bookings.",
-  "The redesign work now focuses on source-aware AI behavior: separating current-trip evidence from reusable Workspace KB, reducing context overload, improving retrieval, and testing model output against cases beyond the seeded demo data.",
-  "This learning changed the direction of the project. JourneyDesk is not treating AI as a magic layer on top of a CRM; it is treating AI as one part of a staff workflow system that needs product design, data boundaries, and evaluation before it can be trusted in real operations."
+  "V3 focused the assistant around source-aware behavior: separating current-trip evidence from reusable Workspace KB, reducing context overload, improving retrieval, and clarifying which decisions remain deterministic.",
+  "Development is intentionally paused at this point. Further AI expansion would require real operational users, domain evaluation, and production infrastructure rather than more speculative features."
 ];
 
 const snapshots = [
@@ -148,7 +148,7 @@ function JourneyDeskProject() {
       <main className="journeydesk-page">
         <section className="journeydesk-hero">
           <div className="journeydesk-hero-copy">
-            <p className="section-kicker">Featured Case Study</p>
+            <p className="section-kicker">Selected Web Case Study</p>
             <h1>JourneyDesk</h1>
             <p className="journeydesk-summary">
               A full-stack travel operations CRM for agency teams with
