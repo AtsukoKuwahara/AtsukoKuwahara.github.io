@@ -1,10 +1,10 @@
 # Atsuko Kuwahara Portfolio
 
-Personal portfolio site for mobile, web, and product-focused software development work.
+Personal portfolio site for software development and product-focused work.
 
 ## Overview
 
-This portfolio presents selected iOS, full-stack, Rails, and AI-assisted projects through a simple editorial layout. It is designed to show not only finished interfaces, but also the product decisions, technical constraints, and learning process behind each build.
+This site presents my work, background, and contact information through a simple editorial layout. The design focuses on clarity, atmosphere, and a calm way to move from introduction to selected work.
 
 ## Tech
 
@@ -12,12 +12,3 @@ This portfolio presents selected iOS, full-stack, Rails, and AI-assisted project
 - React Router
 - CSS
 - Font Awesome
-
-## Main Areas
-
-- `Home`: introduction and focus areas.
-- `About`: personal background and approach to making software.
-- `Selected Work`: short entry point into the project collection.
-- `Resume`: compact resume overview.
-- `Projects`: featured case studies and additional work.
-- `Contact`: email, LinkedIn, and GitHub links.
