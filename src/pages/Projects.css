@@ -130,14 +130,22 @@
 
 .featured-project-media-portrait .project-image-button {
   max-width: 430px;
+  border: 2px solid var(--retro-ink);
+  border-radius: 22px;
+  background: rgba(246, 241, 233, 0.92);
+  box-shadow: 0 18px 28px rgba(20, 20, 20, 0.18);
 }
 
 .featured-project-media-portrait img {
+  display: block;
   min-height: 0;
   height: auto;
   max-height: 520px;
   object-fit: contain;
-  background: rgba(246, 241, 233, 0.92);
+  border: none;
+  border-radius: 20px;
+  background: transparent;
+  box-shadow: none;
 }
 
 .featured-project-secondary .featured-project-media {
