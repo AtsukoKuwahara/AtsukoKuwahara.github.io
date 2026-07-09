@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Home() {
+  const [isFocusOpen, setIsFocusOpen] = useState(false);
+
   return (
     <div className="home-stage">
       <div className="home-copy">
@@ -23,6 +25,9 @@ function Home() {
           <Link to="/projects" className="btn btn-primary">
             Explore Projects
           </Link>
+          <Link to="/resume" className="btn btn-outline">
+            View Resume
+          </Link>
         </div>
       </div>
       <div className="home-vinyl-wrap" aria-hidden="true">
@@ -38,6 +43,46 @@ function Home() {
           </div>
         </div>
         <div className="home-vinyl-note">music / systems / warmth</div>
+      </div>
+      <div className={`home-focus-drawer ${isFocusOpen ? 'is-open' : ''}`}>
+        <button
+          type="button"
+          className="home-focus-toggle"
+          aria-expanded={isFocusOpen}
+          aria-controls="home-focus-panel"
+          onClick={() => setIsFocusOpen((current) => !current)}
+        >
+          <span className="home-focus-toggle-copy">
+            <span>Focus areas</span>
+            <span>Mobile / Web / AI</span>
+          </span>
+          <span className="home-focus-toggle-mark" aria-hidden="true">
+            {isFocusOpen ? '−' : '+'}
+          </span>
+        </button>
+        <aside
+          id="home-focus-panel"
+          className="home-capability-panel"
+          aria-label="Focus areas"
+        >
+          <p className="home-panel-kicker">Focus areas</p>
+          <div className="home-panel-item">
+            <span>Mobile products</span>
+            <p>SwiftUI / iOS / API Integration</p>
+          </div>
+          <div className="home-panel-item">
+            <span>Web systems</span>
+            <p>React / TypeScript / Rails</p>
+          </div>
+          <div className="home-panel-item">
+            <span>AI-assisted tools</span>
+            <p>LLM evaluation / Chatbot systems / Local AI</p>
+          </div>
+          <div className="home-panel-meta">
+            <span>Based in Montreal, QC</span>
+            <span>Open to software developer roles</span>
+          </div>
+        </aside>
       </div>
     </div>
   );

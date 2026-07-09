@@ -12,6 +12,7 @@ import OpenCollectionProject from './pages/OpenCollectionProject';
 import JourneyDeskProject from './pages/JourneyDeskProject';
 import RijksExplorerProject from './pages/RijksExplorerProject';
 import Contact from './pages/Contact';
+import Resume from './pages/Resume';
 import useScrollToTop from './useScrollToTop'; // Import the custom hook
 import './styles/App.css';
 
@@ -24,37 +25,40 @@ function App() {
     <div className="App">
       <Header />
       {!isStandalonePage && <FloatingNav />}
-      <Routes>
-        <Route path="/" element={
-          <div className="content">
-            <section id="home" className="full-page">
-              <div className="section-inner">
-                <Home />
-              </div>
-            </section>
-            <section id="about" className="full-page">
-              <div className="section-inner">
-                <About />
-              </div>
-            </section>
-            <section id="projects-overview" className="full-page">
-              <div className="section-inner">
-                <ProjectsOverview />
-              </div>
-            </section>
-            <section id="contact" className="full-page">
-              <div className="section-inner">
-                <Contact />
-              </div>
-            </section>
-          </div>
-        } />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/projects/journeydesk" element={<JourneyDeskProject />} />
-        <Route path="/projects/a-s-records-rails-suite" element={<ARecordsProject />} />
-        <Route path="/projects/open-collection-ios" element={<OpenCollectionProject />} />
-        <Route path="/projects/rijks-explorer-ios" element={<RijksExplorerProject />} />
-      </Routes>
+      <main key={location.pathname} className="route-transition">
+        <Routes location={location}>
+          <Route path="/" element={
+            <div className="content">
+              <section id="home" className="full-page">
+                <div className="section-inner">
+                  <Home />
+                </div>
+              </section>
+              <section id="about" className="full-page">
+                <div className="section-inner">
+                  <About />
+                </div>
+              </section>
+              <section id="projects-overview" className="full-page">
+                <div className="section-inner">
+                  <ProjectsOverview />
+                </div>
+              </section>
+              <section id="contact" className="full-page">
+                <div className="section-inner">
+                  <Contact />
+                </div>
+              </section>
+            </div>
+          } />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/journeydesk" element={<JourneyDeskProject />} />
+          <Route path="/projects/a-s-records-rails-suite" element={<ARecordsProject />} />
+          <Route path="/projects/open-collection-ios" element={<OpenCollectionProject />} />
+          <Route path="/projects/rijks-explorer-ios" element={<RijksExplorerProject />} />
+          <Route path="/resume" element={<Resume />} />
+        </Routes>
+      </main>
     </div>
   );
 }

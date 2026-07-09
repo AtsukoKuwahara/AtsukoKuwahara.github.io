@@ -232,54 +232,6 @@
   margin-top: 8px;
 }
 
-.image-lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 32px;
-  background: rgba(20, 20, 20, 0.78);
-  backdrop-filter: blur(6px);
-}
-
-.image-lightbox-content {
-  position: relative;
-  max-width: min(1100px, 92vw);
-  max-height: 88vh;
-}
-
-.image-lightbox-content img {
-  display: block;
-  max-width: 100%;
-  max-height: 88vh;
-  border-radius: 22px;
-  border: 2px solid rgba(255, 249, 240, 0.85);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
-}
-
-.image-lightbox-close {
-  position: absolute;
-  top: -12px;
-  right: -12px;
-  padding: 10px 14px;
-  border: none;
-  border-radius: 999px;
-  background: var(--retro-ink);
-  color: var(--retro-cream);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  cursor: pointer;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.image-lightbox-close:hover {
-  background: var(--retro-teal);
-}
-
 @media (max-width: 1100px) {
   .open-collection-hero {
     grid-template-columns: 1fr;
@@ -315,7 +267,4 @@
     max-width: 280px;
   }
 
-  .image-lightbox {
-    padding: 18px;
-  }
 }

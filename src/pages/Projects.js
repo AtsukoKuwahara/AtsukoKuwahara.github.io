@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDocker, faNodeJs, faReact, faStripe } from "@fortawesome/free-brands-svg-icons";
+import { faDocker, faJava, faNodeJs, faReact, faStripe } from "@fortawesome/free-brands-svg-icons";
+import ImageLightbox from "../components/ImageLightbox";
 import "./Projects.css";
 
 import adobeXdImg from "../assets/images/adobe-xd.jpg";
@@ -45,8 +46,8 @@ const techCatalog = {
   javascript: { label: "JavaScript", shortLabel: "JS", tone: "javascript" },
   css: { label: "CSS", shortLabel: "CSS", tone: "css" },
   html: { label: "HTML", shortLabel: "HTML", tone: "html" },
-  reactNative: { label: "React Native", shortLabel: "RN", tone: "react" },
-  java: { label: "Java", shortLabel: "Java", tone: "java" },
+  reactNative: { label: "React Native", icon: faReact, tone: "react" },
+  java: { label: "Java", icon: faJava, tone: "java" },
   premiere: { label: "Premiere Pro", shortLabel: "Pr", tone: "violet" },
   xd: { label: "Adobe XD", shortLabel: "Xd", tone: "pink" },
 };
@@ -174,6 +175,7 @@ const projects = [
     videoLink: process.env.REACT_APP_ONE_DRIVE_LINK_ADOBE_PREMIERE,
     stack: ["premiere"],
     role: "Editing / Motion / Story Rhythm",
+    isSupporting: true,
   },
   {
     imgSrc: adobeXdImg,
@@ -182,59 +184,10 @@ const projects = [
     videoLink: process.env.REACT_APP_ONE_DRIVE_LINK_ADOBE_XD,
     stack: ["xd"],
     role: "UI Prototype / Interaction Flow",
+    isSupporting: true,
+    visualClassName: "project-card-xd",
   },
 ];
-
-function ImageLightbox({ image, onClose }) {
-  useEffect(() => {
-    if (!image) {
-      return undefined;
-    }
-
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        onClose();
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyDown);
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "";
-    };
-  }, [image, onClose]);
-
-  if (!image) {
-    return null;
-  }
-
-  return (
-    <div
-      className="image-lightbox"
-      role="dialog"
-      aria-modal="true"
-      aria-label={`${image.alt} expanded view`}
-      onClick={onClose}
-    >
-      <div
-        className="image-lightbox-content"
-        onClick={(event) => event.stopPropagation()}
-      >
-        <button
-          type="button"
-          className="image-lightbox-close"
-          onClick={onClose}
-          aria-label="Close expanded image"
-        >
-          Close
-        </button>
-        <img src={image.src} alt={image.alt} />
-      </div>
-    </div>
-  );
-}
 
 const ProjectCard = ({
   imgSrc,
@@ -245,8 +198,14 @@ const ProjectCard = ({
   stack = [],
   role,
   onImageOpen,
+  isSupporting = false,
+  visualClassName = "",
 }) => (
-  <article className="project-card reveal-card">
+  <article
+    className={`project-card reveal-card${isSupporting ? " project-card-supporting" : ""}${
+      visualClassName ? ` ${visualClassName}` : ""
+    }`}
+  >
     <button
       type="button"
       className="project-image-button"

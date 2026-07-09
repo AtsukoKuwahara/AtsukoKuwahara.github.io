@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import ImageLightbox from "../components/ImageLightbox";
 import "./JourneyDeskProject.css";
 
 import landingHeroImg from "../assets/images/journeydesk_landing_hero.jpg";
@@ -86,57 +87,6 @@ const snapshots = [
       "Reusable agency policies, supplier notes, destination insights, and past-trip lessons are searchable without replacing current-trip evidence."
   }
 ];
-
-function ImageLightbox({ image, onClose }) {
-  useEffect(() => {
-    if (!image) {
-      return undefined;
-    }
-
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        onClose();
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyDown);
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "";
-    };
-  }, [image, onClose]);
-
-  if (!image) {
-    return null;
-  }
-
-  return (
-    <div
-      className="image-lightbox"
-      role="dialog"
-      aria-modal="true"
-      aria-label={`${image.alt} expanded view`}
-      onClick={onClose}
-    >
-      <div
-        className="image-lightbox-content"
-        onClick={(event) => event.stopPropagation()}
-      >
-        <button
-          type="button"
-          className="image-lightbox-close"
-          onClick={onClose}
-          aria-label="Close expanded image"
-        >
-          Close
-        </button>
-        <img src={image.src} alt={image.alt} />
-      </div>
-    </div>
-  );
-}
 
 function JourneyDeskProject() {
   const [activeImage, setActiveImage] = useState(null);

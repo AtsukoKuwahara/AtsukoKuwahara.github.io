@@ -15,9 +15,24 @@ const beats = [
   },
 ];
 
+const RippleMotif = () => (
+  <div className="about-ripple-motif">
+    <span className="about-drop about-drop-main" />
+    <span className="about-drop-trace" />
+    <span className="about-ripple about-ripple-one" />
+    <span className="about-ripple about-ripple-two" />
+    <span className="about-ripple about-ripple-three" />
+    <span className="about-surface-line" />
+    <p>clarity / rhythm / craft</p>
+  </div>
+);
+
 function About() {
   return (
     <div className="about-stage">
+      <div className="about-atmosphere" aria-hidden="true">
+        <RippleMotif />
+      </div>
       <div className="about-heading">
         <p className="section-kicker">About Me</p>
         <h2>Late to tech, close to craft</h2>

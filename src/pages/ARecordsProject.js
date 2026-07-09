@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import ImageLightbox from "../components/ImageLightbox";
 import "./ARecordsProject.css";
 
 import websiteHomeImg from "../assets/images/a-records-website-home.jpg";
@@ -50,57 +51,6 @@ const focusPoints = [
       "The website ties those focused apps back together, so the suite still reads as one A'S RECORDS system rather than separate experiments.",
   },
 ];
-
-function ImageLightbox({ image, onClose }) {
-  useEffect(() => {
-    if (!image) {
-      return undefined;
-    }
-
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        onClose();
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyDown);
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "";
-    };
-  }, [image, onClose]);
-
-  if (!image) {
-    return null;
-  }
-
-  return (
-    <div
-      className="image-lightbox"
-      role="dialog"
-      aria-modal="true"
-      aria-label={`${image.alt} expanded view`}
-      onClick={onClose}
-    >
-      <div
-        className="image-lightbox-content"
-        onClick={(event) => event.stopPropagation()}
-      >
-        <button
-          type="button"
-          className="image-lightbox-close"
-          onClick={onClose}
-          aria-label="Close expanded image"
-        >
-          Close
-        </button>
-        <img src={image.src} alt={image.alt} />
-      </div>
-    </div>
-  );
-}
 
 function ARecordsProject() {
   const [activeImage, setActiveImage] = useState(null);
