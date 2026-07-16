@@ -105,12 +105,12 @@ function ARecordsProject() {
 
   return (
     <>
-      <main className="a-records-page">
-        <section className="a-records-hero">
-          <div className="a-records-hero-copy">
+      <main className="case-study-page a-records-page">
+        <section className="case-study-hero case-study-hero--balanced a-records-hero">
+          <div className="case-study-hero-copy case-study-surface">
             <p className="section-kicker">Selected Web Case Study</p>
             <h1>A'S RECORDS Rails Suite</h1>
-            <p className="a-records-summary">
+            <p className="case-study-summary a-records-summary">
               A three-app Rails portfolio project built as a connected system: a
               hub website, a storefront, and a community / events experience.
             </p>
@@ -120,20 +120,20 @@ function ARecordsProject() {
               development, and rethink the project as a connected system rather
               than a single storefront alone.
             </p>
-            <p className="a-records-role">
+            <p className="case-study-role">
               My role: concept development, UI direction, app structure,
               navigation flow, and Rails-based implementation.
             </p>
-            <div className="featured-tag-list a-records-tags">
+            <div className="featured-tag-list case-study-tags">
               <span className="featured-tag">Ruby on Rails</span>
               <span className="featured-tag">Three-App Suite</span>
               <span className="featured-tag">Portfolio Case Study</span>
             </div>
           </div>
-          <div className="a-records-hero-media">
+          <div className="case-study-hero-media a-records-hero-media">
             <button
               type="button"
-              className="a-records-image-button"
+              className="case-study-image-button"
               onClick={() =>
                 setActiveImage({
                   src: websiteHomeImg,
@@ -142,13 +142,13 @@ function ARecordsProject() {
               }
               aria-label="Open larger image for A'S RECORDS website screenshot"
             >
-              <img src={websiteHomeImg} alt="A'S RECORDS website screenshot" loading="eager" />
+              <img className="case-study-image" src={websiteHomeImg} alt="A'S RECORDS website screenshot" loading="eager" />
             </button>
           </div>
         </section>
 
-        <section className="a-records-section a-records-section-story">
-          <div className="section-heading">
+        <section className="case-study-section case-study-surface a-records-section-story">
+          <div className="case-study-section-heading">
             <p className="section-kicker">Why I Rebuilt It</p>
             <h2>From One Store Prototype To A Three-App Learning Project</h2>
           </div>
@@ -170,14 +170,14 @@ function ARecordsProject() {
           </p>
         </section>
 
-        <section className="a-records-section a-records-section-focus">
-          <div className="section-heading">
+        <section className="case-study-section case-study-surface a-records-section-focus">
+          <div className="case-study-section-heading">
             <p className="section-kicker">What This Version Focuses On</p>
             <h2>Three Separate Learning Goals Inside One System</h2>
           </div>
-          <div className="role-grid">
+          <div className="case-study-grid case-study-role-grid">
             {focusPoints.map((point) => (
-              <article key={point.name} className="role-card">
+              <article key={point.name} className="case-study-card case-study-surface case-study-role-card">
                 <h3>{point.name}</h3>
                 <p>{point.detail}</p>
               </article>
@@ -185,18 +185,18 @@ function ARecordsProject() {
           </div>
         </section>
 
-        <section className="a-records-section a-records-section-system">
-          <div className="section-heading">
+        <section className="case-study-section case-study-surface a-records-section-system">
+          <div className="case-study-section-heading">
             <p className="section-kicker">How The Suite Works</p>
             <h2>Role Separation With A Hub-Led Flow</h2>
-            <p className="section-intro">
+            <p className="case-study-section-intro">
               The suite works because each app has a clearer role, while the
               website still acts as the shared entry point and connector.
             </p>
           </div>
-          <div className="role-grid">
+          <div className="case-study-grid case-study-role-grid">
             {appRoles.map((role) => (
-              <article key={role.name} className="role-card">
+              <article key={role.name} className="case-study-card case-study-surface case-study-role-card">
                 <h3>{role.name}</h3>
                 <p>{role.detail}</p>
               </article>
@@ -212,17 +212,17 @@ function ARecordsProject() {
           </div>
         </section>
 
-        <section className="a-records-section">
-          <div className="section-heading">
+        <section className="case-study-section case-study-surface">
+          <div className="case-study-section-heading">
             <p className="section-kicker">Visual Snapshot</p>
             <h2>Current Screens Across The Suite</h2>
           </div>
-          <div className="snapshot-grid snapshot-grid-three">
+          <div className="case-study-grid case-study-snapshot-grid snapshot-grid-three">
             {snapshots.map((snapshot) => (
-              <article key={snapshot.title} className="snapshot-card">
+              <article key={snapshot.title} className="case-study-card case-study-surface case-study-snapshot-card">
                 <button
                   type="button"
-                  className="a-records-image-button"
+                  className="case-study-image-button"
                   onClick={() =>
                     setActiveImage({
                       src: snapshot.image,
@@ -231,30 +231,30 @@ function ARecordsProject() {
                   }
                   aria-label={`Open larger image for ${snapshot.title}`}
                 >
-                  <img src={snapshot.image} alt={snapshot.alt} loading="lazy" />
+                  <img className="case-study-image" src={snapshot.image} alt={snapshot.alt} loading="lazy" />
                 </button>
                 <h3>{snapshot.title}</h3>
-                <p>{snapshot.description}</p>
+                <p className="case-study-card-copy">{snapshot.description}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="a-records-section">
-          <div className="section-heading">
+        <section className="case-study-section case-study-surface">
+          <div className="case-study-section-heading">
             <p className="section-kicker">Community Focus</p>
             <h2>Features Added Beyond The Original Store Idea</h2>
-            <p className="section-intro">
+            <p className="case-study-section-intro">
               These screens show how the project expanded past storefront logic
               into separate public and admin-facing community features.
             </p>
           </div>
-          <div className="admin-snapshot-grid">
+          <div className="case-study-grid admin-snapshot-grid">
             {adminSnapshots.map((snapshot) => (
-              <article key={snapshot.title} className="snapshot-card admin-snapshot-card">
+              <article key={snapshot.title} className="case-study-card case-study-surface case-study-snapshot-card admin-snapshot-card">
                 <button
                   type="button"
-                  className="a-records-image-button"
+                  className="case-study-image-button"
                   onClick={() =>
                     setActiveImage({
                       src: snapshot.image,
@@ -263,17 +263,17 @@ function ARecordsProject() {
                   }
                   aria-label={`Open larger image for ${snapshot.title}`}
                 >
-                  <img src={snapshot.image} alt={snapshot.alt} loading="lazy" />
+                  <img className="case-study-image" src={snapshot.image} alt={snapshot.alt} loading="lazy" />
                 </button>
                 <h3>{snapshot.title}</h3>
-                <p>{snapshot.description}</p>
+                <p className="case-study-card-copy">{snapshot.description}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="a-records-section previous-iteration">
-          <div className="section-heading">
+        <section className="case-study-section case-study-surface previous-iteration">
+          <div className="case-study-section-heading">
             <p className="section-kicker">Previous Iteration</p>
             <h2>Earlier Flask / MongoDB Version</h2>
           </div>
@@ -285,7 +285,7 @@ function ARecordsProject() {
           </p>
         </section>
 
-        <div className="a-records-footer-actions">
+        <div className="case-study-footer-actions">
           <Link to="/projects" className="btn btn-primary">
             Back to Projects
           </Link>

@@ -128,12 +128,12 @@ function OpenCollectionProject() {
 
   return (
     <>
-      <main className="open-collection-page">
-        <section className="open-collection-hero">
-          <div className="open-collection-hero-copy">
+      <main className="case-study-page open-collection-page">
+        <section className="case-study-hero open-collection-hero">
+          <div className="case-study-hero-copy case-study-surface open-collection-hero-copy">
             <p className="section-kicker">Featured Case Study</p>
             <h1>Open Collection iOS</h1>
-            <p className="open-collection-summary">
+            <p className="case-study-summary open-collection-summary">
               A SwiftUI art browsing app for calm cross-museum discovery and
               personal library.
             </p>
@@ -142,11 +142,11 @@ function OpenCollectionProject() {
               the Cleveland Museum of Art in one artwork-first iPhone
               experience.
             </p>
-            <p className="open-collection-role">
+            <p className="case-study-role">
               Role: concept, product direction, UI/UX, information
               architecture, SwiftUI implementation, and iteration.
             </p>
-            <div className="featured-tag-list open-collection-tags">
+            <div className="featured-tag-list case-study-tags">
               <span className="featured-tag">SwiftUI</span>
               <span className="featured-tag">iOS Product Design</span>
               <span className="featured-tag">Cross-Museum App</span>
@@ -154,10 +154,10 @@ function OpenCollectionProject() {
             </div>
           </div>
 
-          <div className="open-collection-hero-image">
+          <div className="case-study-hero-media open-collection-hero-image">
             <button
               type="button"
-              className="open-collection-image-button"
+              className="case-study-image-button"
               onClick={() =>
                 openImage(
                   v3DiscoverImg,
@@ -167,6 +167,7 @@ function OpenCollectionProject() {
               aria-label="Open larger image for Discover"
             >
               <img
+                className="case-study-image case-study-image--contained"
                 src={v3DiscoverImg}
                 alt="Open Collection v3 discover screen"
                 loading="eager"
@@ -175,8 +176,8 @@ function OpenCollectionProject() {
           </div>
         </section>
 
-        <section className="open-collection-section open-collection-section-story">
-          <div className="section-heading">
+        <section className="case-study-section case-study-surface open-collection-section-story">
+          <div className="case-study-section-heading">
             <p className="section-kicker">Product Direction</p>
             <h2>A quiet product, not a museum data demo</h2>
           </div>
@@ -187,9 +188,9 @@ function OpenCollectionProject() {
             discovery, artwork-first detail views, and a local library space
             for saving and revisiting works.
           </p>
-          <div className="role-grid">
+          <div className="case-study-grid case-study-role-grid">
             {productPillars.map((point) => (
-              <article key={point.name} className="role-card">
+              <article key={point.name} className="case-study-card case-study-surface case-study-role-card">
                 <h3>{point.name}</h3>
                 <p>{point.detail}</p>
               </article>
@@ -197,77 +198,77 @@ function OpenCollectionProject() {
           </div>
         </section>
 
-        <section className="open-collection-section open-collection-section-focus">
-          <div className="section-heading">
+        <section className="case-study-section case-study-surface open-collection-section-focus">
+          <div className="case-study-section-heading">
             <p className="section-kicker">Core Experience</p>
             <h2>The product is strongest when it stays clear and direct</h2>
-            <p className="section-intro">
+            <p className="case-study-section-intro">
               The baseline release already works as a complete iOS product:
               discover works across museums, search directly, open richer
               detail views, and keep a personal library on device.
             </p>
           </div>
-          <div className="snapshot-grid snapshot-grid-core">
+          <div className="case-study-grid case-study-snapshot-grid snapshot-grid-core">
             {coreSnapshots.map((snapshot) => (
-              <article key={snapshot.title} className="snapshot-card snapshot-card-compact">
+              <article key={snapshot.title} className="case-study-card case-study-surface case-study-snapshot-card snapshot-card-compact">
                 <button
                   type="button"
-                  className="open-collection-image-button"
+                  className="case-study-image-button"
                   onClick={() => openImage(snapshot.image, snapshot.alt)}
                   aria-label={`Open larger image for ${snapshot.title}`}
                 >
-                  <img src={snapshot.image} alt={snapshot.alt} loading="lazy" />
+                  <img className="case-study-image case-study-image--contained" src={snapshot.image} alt={snapshot.alt} loading="lazy" />
                 </button>
                 <h3>{snapshot.title}</h3>
-                <p>{snapshot.description}</p>
+                <p className="case-study-card-copy">{snapshot.description}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="open-collection-section open-collection-section-system">
-          <div className="section-heading">
+        <section className="case-study-section case-study-surface open-collection-section-system">
+          <div className="case-study-section-heading">
             <p className="section-kicker">Iteration Across Releases</p>
             <h2>V2 and V3 added depth without replacing the core product</h2>
-            <p className="section-intro">
+            <p className="case-study-section-intro">
               I did not treat feature count as progress by default. Each later
               release tested a narrower product question and helped clarify
               where the app should deepen and where it should stay restrained.
             </p>
           </div>
-          <div className="release-grid">
+          <div className="case-study-grid release-grid">
             {releaseCards.map((card) => (
-              <article key={card.label} className="release-card">
+              <article key={card.label} className="case-study-card case-study-surface release-card">
                 <button
                   type="button"
-                  className="open-collection-image-button"
+                  className="case-study-image-button"
                   onClick={() => openImage(card.image, card.alt)}
                   aria-label={`Open larger image for ${card.label}`}
                 >
-                  <img src={card.image} alt={card.alt} loading="lazy" />
+                  <img className="case-study-image case-study-image--contained" src={card.image} alt={card.alt} loading="lazy" />
                 </button>
                 <p className="release-label">{card.label}</p>
                 <h3>{card.title}</h3>
-                <p>{card.description}</p>
+                <p className="case-study-card-copy">{card.description}</p>
                 <p className="release-note">{card.note}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="open-collection-section">
-          <div className="section-heading">
+        <section className="case-study-section case-study-surface">
+          <div className="case-study-section-heading">
             <p className="section-kicker">Product And Technical Decisions</p>
             <h2>Implementation choices that shaped the experience</h2>
-            <p className="section-intro">
+            <p className="case-study-section-intro">
               The product only works because the underlying implementation takes
               source differences seriously. These choices mattered as much as
               the UI itself.
             </p>
           </div>
-          <div className="role-grid">
+          <div className="case-study-grid case-study-role-grid">
             {technicalDecisions.slice(0, 3).map((decision) => (
-              <article key={decision.name} className="role-card">
+              <article key={decision.name} className="case-study-card case-study-surface case-study-role-card">
                 <h3>{decision.name}</h3>
                 <p>{decision.detail}</p>
               </article>
@@ -275,7 +276,7 @@ function OpenCollectionProject() {
           </div>
         </section>
 
-        <div className="open-collection-footer-actions">
+        <div className="case-study-footer-actions">
           <Link to="/projects" className="btn btn-primary">
             Back to Projects
           </Link>

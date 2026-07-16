@@ -1,0 +1,155 @@
+/* Resume page */
+
+/* Page frame and introduction */
+.resume-page {
+  min-height: 100vh;
+  padding: 140px 80px 80px;
+  background:
+    radial-gradient(circle at 84% 20%, rgba(44, 110, 111, 0.12), transparent 18%),
+    radial-gradient(circle at 12% 72%, rgba(197, 106, 74, 0.11), transparent 20%),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.28)),
+    var(--retro-cream);
+}
+
+.resume-hero,
+.resume-grid {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.resume-hero {
+  margin-bottom: 36px;
+}
+
+.resume-hero h1 {
+  margin-top: 0;
+}
+
+.resume-lede {
+  max-width: 760px;
+  font-size: clamp(1.12rem, 1.5vw, 1.3rem);
+}
+
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* Resume summary cards */
+.resume-card {
+  padding: 24px;
+  border: 1px solid rgba(31, 36, 40, 0.1);
+  border-radius: 24px;
+  background: rgba(255, 252, 246, 0.74);
+  box-shadow: var(--retro-shadow-soft);
+}
+
+.resume-card h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+}
+
+.resume-card p,
+.resume-card li {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.resume-card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+/* Technology badges */
+.resume-language-strip {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+  margin: 0 0 18px;
+}
+
+.resume-tech-badge {
+  width: auto;
+  min-height: 34px;
+  padding: 0 9px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(31, 36, 40, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 4px 9px rgba(20, 20, 20, 0.08);
+}
+
+.resume-tech-badge-react {
+  background: linear-gradient(135deg, #71bfca, #3d8792);
+  color: #10272b;
+}
+
+.resume-tech-badge-javascript {
+  background: linear-gradient(135deg, #dfc84f, #b79a27);
+  color: #1f2428;
+}
+
+.resume-tech-badge-python {
+  background: linear-gradient(135deg, #4e7fa6, #d4b753);
+  color: #162733;
+}
+
+.resume-tech-badge-java {
+  background: linear-gradient(135deg, #d98a2d, #b56c1f);
+  color: #1f2428;
+}
+
+.resume-tech-badge-ruby {
+  background: linear-gradient(135deg, #aa4546, #833233);
+}
+
+.resume-tech-badge-swift {
+  background: linear-gradient(135deg, #e8844f, #c86138);
+  color: #1f2428;
+}
+
+.resume-tech-badge-violet {
+  background: linear-gradient(135deg, #7667c7, #574aa2);
+}
+
+.resume-tech-badge-slate {
+  background: linear-gradient(135deg, #52616a, #36464e);
+}
+
+.resume-bottom-actions {
+  max-width: 1120px;
+  margin: 28px auto 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+
+.resume-page {
+  padding: 120px 32px 64px;
+}
+
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-language-strip {
+    flex-wrap: wrap;
+  }
+}

@@ -95,12 +95,12 @@ function JourneyDeskProject() {
 
   return (
     <>
-      <main className="journeydesk-page">
-        <section className="journeydesk-hero">
-          <div className="journeydesk-hero-copy">
+      <main className="case-study-page journeydesk-page">
+        <section className="case-study-hero case-study-hero--balanced journeydesk-hero">
+          <div className="case-study-hero-copy case-study-surface">
             <p className="section-kicker">Selected Web Case Study</p>
             <h1>JourneyDesk</h1>
-            <p className="journeydesk-summary">
+            <p className="case-study-summary journeydesk-summary">
               A full-stack travel operations CRM for agency teams with
               review-only local AI support.
             </p>
@@ -112,12 +112,13 @@ function JourneyDeskProject() {
               designed to support staff review without updating bookings,
               emails, or records automatically.
             </p>
-            <p className="journeydesk-role">
+            <p className="case-study-role">
               Role: product framing, UI/UX, full-stack implementation, API
               design, relational modeling, local AI workflow, and documentation.
             </p>
-            <div className="featured-tag-list journeydesk-tags">
-              <span className="featured-tag">Next.js</span>
+            <div className="featured-tag-list case-study-tags">
+              <span className="featured-tag">React / Next.js</span>
+              <span className="featured-tag">TypeScript</span>
               <span className="featured-tag">Express API</span>
               <span className="featured-tag">PostgreSQL</span>
               <span className="featured-tag">Ollama</span>
@@ -125,16 +126,17 @@ function JourneyDeskProject() {
             </div>
           </div>
 
-          <div className="journeydesk-hero-media">
+          <div className="case-study-hero-media journeydesk-hero-media">
             <button
               type="button"
-              className="journeydesk-image-button"
+              className="case-study-image-button"
               onClick={() =>
                 openImage(landingHeroImg, "JourneyDesk landing page hero")
               }
               aria-label="Open larger image for JourneyDesk landing page hero"
             >
               <img
+                className="case-study-image"
                 src={landingHeroImg}
                 alt="JourneyDesk landing page hero"
                 loading="eager"
@@ -143,8 +145,8 @@ function JourneyDeskProject() {
           </div>
         </section>
 
-        <section className="journeydesk-section">
-          <div className="section-heading">
+        <section className="case-study-section case-study-surface">
+          <div className="case-study-section-heading">
             <p className="section-kicker">Product Direction</p>
             <h2>A staff workflow tool, not a booking clone</h2>
           </div>
@@ -156,9 +158,9 @@ function JourneyDeskProject() {
             keeping communication context visible, and using AI as a reviewed
             staff support layer rather than an automatic operator.
           </p>
-          <div className="role-grid">
+          <div className="case-study-grid case-study-role-grid">
             {productPillars.map((point) => (
-              <article key={point.name} className="role-card">
+              <article key={point.name} className="case-study-card case-study-surface case-study-role-card">
                 <h3>{point.name}</h3>
                 <p>{point.detail}</p>
               </article>
@@ -166,8 +168,8 @@ function JourneyDeskProject() {
           </div>
         </section>
 
-        <section className="journeydesk-section journeydesk-section-build">
-          <div className="section-heading">
+        <section className="case-study-section case-study-surface journeydesk-section-build">
+          <div className="case-study-section-heading">
             <p className="section-kicker">Build Scope</p>
             <h2>What the project demonstrates</h2>
           </div>
@@ -181,47 +183,47 @@ function JourneyDeskProject() {
           </div>
         </section>
 
-        <section className="journeydesk-section">
-          <div className="section-heading">
+        <section className="case-study-section case-study-surface">
+          <div className="case-study-section-heading">
             <p className="section-kicker">Core Screens</p>
             <h2>The main product surfaces</h2>
-            <p className="section-intro">
+            <p className="case-study-section-intro">
               These screens show the V3 workflow from public introduction
               through authenticated planning, review-only AI support, and
               reusable agency knowledge.
             </p>
           </div>
-          <div className="journeydesk-snapshot-grid">
+          <div className="case-study-grid case-study-snapshot-grid journeydesk-snapshot-grid">
             {snapshots.map((snapshot) => (
-              <article key={snapshot.title} className="snapshot-card">
+              <article key={snapshot.title} className="case-study-card case-study-surface case-study-snapshot-card">
                 <button
                   type="button"
-                  className="journeydesk-image-button"
+                  className="case-study-image-button"
                   onClick={() => openImage(snapshot.image, snapshot.alt)}
                   aria-label={`Open larger image for ${snapshot.title}`}
                 >
-                  <img src={snapshot.image} alt={snapshot.alt} loading="lazy" />
+                  <img className="case-study-image" src={snapshot.image} alt={snapshot.alt} loading="lazy" />
                 </button>
                 <h3>{snapshot.title}</h3>
-                <p>{snapshot.description}</p>
+                <p className="case-study-card-copy">{snapshot.description}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="journeydesk-section journeydesk-section-learning">
-          <div className="section-heading">
+        <section className="case-study-section case-study-surface journeydesk-section-learning">
+          <div className="case-study-section-heading">
             <p className="section-kicker">V2 to V3 Learning</p>
             <h2>Making AI useful requires product architecture</h2>
           </div>
-          <article className="v2-learning-card">
+          <article className="case-study-card case-study-surface v2-learning-card">
             {v2LearningPoints.map((point) => (
               <p key={point}>{point}</p>
             ))}
           </article>
         </section>
 
-        <div className="journeydesk-footer-actions">
+        <div className="case-study-footer-actions">
           <Link to="/projects" className="btn btn-secondary">
             Back to Projects
           </Link>

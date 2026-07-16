@@ -1,3 +1,67 @@
+/* Floating section navigation */
+
+.floating-nav {
+  position: fixed;
+  right: 24px;
+  bottom: 38px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 6px;
+  border: 1px solid rgba(183, 137, 28, 0.48);
+  border-radius: 999px;
+  background: rgba(255, 252, 244, 0.84);
+  box-shadow: 0 14px 30px rgba(31, 36, 40, 0.16);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+
+.nav-item {
+  background-color: transparent;
+  color: rgba(31, 36, 40, 0.84);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  box-shadow: none;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+  padding: 0;
+  appearance: none;
+  font: inherit;
+}
+
+.nav-item:hover,
+.nav-item:focus-visible {
+  transform: translateY(-2px);
+  background-color: rgba(44, 110, 111, 0.94);
+  color: var(--retro-cream);
+  border-color: rgba(183, 137, 28, 0.5);
+  outline: none;
+}
+
+@media (max-width: 600px) {
+
+  .floating-nav {
+    right: 12px;
+    bottom: 20px;
+    gap: 5px;
+    padding: 7px 5px;
+  }
+
+  .nav-item {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Icon presentation */
+
 .nav-icon {
   display: inline-flex;
   width: 20px;

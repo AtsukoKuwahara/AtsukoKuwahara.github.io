@@ -1,4 +1,7 @@
+/* Contact page */
+
 .contact-container {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -6,6 +9,7 @@
   max-width: 1100px;
   padding: 20px 0;
   gap: 30px;
+  animation: driftIn 0.8s ease both;
 }
 
 .contact-content {
@@ -98,4 +102,18 @@
   .contact-inline-logo {
     width: 96px;
   }
+}
+
+/* Decorative framing shared with the home contact section */
+
+#contact .section-inner {
+  width: 100%;
+}
+
+#contact {
+  background:
+    radial-gradient(circle at 80% 40%, rgba(197, 106, 74, 0.16), transparent 16%),
+    radial-gradient(circle at 16% 76%, rgba(44, 110, 111, 0.1), transparent 18%),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.28)),
+    #f2d2c8;
 }

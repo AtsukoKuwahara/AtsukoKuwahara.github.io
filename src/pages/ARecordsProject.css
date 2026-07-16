@@ -1,29 +1,15 @@
+/* A'S Records-specific case-study layout and visual treatment. */
+
 .a-records-page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 104px 48px 80px;
-}
-
-.a-records-hero {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 32px;
-  align-items: center;
-  margin-bottom: 48px;
-}
-
-.a-records-hero-copy,
-.a-records-section,
-.role-card,
-.snapshot-card {
-  background: rgba(255, 249, 240, 0.82);
-  border: 2px solid rgba(31, 36, 40, 0.12);
-  box-shadow: var(--retro-shadow-soft);
-}
-
-.a-records-hero-copy {
-  padding: 32px;
-  border-radius: 24px;
+  --case-study-max-width: 1200px;
+  --case-study-surface-background: rgba(255, 249, 240, 0.82);
+  --case-study-hero-copy-padding: 32px;
+  --case-study-role-font-size: 0.82rem;
+  --case-study-tags-margin-top: 18px;
+  --case-study-section-radius: 24px;
+  --case-study-section-padding: 28px;
+  --case-study-section-margin-bottom: 28px;
+  --case-study-card-radius: 20px;
 }
 
 .a-records-summary {
@@ -31,53 +17,10 @@
   max-width: 38rem;
 }
 
-.a-records-role {
-  margin: 14px 0 0;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(44, 110, 111, 0.82);
-}
-
-.a-records-hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 24px 0 18px;
-}
-
-.a-records-tags {
-  margin-top: 18px;
-}
-
-.a-records-hero-media img {
-  width: 100%;
-  display: block;
+.a-records-hero-media .case-study-image {
   border-radius: 24px;
   border: 2px solid var(--retro-ink);
   box-shadow: 0 22px 40px rgba(20, 20, 20, 0.18);
-}
-
-.a-records-image-button {
-  display: block;
-  width: 100%;
-  padding: 0;
-  border: none;
-  background: transparent;
-  cursor: zoom-in;
-}
-
-.a-records-image-button:focus-visible {
-  outline: 3px solid rgba(44, 110, 111, 0.45);
-  outline-offset: 4px;
-  border-radius: 22px;
-}
-
-.a-records-section {
-  border-radius: 24px;
-  padding: 28px;
-  margin-bottom: 28px;
 }
 
 .a-records-section-story {
@@ -94,38 +37,8 @@
   background: rgba(255, 249, 240, 0.84);
 }
 
-.section-heading {
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.section-heading::after {
-  content: "";
-  display: block;
-  width: 72px;
-  height: 3px;
-  margin-top: 14px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--retro-teal), rgba(44, 110, 111, 0.16));
-}
-
-.section-intro {
-  max-width: none;
+.a-records-page .case-study-section-intro {
   margin: 0;
-}
-
-.role-grid,
-.snapshot-grid {
-  display: grid;
-  gap: 18px;
-}
-
-.role-grid {
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-
-.snapshot-grid {
-  grid-template-columns: 1.2fr 0.8fr;
 }
 
 .snapshot-grid-three {
@@ -133,41 +46,34 @@
 }
 
 .admin-snapshot-grid {
-  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 18px;
 }
 
-.role-card,
-.snapshot-card {
-  border-radius: 20px;
-  padding: 22px;
+.a-records-page .case-study-card {
   text-decoration: none;
-  color: inherit;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
-.a-records-section-focus .role-card:nth-child(1) {
+.a-records-section-focus .case-study-role-card:nth-child(1) {
   background: rgba(255, 249, 240, 0.94);
 }
 
-.a-records-section-focus .role-card:nth-child(2) {
+.a-records-section-focus .case-study-role-card:nth-child(2) {
   background: rgba(255, 249, 240, 0.94);
 }
 
-.a-records-section-focus .role-card:nth-child(3) {
+.a-records-section-focus .case-study-role-card:nth-child(3) {
   background: rgba(255, 249, 240, 0.94);
 }
 
-.a-records-section-system .role-card:nth-child(1) {
+.a-records-section-system .case-study-role-card:nth-child(1) {
   background: rgba(255, 249, 240, 0.94);
 }
 
-.a-records-section-system .role-card:nth-child(2) {
+.a-records-section-system .case-study-role-card:nth-child(2) {
   background: rgba(255, 249, 240, 0.94);
 }
 
-.a-records-section-system .role-card:nth-child(3) {
+.a-records-section-system .case-study-role-card:nth-child(3) {
   background: rgba(255, 249, 240, 0.94);
 }
 
@@ -175,16 +81,8 @@
   color: rgba(44, 110, 111, 0.85);
 }
 
-.role-card:hover,
-.snapshot-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 26px rgba(20, 20, 20, 0.16);
-}
 
-
-.snapshot-card img {
-  width: 100%;
-  display: block;
+.a-records-page .case-study-snapshot-card .case-study-image {
   border-radius: 16px;
   border: 2px solid rgba(31, 36, 40, 0.12);
   margin-bottom: 16px;
@@ -199,11 +97,8 @@
   margin-bottom: 8px;
 }
 
-.snapshot-card p,
-.admin-snapshot-card p {
+.a-records-page .case-study-card-copy {
   margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
 }
 
 .flow-list {
@@ -238,39 +133,17 @@
   max-width: none;
 }
 
-.a-records-section > p {
-  max-width: none;
+.a-records-page .case-study-section > p {
   line-height: 1.75;
 }
 
-.a-records-footer-actions {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 8px;
-}
-
+/* Responsive page-specific grids */
 @media (max-width: 960px) {
-  .a-records-page {
-    padding: 96px 32px 72px;
-  }
-
   .a-records-hero,
-  .role-grid,
-  .snapshot-grid,
+  .a-records-page .case-study-role-grid,
+  .a-records-page .case-study-snapshot-grid,
   .snapshot-grid-three,
   .admin-snapshot-grid {
     grid-template-columns: 1fr;
   }
-}
-
-@media (max-width: 640px) {
-  .a-records-page {
-    padding: 92px 20px 56px;
-  }
-
-  .a-records-hero-copy,
-  .a-records-section {
-    padding: 22px;
-  }
-
 }

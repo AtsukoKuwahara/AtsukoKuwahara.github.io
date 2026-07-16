@@ -86,12 +86,12 @@ function RijksExplorerProject() {
 
   return (
     <>
-      <main className="rijks-page">
-        <section className="rijks-hero">
-          <div className="rijks-hero-copy">
+      <main className="case-study-page rijks-page">
+        <section className="case-study-hero rijks-hero">
+          <div className="case-study-hero-copy case-study-surface rijks-hero-copy">
             <p className="section-kicker">Featured iOS Case Study</p>
             <h1>RijksExplorer iOS</h1>
-            <p className="rijks-summary">
+            <p className="case-study-summary rijks-summary">
               A SwiftUI museum app for Rijksmuseum masterpiece stories and live
               collection exploration.
             </p>
@@ -102,11 +102,11 @@ function RijksExplorerProject() {
               withheld, and where the app should separate stable editorial
               stories from live search.
             </p>
-            <p className="rijks-role">
+            <p className="case-study-role">
               Role: concept, product direction, UI/UX, SwiftUI implementation,
               live API integration, data fallback design, and polish.
             </p>
-            <div className="featured-tag-list rijks-tags">
+            <div className="featured-tag-list case-study-tags">
               <span className="featured-tag">SwiftUI</span>
               <span className="featured-tag">Rijksmuseum API</span>
               <span className="featured-tag">Live Data</span>
@@ -114,22 +114,22 @@ function RijksExplorerProject() {
             </div>
           </div>
 
-          <div className="rijks-hero-image">
+          <div className="case-study-hero-media rijks-hero-image">
             <button
               type="button"
-              className="rijks-image-button"
+              className="case-study-image-button"
               onClick={() =>
                 openImage(masterpiecesImg, "RijksExplorer masterpieces tab")
               }
               aria-label="Open larger image for RijksExplorer masterpieces"
             >
-              <img src={masterpiecesImg} alt="RijksExplorer masterpieces tab" loading="eager" />
+              <img className="case-study-image case-study-image--contained" src={masterpiecesImg} alt="RijksExplorer masterpieces tab" loading="eager" />
             </button>
           </div>
         </section>
 
-        <section className="rijks-section rijks-section-story">
-          <div className="section-heading">
+        <section className="case-study-section case-study-surface rijks-section-story">
+          <div className="case-study-section-heading">
             <p className="section-kicker">Core Challenge</p>
             <h2>Available data is not the same as reliable product data</h2>
           </div>
@@ -140,9 +140,9 @@ function RijksExplorerProject() {
             but not reliable enough across objects, categories, and detail
             pages.
           </p>
-          <div className="role-grid">
+          <div className="case-study-grid case-study-role-grid">
             {productPillars.map((point) => (
-              <article key={point.name} className="role-card">
+              <article key={point.name} className="case-study-card case-study-surface case-study-role-card">
                 <h3>{point.name}</h3>
                 <p>{point.detail}</p>
               </article>
@@ -150,14 +150,14 @@ function RijksExplorerProject() {
           </div>
         </section>
 
-        <section className="rijks-section rijks-section-system">
-          <div className="section-heading">
+        <section className="case-study-section case-study-surface rijks-section-system">
+          <div className="case-study-section-heading">
             <p className="section-kicker">Engineering Response</p>
             <h2>Designing boundaries around uneven live data</h2>
           </div>
-          <div className="role-grid">
+          <div className="case-study-grid case-study-role-grid">
             {technicalDecisions.map((decision) => (
-              <article key={decision.name} className="role-card">
+              <article key={decision.name} className="case-study-card case-study-surface case-study-role-card">
                 <h3>{decision.name}</h3>
                 <p>{decision.detail}</p>
               </article>
@@ -165,31 +165,31 @@ function RijksExplorerProject() {
           </div>
         </section>
 
-        <section className="rijks-section">
-          <div className="section-heading">
+        <section className="case-study-section case-study-surface">
+          <div className="case-study-section-heading">
             <p className="section-kicker">Screens</p>
             <h2>Current product surfaces</h2>
           </div>
-          <div className="rijks-snapshot-grid">
+          <div className="case-study-grid case-study-snapshot-grid rijks-snapshot-grid">
             {snapshots.map((snapshot) => (
-              <article key={snapshot.title} className="snapshot-card">
+              <article key={snapshot.title} className="case-study-card case-study-surface case-study-snapshot-card">
                 <button
                   type="button"
-                  className="rijks-image-button"
+                  className="case-study-image-button"
                   onClick={() => openImage(snapshot.image, snapshot.alt)}
                   aria-label={`Open larger image for ${snapshot.title}`}
                 >
-                  <img src={snapshot.image} alt={snapshot.alt} loading="lazy" />
+                  <img className="case-study-image case-study-image--contained" src={snapshot.image} alt={snapshot.alt} loading="lazy" />
                 </button>
                 <h3>{snapshot.title}</h3>
-                <p>{snapshot.description}</p>
+                <p className="case-study-card-copy">{snapshot.description}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="rijks-section rijks-section-note">
-          <div className="section-heading">
+        <section className="case-study-section case-study-surface rijks-section-note">
+          <div className="case-study-section-heading">
             <p className="section-kicker">Final Judgment</p>
             <h2>Reliable paths over broad filters</h2>
           </div>
@@ -202,7 +202,7 @@ function RijksExplorerProject() {
           </p>
         </section>
 
-        <div className="rijks-footer-actions">
+        <div className="case-study-footer-actions">
           <Link to="/projects" className="btn btn-secondary">
             Back to Projects
           </Link>

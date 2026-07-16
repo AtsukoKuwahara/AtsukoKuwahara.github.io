@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Header from './components/Header';
 import FloatingNav from './components/FloatingNav';
 import Home from './pages/Home';
@@ -14,24 +14,61 @@ import RijksExplorerProject from './pages/RijksExplorerProject';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
 import useScrollToTop from './useScrollToTop'; // Import the custom hook
-import './styles/App.css';
 
 function App() {
   useScrollToTop(); // Use the custom hook
   const location = useLocation();
+  const navigate = useNavigate();
+  const routeTimerRef = useRef(null);
+  const [leavingPath, setLeavingPath] = useState(null);
   const isStandalonePage = location.pathname !== '/';
+  const isRouteLeaving = leavingPath === location.pathname;
+
+  useEffect(() => {
+    setLeavingPath(null);
+
+    return () => window.clearTimeout(routeTimerRef.current);
+  }, [location.pathname]);
+
+  const handleHomeRouteClick = (event, destination) => {
+    const isModifiedClick = event.metaKey || event.altKey || event.ctrlKey || event.shiftKey;
+
+    if (event.defaultPrevented || event.button !== 0 || isModifiedClick) {
+      return;
+    }
+
+    event.preventDefault();
+
+    if (isRouteLeaving) {
+      return;
+    }
+
+    const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      navigate(destination);
+      return;
+    }
+
+    setLeavingPath(location.pathname);
+    window.clearTimeout(routeTimerRef.current);
+    routeTimerRef.current = window.setTimeout(() => navigate(destination), 180);
+  };
 
   return (
     <div className="App">
       <Header />
       {!isStandalonePage && <FloatingNav />}
-      <main key={location.pathname} className="route-transition">
+      <main
+        key={location.pathname}
+        className={`route-transition${isRouteLeaving ? ' is-leaving' : ''}`}
+      >
         <Routes location={location}>
           <Route path="/" element={
             <div className="content">
               <section id="home" className="full-page">
                 <div className="section-inner">
-                  <Home />
+                  <Home onRouteLinkClick={handleHomeRouteClick} />
                 </div>
               </section>
               <section id="about" className="full-page">

@@ -1,0 +1,30 @@
+/* Fixed site header */
+
+.header {
+  background: var(--retro-ink);
+  color: var(--retro-cream);
+  padding: 14px 24px;
+  text-align: left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: 4px solid var(--retro-mustard);
+}
+
+.logo {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: var(--retro-cream);
+  text-decoration: none;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+
+  .logo {
+    font-size: 1.1em;
+  }
+}

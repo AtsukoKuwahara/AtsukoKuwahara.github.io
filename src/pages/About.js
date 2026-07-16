@@ -1,4 +1,5 @@
 import React from 'react';
+import './About.css';
 
 const beats = [
   {
@@ -7,18 +8,18 @@ const beats = [
   },
   {
     title: 'Journey',
-    text: 'My path into development was not early or linear. Travel, family life in Montreal, and the pause of the pandemic all pushed me toward building the kinds of products I wanted to see instead of only imagining them.',
+    text: 'The pandemic turned a long-standing interest in digital products into a decision to make them. What began as curiosity became a deliberate change in direction.',
   },
   {
     title: 'Making',
-    text: 'After a 1,200-hour mobile development program, I kept building across mobile, web, and AI-assisted projects. I care about taking ideas through interface direction, structure, and implementation so they become coherent, usable, working experiences.',
+    text: 'A 1,200-hour mobile development program gave me the foundation. Since then, I have built on it through self-directed work across iOS, web, and AI-assisted tools, one working product at a time.',
   },
 ];
 
 const RippleMotif = () => (
   <div className="about-ripple-motif">
-    <span className="about-drop about-drop-main" />
-    <span className="about-drop-trace" />
+    <span className="about-drop" />
+    <span className="about-impact" />
     <span className="about-ripple about-ripple-one" />
     <span className="about-ripple about-ripple-two" />
     <span className="about-ripple about-ripple-three" />
@@ -37,9 +38,9 @@ function About() {
         <p className="section-kicker">About Me</p>
         <h2>Late to tech, close to craft</h2>
         <p>
-          I am not trying to look like the loudest developer in the room. What
-          matters more to me is building steadily, thinking clearly, and making
-          products that feel intentional from concept to interface.
+          I came to software later, after years shaped by travel, family life,
+          and creative work. My path was not linear, and each part of it remains
+          part of who I am.
         </p>
       </div>
       <div className="about-beats">

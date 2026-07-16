@@ -18,7 +18,7 @@ const Contact = () => {
         </p>
         <div className="contact-brand-row">
           <p className="contact-side-note">Built with warmth, intention, and a little noise in the background.</p>
-          <img src={logoImg} alt="AsRecords Logo" className="contact-inline-logo" />
+          <img src={logoImg} alt="A'S RECORDS logo" className="contact-inline-logo" />
         </div>
         <a href="mailto:kuwahara.atsuko@gmail.com" className="contact-link">
           <FontAwesomeIcon icon={faEnvelope} /> Email Atsuko
@@ -31,6 +31,7 @@ const Contact = () => {
             className="social-link"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Atsuko Kuwahara on LinkedIn"
           >
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </a>
@@ -39,6 +40,7 @@ const Contact = () => {
             className="social-link"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Atsuko Kuwahara on GitHub"
           >
             <FontAwesomeIcon icon={faGithub} size="2x" />
           </a>

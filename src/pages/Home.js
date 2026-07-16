@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Home.css';
 
-function Home() {
+function Home({ onRouteLinkClick }) {
   const [isFocusOpen, setIsFocusOpen] = useState(false);
 
   return (
@@ -22,10 +23,18 @@ function Home() {
           Solo builds / UI clarity / product feel
         </p>
         <div className="home-actions">
-          <Link to="/projects" className="btn btn-primary">
+          <Link
+            to="/projects"
+            className="btn btn-primary"
+            onClick={(event) => onRouteLinkClick(event, '/projects')}
+          >
             Explore Projects
           </Link>
-          <Link to="/resume" className="btn btn-outline">
+          <Link
+            to="/resume"
+            className="btn btn-outline"
+            onClick={(event) => onRouteLinkClick(event, '/resume')}
+          >
             View Resume
           </Link>
         </div>
@@ -44,45 +53,64 @@ function Home() {
         </div>
         <div className="home-vinyl-note">music / systems / warmth</div>
       </div>
-      <div className={`home-focus-drawer ${isFocusOpen ? 'is-open' : ''}`}>
-        <button
-          type="button"
-          className="home-focus-toggle"
-          aria-expanded={isFocusOpen}
-          aria-controls="home-focus-panel"
-          onClick={() => setIsFocusOpen((current) => !current)}
-        >
-          <span className="home-focus-toggle-copy">
-            <span>Focus areas</span>
-            <span>Mobile / Web / AI</span>
-          </span>
-          <span className="home-focus-toggle-mark" aria-hidden="true">
-            {isFocusOpen ? '−' : '+'}
-          </span>
-        </button>
-        <aside
-          id="home-focus-panel"
-          className="home-capability-panel"
-          aria-label="Focus areas"
-        >
-          <p className="home-panel-kicker">Focus areas</p>
-          <div className="home-panel-item">
-            <span>Mobile products</span>
-            <p>SwiftUI / iOS / API Integration</p>
+      <div className={`home-focus-album ${isFocusOpen ? 'is-flipped' : ''}`}>
+        <div className="home-album-sleeve">
+          <div className="home-album-face home-album-cover" aria-hidden={isFocusOpen}>
+            <span className="home-album-catalog">A&apos;S Records / Profile 01</span>
+            <button
+              type="button"
+              className="home-album-label"
+              aria-expanded={isFocusOpen}
+              aria-controls="home-focus-panel"
+              aria-label="Show focus areas track list"
+              tabIndex={isFocusOpen ? -1 : 0}
+              onClick={() => setIsFocusOpen(true)}
+            >
+              <span className="home-album-label-row">
+                <span className="home-album-label-catalog">A&apos;S Records</span>
+                <span className="home-album-label-hint" aria-hidden="true">↗</span>
+              </span>
+              <span className="home-album-label-title">Focus Areas</span>
+              <span className="home-album-label-meta">Mobile · Web · AI</span>
+            </button>
           </div>
-          <div className="home-panel-item">
-            <span>Web systems</span>
-            <p>React / TypeScript / Rails</p>
-          </div>
-          <div className="home-panel-item">
-            <span>AI-assisted tools</span>
-            <p>LLM evaluation / Chatbot systems / Local AI</p>
-          </div>
-          <div className="home-panel-meta">
-            <span>Based in Montreal, QC</span>
-            <span>Open to software developer roles</span>
-          </div>
-        </aside>
+          <aside
+            id="home-focus-panel"
+            className="home-album-face home-capability-panel"
+            aria-label="Focus areas track list"
+            aria-hidden={!isFocusOpen}
+          >
+            <div className="home-panel-heading">
+              <p className="home-panel-kicker">A&apos;S Records / Side B</p>
+              <span>Focus Areas</span>
+            </div>
+            <div className="home-panel-item">
+              <span>Mobile products</span>
+              <p>SwiftUI / iOS / API Integration</p>
+            </div>
+            <div className="home-panel-item">
+              <span>Web systems</span>
+              <p>React / TypeScript / Rails</p>
+            </div>
+            <div className="home-panel-item">
+              <span>AI-assisted tools</span>
+              <p>LLM evaluation / Chatbot systems / Local AI</p>
+            </div>
+            <div className="home-panel-meta">
+              <span>Based in Montreal, QC</span>
+              <span>Open to software developer roles</span>
+            </div>
+            <button
+              type="button"
+              className="home-album-return"
+              aria-label="Show focus areas album cover"
+              tabIndex={isFocusOpen ? 0 : -1}
+              onClick={() => setIsFocusOpen(false)}
+            >
+              Return ↙
+            </button>
+          </aside>
+        </div>
       </div>
     </div>
   );

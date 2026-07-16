@@ -1,0 +1,172 @@
+/* Scalable foundations for standalone case-study pages. */
+
+/*
+ * Page-specific root classes may override these variables in their own CSS.
+ * Shared selectors below must remain independent from individual project names.
+ */
+.case-study-page {
+  --case-study-max-width: 1200px;
+  --case-study-page-padding: 104px 48px 80px;
+  --case-study-tablet-padding: 96px 32px 72px;
+  --case-study-mobile-padding: 92px 20px 56px;
+  --case-study-surface-background: rgba(255, 249, 240, 0.86);
+  --case-study-hero-copy-padding: 26px;
+  --case-study-role-font-size: 0.78rem;
+  --case-study-tags-margin-top: 14px;
+  --case-study-section-radius: 26px;
+  --case-study-section-padding: 26px;
+  --case-study-section-margin-bottom: 24px;
+  --case-study-card-radius: 22px;
+  --case-study-card-padding: 22px;
+  --case-study-mobile-surface-padding: 22px;
+  --case-study-footer-margin-top: 8px;
+
+  max-width: var(--case-study-max-width);
+  margin: 0 auto;
+  padding: var(--case-study-page-padding);
+}
+
+/* Hero */
+.case-study-hero {
+  display: grid;
+}
+
+.case-study-hero--balanced {
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.case-study-hero-copy {
+  padding: var(--case-study-hero-copy-padding);
+  border-radius: 24px;
+}
+
+.case-study-role {
+  margin: 14px 0 0;
+  font-size: var(--case-study-role-font-size);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(44, 110, 111, 0.82);
+}
+
+.case-study-tags {
+  margin-top: var(--case-study-tags-margin-top);
+}
+
+/* Shared surfaces and sections */
+.case-study-surface {
+  background: var(--case-study-surface-background);
+  border: 2px solid rgba(31, 36, 40, 0.12);
+  box-shadow: var(--retro-shadow-soft);
+}
+
+.case-study-section {
+  border-radius: var(--case-study-section-radius);
+  padding: var(--case-study-section-padding);
+  margin-bottom: var(--case-study-section-margin-bottom);
+}
+
+.case-study-section-heading {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.case-study-section-heading::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 3px;
+  margin-top: 14px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--retro-teal), rgba(44, 110, 111, 0.16));
+}
+
+.case-study-section-intro,
+.case-study-section > p {
+  max-width: none;
+}
+
+/* Grids and cards */
+.case-study-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.case-study-role-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.case-study-card {
+  border-radius: var(--case-study-card-radius);
+  padding: var(--case-study-card-padding);
+  color: inherit;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.case-study-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 26px rgba(20, 20, 20, 0.16);
+}
+
+.case-study-card-copy {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Image presentation and keyboard focus */
+.case-study-image-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.case-study-image-button:focus-visible {
+  outline: 3px solid rgba(44, 110, 111, 0.45);
+  outline-offset: 4px;
+  border-radius: 22px;
+}
+
+.case-study-image {
+  width: 100%;
+  display: block;
+}
+
+.case-study-image--contained {
+  border-radius: 18px;
+  border: none;
+  object-fit: contain;
+  background: transparent;
+  box-shadow: 0 10px 18px rgba(20, 20, 20, 0.06);
+}
+
+/* Shared footer alignment */
+.case-study-footer-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--case-study-footer-margin-top);
+}
+
+/* Responsive spacing remains configurable without editing this file. */
+@media (max-width: 960px) {
+  .case-study-page {
+    padding: var(--case-study-tablet-padding);
+  }
+}
+
+@media (max-width: 640px) {
+  .case-study-page {
+    padding: var(--case-study-mobile-padding);
+  }
+
+  .case-study-hero-copy,
+  .case-study-section {
+    padding: var(--case-study-mobile-surface-padding);
+  }
+}

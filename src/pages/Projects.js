@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDocker, faJava, faNodeJs, faReact, faStripe } from "@fortawesome/free-brands-svg-icons";
 import ImageLightbox from "../components/ImageLightbox";
+import featuredProjects from "../data/featuredProjects";
 import "./Projects.css";
 
 import adobeXdImg from "../assets/images/adobe-xd.jpg";
@@ -13,13 +14,11 @@ import leafletWebAppImg from "../assets/images/leaflet-web-app.jpg";
 import apwStoreRailsImg from "../assets/images/apw-store-rails.jpg";
 import asRecordsStoreImg from "../assets/images/as-records-store.jpg";
 import aRecordsPortfolioImg from "../assets/images/asrecords_landing_ps.jpg";
-import openCollectionDiscoverImg from "../assets/images/open-collection-discover.png";
 import journeyDeskPortfolioImg from "../assets/images/journeydesk_landing_pf.jpg";
-import rijksExplorerMasterpiecesImg from "../assets/images/rijks-explorer-masterpieces.png";
 import orangebotImg from "../assets/images/orange-bot.jpg";
 
 const techCatalog = {
-  rails: { label: "Rails", shortLabel: "RbR", tone: "ruby" },
+  rails: { label: "Rails", shortLabel: "RoR", tone: "ruby" },
   ruby: { label: "Ruby", shortLabel: "Rb", tone: "ruby" },
   react: { label: "React", icon: faReact, tone: "react" },
   nextjs: { label: "Next.js", shortLabel: "Nx", tone: "slate" },
@@ -46,42 +45,11 @@ const techCatalog = {
   javascript: { label: "JavaScript", shortLabel: "JS", tone: "javascript" },
   css: { label: "CSS", shortLabel: "CSS", tone: "css" },
   html: { label: "HTML", shortLabel: "HTML", tone: "html" },
-  reactNative: { label: "React Native", icon: faReact, tone: "react" },
+  reactNative: { label: "React Native", shortLabel: "RN", tone: "react-native" },
   java: { label: "Java", icon: faJava, tone: "java" },
   premiere: { label: "Premiere Pro", shortLabel: "Pr", tone: "violet" },
   xd: { label: "Adobe XD", shortLabel: "Xd", tone: "pink" },
 };
-
-const featuredProjects = [
-  {
-    id: "open-collection-ios",
-    imgSrc: openCollectionDiscoverImg,
-    mediaClassName: "featured-project-media-portrait",
-    title: "Open Collection iOS",
-    description:
-      "A calm cross-museum SwiftUI app for discovering, saving, and organizing artworks from the Art Institute of Chicago and the Cleveland Museum of Art.",
-    detailLink: "/projects/open-collection-ios",
-    tags: ["SwiftUI", "Cross-Museum App", "Personal Library"],
-    stack: ["swiftui", "ios", "api", "localData"],
-    role: "Concept / Product Direction / UI / SwiftUI Implementation",
-    note:
-      "The key challenge was making two different museum APIs feel like one coherent discovery and library experience.",
-  },
-  {
-    id: "rijks-explorer-ios",
-    imgSrc: rijksExplorerMasterpiecesImg,
-    mediaClassName: "featured-project-media-portrait",
-    title: "RijksExplorer iOS",
-    description:
-      "A focused Rijksmuseum app that separates stable masterpiece stories from live collection exploration.",
-    detailLink: "/projects/rijks-explorer-ios",
-    tags: ["SwiftUI", "Live Museum Data", "Product Decisions"],
-    stack: ["swiftui", "ios", "api", "localData"],
-    role: "Concept / Product Direction / UI / SwiftUI Implementation",
-    note:
-      "The hardest product decision was choosing reliable paths over broad filters when live museum metadata proved uneven.",
-  },
-];
 
 const selectedWebProjects = [
   {
@@ -90,10 +58,10 @@ const selectedWebProjects = [
     title: "JourneyDesk",
     eyebrow: "Full-Stack Product Evolution / Local AI",
     description:
-      "A React / TypeScript travel operations workspace developed from a full-stack foundation into a safer, source-aware local AI Assistant.",
+      "A React / TypeScript travel operations CRM for agency workflows, with review-only local AI added as a bounded support feature.",
     detailLink: "/projects/journeydesk",
     stack: ["react", "typescript", "node", "postgres", "docker", "openapi"],
-    progression: ["V1 Full-Stack", "V2 AI Introduction", "V3 Practical AI Upgrade"],
+    progression: ["V1 CRM Foundation", "V2 Local AI Support", "V3 Workflow + Knowledge"],
     note:
       "Shows React full-stack architecture, REST/OpenAPI documentation, Docker, CI, and a deliberately bounded local AI workflow.",
   },
@@ -260,21 +228,26 @@ const StackBadges = ({ stack = [], label }) => (
       return tech.icon ? (
         <span
           key={tech.label}
-          className={`tech-badge tech-badge-text tech-badge-icon tech-badge-${tech.tone || "slate"}`}
-          title={tech.label}
+          className={`technology-badge-tooltip tech-badge tech-badge-text tech-badge-icon tech-badge-${tech.tone || "slate"}`}
+          data-tooltip={tech.label}
           aria-label={tech.label}
         >
           <FontAwesomeIcon icon={tech.icon} />
         </span>
       ) : tech.src ? (
-        <span key={tech.label} className="tech-badge tech-badge-image" title={tech.label}>
+        <span
+          key={tech.label}
+          className="technology-badge-tooltip tech-badge tech-badge-image"
+          data-tooltip={tech.label}
+          aria-label={tech.label}
+        >
           <img src={tech.src} alt={tech.label} loading="lazy" />
         </span>
       ) : (
         <span
           key={tech.label}
-          className={`tech-badge tech-badge-text tech-badge-${tech.tone || "slate"}`}
-          title={tech.label}
+          className={`technology-badge-tooltip tech-badge tech-badge-text tech-badge-${tech.tone || "slate"}`}
+          data-tooltip={tech.label}
           aria-label={tech.label}
         >
           {tech.shortLabel}
@@ -337,7 +310,7 @@ function Projects() {
       <main className="projects-container">
         <header className="projects-header reveal-card">
           <p className="section-kicker">Portfolio Projects</p>
-          <h2>Selected Works</h2>
+          <h2>Selected Work</h2>
           <p className="projects-lede">
             Product-focused work across iOS, full-stack development, and
             connected web systems. These projects show not only what I built,
@@ -411,10 +384,10 @@ function Projects() {
         <section className="selected-web-section" aria-labelledby="selected-web-heading">
           <div className="projects-list-heading reveal-card">
             <p className="section-kicker">Selected Web Projects</p>
-            <h3 id="selected-web-heading">React AI Product / Rails Product System</h3>
+            <h3 id="selected-web-heading">React Product / Rails Product Suite</h3>
             <p>
-              Two web projects with different learning curves: one full-stack
-              React product that tests local AI boundaries, and one Rails suite
+              Two web projects with different development paths: one full-stack
+              React product with bounded local AI support, and one Rails suite
               that connects three applications into a shared product world.
             </p>
           </div>

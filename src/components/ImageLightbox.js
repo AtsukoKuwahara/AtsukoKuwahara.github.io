@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import "./ImageLightbox.css";
 import { createPortal } from "react-dom";
 
 function ImageLightbox({ image, onClose }) {

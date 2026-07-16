@@ -1,47 +1,15 @@
+/* JourneyDesk-specific case-study layout and visual treatment. */
+
 .journeydesk-page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 104px 48px 80px;
-}
-
-.journeydesk-hero {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 32px;
-  align-items: center;
-  margin-bottom: 48px;
-}
-
-.journeydesk-hero-copy,
-.journeydesk-section,
-.journeydesk-section .role-card,
-.journeydesk-section .snapshot-card {
-  background: rgba(255, 249, 240, 0.86);
-  border: 2px solid rgba(31, 36, 40, 0.12);
-  box-shadow: var(--retro-shadow-soft);
-}
-
-.journeydesk-hero-copy {
-  padding: 32px;
-  border-radius: 24px;
+  --case-study-max-width: 1200px;
+  --case-study-hero-copy-padding: 32px;
+  --case-study-tags-margin-top: 18px;
+  --case-study-footer-margin-top: 10px;
 }
 
 .journeydesk-summary {
   font-size: 1.2rem;
   max-width: 38rem;
-}
-
-.journeydesk-role {
-  margin: 14px 0 0;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(44, 110, 111, 0.82);
-}
-
-.journeydesk-tags {
-  margin-top: 18px;
 }
 
 .journeydesk-hero-media {
@@ -50,10 +18,7 @@
   align-items: center;
 }
 
-.journeydesk-hero-media img,
-.journeydesk-section .snapshot-card img {
-  display: block;
-  width: 100%;
+.journeydesk-page .case-study-image {
   border-radius: 18px;
   object-fit: cover;
   object-position: center top;
@@ -61,32 +26,11 @@
   box-shadow: 0 12px 22px rgba(20, 20, 20, 0.08);
 }
 
-.journeydesk-hero-media img {
+.journeydesk-hero-media .case-study-image {
   min-height: 360px;
   max-height: 470px;
   border: 2px solid var(--retro-ink);
   box-shadow: 0 22px 40px rgba(20, 20, 20, 0.18);
-}
-
-.journeydesk-image-button {
-  display: block;
-  width: 100%;
-  padding: 0;
-  border: none;
-  background: transparent;
-  cursor: zoom-in;
-}
-
-.journeydesk-image-button:focus-visible {
-  outline: 3px solid rgba(44, 110, 111, 0.45);
-  outline-offset: 4px;
-  border-radius: 22px;
-}
-
-.journeydesk-section {
-  border-radius: 26px;
-  padding: 26px;
-  margin-bottom: 24px;
 }
 
 .journeydesk-section-build {
@@ -99,28 +43,12 @@
   background: rgba(255, 249, 240, 0.84);
 }
 
-.journeydesk-section .section-heading {
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.journeydesk-section .section-heading::after {
-  content: "";
-  display: block;
-  width: 72px;
-  height: 3px;
-  margin-top: 14px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--retro-teal), rgba(44, 110, 111, 0.16));
-}
-
-.journeydesk-section .section-intro,
-.journeydesk-section > p {
-  max-width: none;
+.journeydesk-page .case-study-section-intro,
+.journeydesk-page .case-study-section > p {
   line-height: 1.75;
 }
 
-.journeydesk-section .flow-list {
+.journeydesk-page .flow-list {
   display: grid;
   gap: 14px;
   margin: 20px 0 0;
@@ -128,7 +56,7 @@
   list-style: none;
 }
 
-.journeydesk-section .flow-step {
+.journeydesk-page .flow-step {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 14px;
@@ -139,7 +67,7 @@
   background: rgba(255, 255, 255, 0.48);
 }
 
-.journeydesk-section .flow-step-icon {
+.journeydesk-page .flow-step-icon {
   display: inline-grid;
   place-items: center;
   width: 34px;
@@ -150,49 +78,21 @@
   font-weight: 800;
 }
 
-.journeydesk-section .flow-step-text h3 {
+.journeydesk-page .flow-step-text h3 {
   margin: 0 0 6px;
 }
 
-.journeydesk-section .flow-step-text p {
+.journeydesk-page .flow-step-text p {
   margin: 0;
   line-height: 1.6;
-}
-
-.journeydesk-section .role-grid,
-.journeydesk-snapshot-grid {
-  display: grid;
-  gap: 18px;
-}
-
-.journeydesk-section .role-grid {
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .journeydesk-snapshot-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.journeydesk-section .role-card,
-.journeydesk-section .snapshot-card,
-.v2-learning-card {
-  border-radius: 22px;
-  padding: 22px;
-  color: inherit;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
-}
-
-.journeydesk-section .role-card:hover,
-.journeydesk-section .snapshot-card:hover,
-.v2-learning-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 26px rgba(20, 20, 20, 0.16);
-}
-
 .v2-learning-card {
   background: rgba(255, 249, 240, 0.94);
-  border: 2px solid rgba(31, 36, 40, 0.12);
-  box-shadow: var(--retro-shadow-soft);
 }
 
 .v2-learning-card p {
@@ -204,24 +104,13 @@
   margin-top: 14px;
 }
 
-.journeydesk-section .snapshot-card img {
+.journeydesk-page .case-study-snapshot-card .case-study-image {
   height: 250px;
   margin-bottom: 16px;
   border: 1px solid rgba(31, 36, 40, 0.12);
 }
 
-.journeydesk-section .snapshot-card p {
-  margin-bottom: 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.journeydesk-footer-actions {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
-}
-
+/* Responsive page-specific grids and media sizing */
 @media (max-width: 1100px) {
   .journeydesk-hero {
     grid-template-columns: 1fr;
@@ -229,27 +118,14 @@
 }
 
 @media (max-width: 960px) {
-  .journeydesk-page {
-    padding: 96px 32px 72px;
-  }
-
   .journeydesk-snapshot-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 640px) {
-  .journeydesk-page {
-    padding: 92px 20px 56px;
-  }
-
-  .journeydesk-hero-copy,
-  .journeydesk-section {
-    padding: 22px;
-  }
-
-  .journeydesk-hero-media img,
-  .journeydesk-section .snapshot-card img {
+  .journeydesk-hero-media .case-study-image,
+  .journeydesk-page .case-study-snapshot-card .case-study-image {
     min-height: 0;
     height: auto;
   }

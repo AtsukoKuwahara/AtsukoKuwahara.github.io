@@ -1,24 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faJava,
-  faJs,
-  faPython,
-  faReact,
-  faSwift,
-} from '@fortawesome/free-brands-svg-icons';
+import './Resume.css';
 
 const languageBadges = [
-  { label: 'Swift', icon: faSwift, tone: 'swift' },
-  { label: 'Java', icon: faJava, tone: 'java' },
-  { label: 'Kotlin', shortLabel: 'Kt', tone: 'violet' },
-  { label: 'Python', icon: faPython, tone: 'python' },
-  { label: 'JavaScript', icon: faJs, tone: 'javascript' },
-  { label: 'TypeScript', shortLabel: 'TS', tone: 'slate' },
-  { label: 'Ruby', shortLabel: 'Rb', tone: 'ruby' },
-  { label: 'Rails', shortLabel: 'RbR', tone: 'ruby' },
-  { label: 'React', icon: faReact, tone: 'react' },
+  { label: 'Swift', tone: 'swift' },
+  { label: 'Java', tone: 'java' },
+  { label: 'Python', tone: 'python' },
+  { label: 'JavaScript', tone: 'javascript' },
+  { label: 'TypeScript', tone: 'slate' },
+  { label: 'Ruby', tone: 'ruby' },
+  { label: 'Rails', tone: 'ruby' },
+  { label: 'React', tone: 'react' },
 ];
 
 function Resume() {
@@ -50,10 +42,9 @@ function Resume() {
               <span
                 key={tech.label}
                 className={`resume-tech-badge resume-tech-badge-${tech.tone}`}
-                title={tech.label}
                 aria-label={tech.label}
               >
-                {tech.icon ? <FontAwesomeIcon icon={tech.icon} /> : tech.shortLabel}
+                {tech.label}
               </span>
             ))}
           </div>
