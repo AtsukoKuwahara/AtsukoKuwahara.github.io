@@ -20,7 +20,7 @@ const Contact = () => {
           <p className="contact-side-note">Built with warmth, intention, and a little noise in the background.</p>
           <img src={logoImg} alt="A'S RECORDS logo" className="contact-inline-logo" />
         </div>
-        <a href="mailto:kuwahara.atsuko@gmail.com" className="contact-link">
+        <a href="mailto:atsuko.portfolio@gmail.com" className="contact-link">
           <FontAwesomeIcon icon={faEnvelope} /> Email Atsuko
         </a>
         <hr />

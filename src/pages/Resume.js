@@ -28,7 +28,7 @@ function Resume() {
           <Link to="/projects" className="btn btn-primary">
             View Projects
           </Link>
-          <a href="mailto:kuwahara.atsuko@gmail.com" className="btn btn-outline">
+          <a href="mailto:atsuko.portfolio@gmail.com" className="btn btn-outline">
             Email Atsuko
           </a>
         </div>
